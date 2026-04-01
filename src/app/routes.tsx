@@ -24,4 +24,6 @@ export const router = createBrowserRouter([
       { path: "*", Component: NotFound },
     ],
   },
-]);
+], {
+  basename: import.meta.env.MODE === 'production' ? "/Ccshubfigma" : "/"
+});
