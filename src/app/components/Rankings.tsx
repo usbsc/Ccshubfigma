@@ -114,95 +114,91 @@ export function Rankings() {
 
         {/* Table Body */}
         <div className="divide-y divide-zinc-800/50">
-          <AnimatePresence mode="popLayout">
-            {sortedTeams.map((team, idx) => {
-              const trend = team.ranking <= 3 ? "up" : team.ranking <= 10 ? "same" : "down";
-              return (
-                <motion.div
-                  key={team.id}
-                  variants={itemVariants}
-                  layout
-                  className="group"
+          {sortedTeams.map((team, idx) => {
+            const trend = team.ranking <= 3 ? "up" : team.ranking <= 10 ? "same" : "down";
+            return (
+              <div
+                key={team.id}
+                className="group"
+              >
+                <Link
+                  to={`/team/${team.id}`}
+                  className="grid grid-cols-12 gap-4 px-6 md:px-8 py-6 hover:bg-blue-600/5 transition-all items-center"
                 >
-                  <Link
-                    to={`/team/${team.id}`}
-                    className="grid grid-cols-12 gap-4 px-6 md:px-8 py-6 hover:bg-blue-600/5 transition-all items-center"
-                  >
-                    {/* Rank */}
-                    <div className="col-span-2 md:col-span-1">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg transition-all ${
-                        team.ranking <= 3
-                          ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30 rotate-3"
-                          : "bg-zinc-800 text-zinc-400 group-hover:bg-zinc-700"
-                      }`}>
-                        {team.ranking}
-                      </div>
+                  {/* Rank */}
+                  <div className="col-span-2 md:col-span-1">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg transition-all ${
+                      team.ranking <= 3
+                        ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30 rotate-3"
+                        : "bg-zinc-800 text-zinc-400 group-hover:bg-zinc-700"
+                    }`}>
+                      {team.ranking}
                     </div>
+                  </div>
 
-                    {/* Team */}
-                    <div className="col-span-7 md:col-span-5 flex items-center gap-4">
-                      <div className="relative w-14 h-14 shrink-0">
-                        <img
-                          src={team.image}
-                          alt={team.name}
-                          className="w-full h-full rounded-xl object-cover border-2 border-zinc-800 group-hover:border-blue-500/50 transition-all shadow-md"
-                        />
-                        <div className="absolute -top-1 -right-1 w-4 h-4 bg-zinc-900 border border-zinc-800 rounded-full flex items-center justify-center">
-                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                        </div>
-                      </div>
-                      <div className="min-w-0">
-                        <div className="font-bold text-white group-hover:text-blue-400 transition-colors truncate tracking-tight uppercase">{team.name}</div>
-                        <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest truncate">
-                          {team.mascot} • {team.league}
-                        </div>
+                  {/* Team */}
+                  <div className="col-span-7 md:col-span-5 flex items-center gap-4">
+                    <div className="relative w-14 h-14 shrink-0">
+                      <img
+                        src={team.image}
+                        alt={team.name}
+                        className="w-full h-full rounded-xl object-cover border-2 border-zinc-800 group-hover:border-blue-500/50 transition-all shadow-md"
+                      />
+                      <div className="absolute -top-1 -right-1 w-4 h-4 bg-zinc-900 border border-zinc-800 rounded-full flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                       </div>
                     </div>
+                    <div className="min-w-0">
+                      <div className="font-bold text-white group-hover:text-blue-400 transition-colors truncate tracking-tight uppercase">{team.name}</div>
+                      <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest truncate">
+                        {team.mascot} • {team.league}
+                      </div>
+                    </div>
+                  </div>
 
-                    {/* Record (Desktop) */}
-                    <div className="hidden md:block col-span-2 text-center">
-                      <div className="font-black text-xl text-white tracking-tighter">
-                        {team.record.wins}-{team.record.losses}
-                      </div>
-                      <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-wide">
-                        {((team.record.wins / (team.record.wins + team.record.losses)) * 100).toFixed(0)}% Win Rate
-                      </div>
+                  {/* Record (Desktop) */}
+                  <div className="hidden md:block col-span-2 text-center">
+                    <div className="font-black text-xl text-white tracking-tighter">
+                      {team.record.wins}-{team.record.losses}
                     </div>
+                    <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-wide">
+                      {((team.record.wins / (team.record.wins + team.record.losses)) * 100).toFixed(0)}% Win Rate
+                    </div>
+                  </div>
 
-                    {/* Division (Desktop) */}
-                    <div className="hidden md:block col-span-2 text-center">
-                      <span className="bg-zinc-800 text-zinc-400 px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest border border-zinc-700">
-                        {team.division}
-                      </span>
-                    </div>
+                  {/* Division (Desktop) */}
+                  <div className="hidden md:block col-span-2 text-center">
+                    <span className="bg-zinc-800 text-zinc-400 px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest border border-zinc-700">
+                      {team.division}
+                    </span>
+                  </div>
 
-                    {/* Trend & Action */}
-                    <div className="col-span-3 md:col-span-2 flex flex-col items-end gap-1">
-                      {trend === "up" && (
-                        <div className="flex items-center gap-1.5 text-green-500">
-                          <TrendingUp className="w-4 h-4" />
-                          <span className="text-[10px] font-black uppercase hidden md:inline">Rising</span>
-                        </div>
-                      )}
-                      {trend === "down" && (
-                        <div className="flex items-center gap-1.5 text-red-500">
-                          <TrendingDown className="w-4 h-4" />
-                          <span className="text-[10px] font-black uppercase hidden md:inline">Falling</span>
-                        </div>
-                      )}
-                      {trend === "same" && (
-                        <div className="flex items-center gap-1.5 text-zinc-600">
-                          <Minus className="w-4 h-4" />
-                          <span className="text-[10px] font-black uppercase hidden md:inline">Steady</span>
-                        </div>
-                      )}
-                      <ArrowRight className="w-4 h-4 text-zinc-800 group-hover:text-blue-500 group-hover:translate-x-1 transition-all mt-1" />
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
+                  {/* Trend & Action */}
+                  <div className="col-span-3 md:col-span-2 flex flex-col items-end gap-1">
+                    {trend === "up" && (
+                      <div className="flex items-center gap-1.5 text-green-500">
+                        <TrendingUp className="w-4 h-4" />
+                        <span className="text-[10px] font-black uppercase hidden md:inline">Rising</span>
+                      </div>
+                    )}
+                    {trend === "down" && (
+                      <div className="flex items-center gap-1.5 text-red-500">
+                        <TrendingDown className="w-4 h-4" />
+                        <span className="text-[10px] font-black uppercase hidden md:inline">Falling</span>
+                      </div>
+                    )}
+                    {trend === "same" && (
+                      <div className="flex items-center gap-1.5 text-zinc-600">
+                        <Minus className="w-4 h-4" />
+                        <span className="text-[10px] font-black uppercase hidden md:inline">Steady</span>
+                      </div>
+                    )}
+                    <ArrowRight className="w-4 h-4 text-zinc-800 group-hover:text-blue-500 group-hover:translate-x-1 transition-all mt-1" />
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
 
           {sortedTeams.length === 0 && (
             <div className="p-20 text-center">
