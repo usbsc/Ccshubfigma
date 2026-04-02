@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Trophy, TrendingUp, MapPin, Users } from "lucide-react";
+import { Trophy, TrendingUp, MapPin, Users, ChevronRight, Filter } from "lucide-react";
 import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
@@ -27,7 +27,6 @@ export function Scores() {
       weekday: "long",
       month: "long",
       day: "numeric",
-      year: "numeric",
     });
     if (!acc[date]) {
       acc[date] = [];
@@ -37,232 +36,137 @@ export function Scores() {
   }, {} as Record<string, typeof finalGames>);
 
   return (
-    <div className="max-w-6xl mx-auto space-y-6">
+    <div className="max-w-6xl mx-auto space-y-12 pb-20">
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="relative rounded-2xl overflow-hidden"
-      >
-        <div className="relative h-48 bg-gradient-to-br from-purple-900 to-purple-700 p-8 flex flex-col justify-end">
-          <div className="absolute inset-0 opacity-20">
-            <img
-              src="https://images.unsplash.com/photo-1663563624897-de8972d7ce93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaWdoJTIwc2Nob29sJTIwZm9vdGJhbGwlMjBnYW1lJTIwbmlnaHR8ZW58MXx8fHwxNzc0MDU1MjU3fDA&ixlib=rb-4.1.0&q=80&w=1080"
-              alt="Football"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="relative">
-            <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
-              <Trophy className="w-10 h-10" />
-              Game Scores
-            </h1>
-            <p className="text-purple-100">Complete historical scores and results</p>
-          </div>
+      <div className="relative rounded-[2.5rem] overflow-hidden bg-zinc-900 border border-zinc-800 shadow-2xl">
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src="https://images.unsplash.com/photo-1663563624897-de8972d7ce93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaWdoJTIwc2Nob29sJTIwZm9vdGJhbGwlMjBnYW1lJTIwbmlnaHR8ZW58MXx8fHwxNzc0MDU1MjU3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            alt="Football"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/40 to-transparent"></div>
         </div>
-      </motion.div>
+        
+        <div className="relative p-10 md:p-16">
+          <div className="inline-flex items-center gap-2 bg-purple-600 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest text-white mb-4">
+            <Trophy className="w-3 h-3 fill-white" /> Historical Archive
+          </div>
+          <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter leading-[0.85] mb-4 uppercase">
+            GAME <br/><span className="text-purple-500">SCORES</span>
+          </h1>
+          <p className="text-zinc-400 text-sm font-medium max-w-sm">
+            Complete results archive including box scores, attendance, and key performance highlights.
+          </p>
+        </div>
+      </div>
 
-      {/* Level Filter */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-        className="flex gap-3 overflow-x-auto pb-2"
-      >
-        {levels.map((level) => (
-          <button
-            key={level}
-            onClick={() => setSelectedLevel(level)}
-            className={`px-6 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-              selectedLevel === level
-                ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30"
-                : "bg-zinc-900 text-zinc-300 hover:bg-zinc-800"
-            }`}
-          >
-            {level === "all" ? "All Levels" : level}
-          </button>
-        ))}
-      </motion.div>
+      {/* Filter Controls */}
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex gap-2 overflow-x-auto no-scrollbar w-full pb-2 md:pb-0">
+          {levels.map((level) => (
+            <button
+              key={level}
+              onClick={() => setSelectedLevel(level)}
+              className={`px-6 py-2.5 rounded-xl font-black text-xs uppercase tracking-widest transition-all whitespace-nowrap border ${
+                selectedLevel === level
+                  ? "bg-white text-zinc-950 border-white shadow-lg"
+                  : "bg-zinc-900 text-zinc-500 border-zinc-800 hover:text-zinc-300"
+              }`}
+            >
+              {level === "all" ? "All Levels" : level}
+            </button>
+          ))}
+        </div>
+        
+        <div className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.2em] flex items-center gap-2">
+          <Filter className="w-3 h-3" /> Showing {finalGames.length} Results
+        </div>
+      </div>
 
-      {/* Scores by Date */}
-      <section className="space-y-6">
-        {Object.entries(gamesByDate).map(([date, dateGames], dateIdx) => (
-          <motion.div
-            key={date}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 + dateIdx * 0.1 }}
-          >
-            <div className="bg-zinc-800 px-4 py-2 rounded-t-xl font-bold flex items-center justify-between">
-              <span>{date}</span>
-              <span className="text-sm text-zinc-400">
-                {dateGames.length} {dateGames.length === 1 ? "game" : "games"}
-              </span>
+      {/* Results by Date */}
+      <section className="space-y-12">
+        {Object.entries(gamesByDate).map(([date, dateGames]) => (
+          <div key={date} className="space-y-6">
+            <div className="flex items-center gap-4">
+              <h3 className="text-sm font-black text-purple-500 uppercase tracking-[0.3em] whitespace-nowrap">{date}</h3>
+              <div className="h-[1px] w-full bg-zinc-800/50"></div>
             </div>
-            <div className="bg-zinc-900 rounded-b-xl border border-zinc-800 border-t-0 divide-y divide-zinc-800">
-              {dateGames.map((game, idx) => {
+            
+            <div className="grid gap-6">
+              {dateGames.map((game) => {
                 const home = getTeam(game.homeTeam);
                 const away = getTeam(game.awayTeam);
-                const homeWon = game.homeScore > game.awayScore;
-                const scoreDiff = Math.abs(game.homeScore - game.awayScore);
+                const awayWon = game.awayScore > game.homeScore;
                 return (
                   <Link
                     key={game.id}
                     to={`/game/${game.id}`}
-                    className="block hover:bg-zinc-800 transition-colors"
+                    className="group bg-zinc-900/50 hover:bg-zinc-900 border border-zinc-800 rounded-[2rem] p-8 transition-all"
                   >
-                    <div className="p-5">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-2 text-sm text-zinc-400">
-                          <span className="bg-zinc-800 px-2 py-1 rounded text-xs">
-                            {game.level}
-                          </span>
-                          {game.stadium && (
-                            <>
-                              <MapPin className="w-3 h-3" />
-                              <span className="text-xs">{game.stadium}</span>
-                            </>
-                          )}
-                        </div>
+                    <div className="flex items-center justify-between mb-8 pb-4 border-b border-zinc-800/50">
+                      <span className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">{game.level} • FINAL</span>
+                      <div className="flex items-center gap-4">
+                        <span className="flex items-center gap-1.5 text-[10px] font-bold text-zinc-600 uppercase">
+                          <MapPin className="w-3 h-3" /> {game.stadium}
+                        </span>
                         {game.attendance && (
-                          <div className="flex items-center gap-2 text-sm text-zinc-400">
-                            <Users className="w-4 h-4" />
-                            <span>{game.attendance.toLocaleString()}</span>
-                          </div>
+                          <span className="flex items-center gap-1.5 text-[10px] font-bold text-zinc-600 uppercase">
+                            <Users className="w-3 h-3" /> {game.attendance.toLocaleString()}
+                          </span>
                         )}
                       </div>
+                    </div>
 
-                      <div className="grid grid-cols-2 gap-8">
-                        {/* Away Team */}
-                        <div
-                          className={`flex items-center gap-4 ${
-                            !homeWon ? "" : "opacity-60"
-                          }`}
-                        >
-                          <img
-                            src={away?.image}
-                            alt={away?.name}
-                            className="w-16 h-16 rounded-lg object-cover"
-                          />
-                          <div className="flex-1">
-                            <div className="font-semibold text-lg flex items-center gap-2">
-                              {away?.name}
-                              {!homeWon && (
-                                <Trophy className="w-4 h-4 text-yellow-500" />
-                              )}
-                            </div>
-                            <div className="text-sm text-zinc-400">
-                              {away?.record.wins}-{away?.record.losses}
-                            </div>
-                          </div>
-                          <div
-                            className={`text-4xl font-bold ${
-                              !homeWon ? "text-green-400" : ""
-                            }`}
-                          >
-                            {game.awayScore}
-                          </div>
+                    <div className="grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 md:gap-12">
+                      {/* Away Team */}
+                      <div className={`flex items-center gap-6 ${awayWon ? 'opacity-100' : 'opacity-40'}`}>
+                        <div className="relative">
+                          <img src={away?.image} className="w-16 h-16 rounded-2xl object-cover border-2 border-zinc-800" alt="" />
+                          {awayWon && <Trophy className="absolute -top-2 -left-2 w-6 h-6 text-yellow-500 bg-zinc-900 rounded-full p-1 border border-zinc-800" />}
                         </div>
-
-                        {/* Home Team */}
-                        <div
-                          className={`flex items-center gap-4 ${
-                            homeWon ? "" : "opacity-60"
-                          }`}
-                        >
-                          <img
-                            src={home?.image}
-                            alt={home?.name}
-                            className="w-16 h-16 rounded-lg object-cover"
-                          />
-                          <div className="flex-1">
-                            <div className="font-semibold text-lg flex items-center gap-2">
-                              {home?.name}
-                              {homeWon && (
-                                <Trophy className="w-4 h-4 text-yellow-500" />
-                              )}
-                            </div>
-                            <div className="text-sm text-zinc-400">
-                              {home?.record.wins}-{home?.record.losses}
-                            </div>
-                          </div>
-                          <div
-                            className={`text-4xl font-bold ${
-                              homeWon ? "text-green-400" : ""
-                            }`}
-                          >
-                            {game.homeScore}
-                          </div>
+                        <div className="flex-1">
+                          <div className="font-black text-xl text-white uppercase tracking-tighter leading-none mb-1">{away?.name}</div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase">{away?.mascot}</div>
                         </div>
+                        <div className="text-4xl font-black text-white tabular-nums">{game.awayScore}</div>
                       </div>
 
-                      {/* Game Highlights */}
-                      {game.highlights && game.highlights.length > 0 && (
-                        <div className="mt-4 pt-4 border-t border-zinc-800">
-                          <div className="text-sm text-zinc-400 mb-2 flex items-center gap-2">
-                            <TrendingUp className="w-4 h-4" />
-                            Key Moments
-                          </div>
-                          <div className="space-y-1">
-                            {game.highlights.map((highlight, idx) => (
-                              <div
-                                key={idx}
-                                className="text-sm text-zinc-300 pl-6"
-                              >
-                                • {highlight}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
+                      <div className="hidden md:block text-[10px] font-black text-zinc-800 uppercase italic">FINAL</div>
 
-                      {/* Score Difference Badge */}
-                      <div className="mt-4 flex items-center gap-2">
-                        <span className="text-xs text-zinc-500">
-                          Final Score Margin: {scoreDiff}
-                          {scoreDiff <= 7 && " • Close Game"}
-                          {scoreDiff > 21 && " • Blowout"}
-                        </span>
+                      {/* Home Team */}
+                      <div className={`flex items-center gap-6 flex-row-reverse md:flex-row ${!awayWon ? 'opacity-100' : 'opacity-40'}`}>
+                        <div className="text-4xl font-black text-white tabular-nums">{game.homeScore}</div>
+                        <div className="flex-1 text-right md:text-left">
+                          <div className="font-black text-xl text-white uppercase tracking-tighter leading-none mb-1">{home?.name}</div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase">{home?.mascot}</div>
+                        </div>
+                        <div className="relative">
+                          <img src={home?.image} className="w-16 h-16 rounded-2xl object-cover border-2 border-zinc-800" alt="" />
+                          {!awayWon && <Trophy className="absolute -top-2 -right-2 md:-left-2 w-6 h-6 text-yellow-500 bg-zinc-900 rounded-full p-1 border border-zinc-800" />}
+                        </div>
                       </div>
                     </div>
+
+                    {game.highlights && game.highlights.length > 0 && (
+                      <div className="mt-8 pt-6 border-t border-zinc-800/50 flex flex-wrap gap-2">
+                        {game.highlights.slice(0, 3).map((h, i) => (
+                          <span key={i} className="px-3 py-1 bg-zinc-950 text-zinc-500 rounded-lg text-[9px] font-black uppercase tracking-widest border border-zinc-800">
+                            {h}
+                          </span>
+                        ))}
+                        <div className="ml-auto flex items-center gap-2 text-[10px] font-black text-purple-500 uppercase tracking-widest group-hover:translate-x-1 transition-transform">
+                          Full Recap <ChevronRight className="w-3 h-3" />
+                        </div>
+                      </div>
+                    )}
                   </Link>
                 );
               })}
             </div>
-          </motion.div>
+          </div>
         ))}
       </section>
-
-      {/* Stats Summary */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-        className="grid md:grid-cols-3 gap-4"
-      >
-        <div className="bg-zinc-900 rounded-xl p-6 border border-zinc-800">
-          <div className="text-sm text-zinc-400 mb-2">Total Games Played</div>
-          <div className="text-3xl font-bold">{finalGames.length}</div>
-        </div>
-        <div className="bg-zinc-900 rounded-xl p-6 border border-zinc-800">
-          <div className="text-sm text-zinc-400 mb-2">Average Score</div>
-          <div className="text-3xl font-bold">
-            {(
-              finalGames.reduce((sum, g) => sum + g.homeScore + g.awayScore, 0) /
-              finalGames.length /
-              2
-            ).toFixed(1)}
-          </div>
-        </div>
-        <div className="bg-zinc-900 rounded-xl p-6 border border-zinc-800">
-          <div className="text-sm text-zinc-400 mb-2">Total Attendance</div>
-          <div className="text-3xl font-bold">
-            {finalGames
-              .reduce((sum, g) => sum + (g.attendance || 0), 0)
-              .toLocaleString()}
-          </div>
-        </div>
-      </motion.div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Calendar, MapPin, Clock, Play } from "lucide-react";
+import { Calendar, MapPin, Clock, Play, ChevronRight, Filter } from "lucide-react";
 import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
@@ -29,7 +29,6 @@ export function Schedule() {
       weekday: "long",
       month: "long",
       day: "numeric",
-      year: "numeric",
     });
     if (!acc[date]) {
       acc[date] = [];
@@ -39,198 +38,171 @@ export function Schedule() {
   }, {} as Record<string, typeof upcomingGames>);
 
   return (
-    <div className="max-w-6xl mx-auto space-y-6">
+    <div className="max-w-6xl mx-auto space-y-12 pb-20">
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="relative rounded-2xl overflow-hidden"
-      >
-        <div className="relative h-48 bg-gradient-to-br from-green-900 to-green-700 p-8 flex flex-col justify-end">
-          <div className="absolute inset-0 opacity-20">
-            <img
-              src="https://images.unsplash.com/photo-1581588535512-4dbe198fbbee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb290YmFsbCUyMHN0YWRpdW0lMjBsaWdodHN8ZW58MXx8fHwxNzc0MDExODExfDA&ixlib=rb-4.1.0&q=80&w=1080"
-              alt="Stadium"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="relative">
-            <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
-              <Calendar className="w-10 h-10" />
-              Game Schedule
-            </h1>
-            <p className="text-green-100">
-              Complete schedule for all CCS football levels
-            </p>
-          </div>
+      <div className="relative rounded-[2.5rem] overflow-hidden bg-zinc-900 border border-zinc-800 shadow-2xl">
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src="https://images.unsplash.com/photo-1581588535512-4dbe198fbbee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb290YmFsbCUyMHN0YWRpdW0lMjBsaWdodHN8ZW58MXx8fHwxNzc0MDExODExfDA&ixlib=rb-4.1.0&q=80&w=1080"
+            alt="Stadium"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-green-600/40 to-transparent"></div>
         </div>
-      </motion.div>
+        
+        <div className="relative p-10 md:p-16">
+          <div className="inline-flex items-center gap-2 bg-green-600 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest text-white mb-4">
+            <Calendar className="w-3 h-3 fill-white" /> Seasonal Schedule
+          </div>
+          <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter leading-[0.85] mb-4 uppercase">
+            GAME <br/><span className="text-green-500">PLAN</span>
+          </h1>
+          <p className="text-zinc-400 text-sm font-medium max-w-sm">
+            Complete broadcast schedule and stadium locations for all CCS competition levels.
+          </p>
+        </div>
+      </div>
 
-      {/* Level Filter */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-        className="flex gap-3 overflow-x-auto pb-2"
-      >
-        {levels.map((level) => (
-          <button
-            key={level}
-            onClick={() => setSelectedLevel(level)}
-            className={`px-6 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-              selectedLevel === level
-                ? "bg-green-600 text-white shadow-lg shadow-green-500/30"
-                : "bg-zinc-900 text-zinc-300 hover:bg-zinc-800"
-            }`}
-          >
-            {level === "all" ? "All Levels" : level}
-          </button>
-        ))}
-      </motion.div>
+      {/* Filter Controls */}
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex gap-2 overflow-x-auto no-scrollbar w-full pb-2 md:pb-0">
+          {levels.map((level) => (
+            <button
+              key={level}
+              onClick={() => setSelectedLevel(level)}
+              className={`px-6 py-2.5 rounded-xl font-black text-xs uppercase tracking-widest transition-all whitespace-nowrap border ${
+                selectedLevel === level
+                  ? "bg-white text-zinc-950 border-white shadow-lg"
+                  : "bg-zinc-900 text-zinc-500 border-zinc-800 hover:text-zinc-300"
+              }`}
+            >
+              {level === "all" ? "All Levels" : level}
+            </button>
+          ))}
+        </div>
+        
+        <div className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.2em] flex items-center gap-2">
+          <Filter className="w-3 h-3" /> Showing {upcomingGames.length} Upcoming
+        </div>
+      </div>
 
-      {/* Live Games */}
+      {/* Live Now Section (Premium) */}
       {liveGames.length > 0 && (
         <section>
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-            <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-            Live Now
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {liveGames.map((game, idx) => {
+          <div className="flex items-center gap-3 mb-8">
+            <span className="w-2 h-8 bg-red-600 rounded-full"></span>
+            <h2 className="text-3xl font-black tracking-tighter text-white uppercase">Live Action</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {liveGames.map((game) => {
               const home = getTeam(game.homeTeam);
               const away = getTeam(game.awayTeam);
               return (
-                <motion.div
+                <Link
                   key={game.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.05 }}
+                  to={`/game/${game.id}`}
+                  className="group relative bg-zinc-900 rounded-[2rem] border-2 border-red-600/50 p-8 hover:bg-zinc-800 transition-all shadow-2xl shadow-red-900/10"
                 >
-                  <Link
-                    to={`/game/${game.id}`}
-                    className="block bg-zinc-900 rounded-xl border border-red-500 p-5 hover:bg-zinc-800 transition-colors"
-                  >
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-2">
-                        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                        LIVE
-                      </span>
-                      <button className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors">
-                        <Play className="w-4 h-4" fill="white" />
-                      </button>
-                    </div>
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center justify-between">
-                        <span className="font-semibold">{away?.name}</span>
-                        <span className="text-2xl font-bold">{game.awayScore}</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="font-semibold">{home?.name}</span>
-                        <span className="text-2xl font-bold">{game.homeScore}</span>
-                      </div>
-                    </div>
-                    <div className="text-sm text-zinc-400">
+                  <div className="flex justify-between items-center mb-8">
+                    <span className="bg-red-600 text-white px-3 py-1 rounded-full text-[10px] font-black tracking-widest uppercase flex items-center gap-2">
+                      <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                      Broadcast Live
+                    </span>
+                    <div className="flex items-center gap-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
                       {game.quarter} • {game.timeRemaining}
                     </div>
-                  </Link>
-                </motion.div>
+                  </div>
+                  
+                  <div className="grid grid-cols-[1fr,auto,1fr] items-center gap-4 mb-8">
+                    <div className="text-right">
+                      <div className="font-black text-2xl text-white uppercase tracking-tighter leading-none mb-1">{away?.name}</div>
+                      <div className="text-[10px] font-bold text-zinc-500 uppercase">{away?.mascot}</div>
+                    </div>
+                    <div className="px-4 py-2 bg-zinc-950 rounded-xl font-black text-xl text-red-500 border border-zinc-800">VS</div>
+                    <div className="text-left">
+                      <div className="font-black text-2xl text-white uppercase tracking-tighter leading-none mb-1">{home?.name}</div>
+                      <div className="text-[10px] font-bold text-zinc-500 uppercase">{home?.mascot}</div>
+                    </div>
+                  </div>
+
+                  <div className="pt-6 border-t border-zinc-800 flex justify-between items-center">
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-zinc-500 uppercase">
+                      <MapPin className="w-3 h-3 text-red-500" /> {game.stadium}
+                    </div>
+                    <ChevronRight className="w-5 h-5 text-zinc-700 group-hover:text-red-500 group-hover:translate-x-1 transition-all" />
+                  </div>
+                </Link>
               );
             })}
           </div>
         </section>
       )}
 
-      {/* Upcoming Games by Date */}
-      <section>
-        <h2 className="text-2xl font-bold mb-4">Upcoming Games</h2>
-        <div className="space-y-6">
-          {Object.entries(gamesByDate).map(([date, dateGames], dateIdx) => (
-            <motion.div
-              key={date}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 + dateIdx * 0.1 }}
-            >
-              <div className="bg-zinc-800 px-4 py-2 rounded-t-xl font-bold">
-                {date}
-              </div>
-              <div className="bg-zinc-900 rounded-b-xl border border-zinc-800 border-t-0 divide-y divide-zinc-800">
-                {dateGames.map((game) => {
-                  const home = getTeam(game.homeTeam);
-                  const away = getTeam(game.awayTeam);
-                  return (
-                    <Link
-                      key={game.id}
-                      to={`/game/${game.id}`}
-                      className="flex items-center gap-6 p-5 hover:bg-zinc-800 transition-colors"
-                    >
-                      {/* Time */}
-                      <div className="w-24 text-center">
-                        <div className="flex items-center justify-center gap-2 text-blue-400">
-                          <Clock className="w-4 h-4" />
-                          <span className="font-semibold">{game.time}</span>
-                        </div>
-                        <div className="text-xs text-zinc-500 mt-1">
-                          {game.level}
+      {/* Grouped Schedule */}
+      <section className="space-y-12">
+        {Object.entries(gamesByDate).map(([date, dateGames]) => (
+          <div key={date} className="space-y-6">
+            <div className="flex items-center gap-4">
+              <h3 className="text-sm font-black text-blue-500 uppercase tracking-[0.3em] whitespace-nowrap">{date}</h3>
+              <div className="h-[1px] w-full bg-zinc-800/50"></div>
+            </div>
+            
+            <div className="grid gap-4">
+              {dateGames.map((game) => {
+                const home = getTeam(game.homeTeam);
+                const away = getTeam(game.awayTeam);
+                return (
+                  <Link
+                    key={game.id}
+                    to={`/game/${game.id}`}
+                    className="group flex flex-col md:flex-row md:items-center gap-6 p-6 bg-zinc-900/50 hover:bg-zinc-900 border border-zinc-800 rounded-[1.5rem] transition-all"
+                  >
+                    {/* Time & Level */}
+                    <div className="md:w-32 shrink-0">
+                      <div className="flex items-center gap-2 text-zinc-100 font-black tracking-tight">
+                        <Clock className="w-4 h-4 text-green-500" /> {game.time}
+                      </div>
+                      <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest mt-1">
+                        {game.level}
+                      </div>
+                    </div>
+
+                    {/* Matchup */}
+                    <div className="flex-1 flex items-center gap-6">
+                      <div className="flex items-center gap-4 flex-1">
+                        <img src={away?.image} className="w-10 h-10 rounded-lg object-cover border border-zinc-800" alt="" />
+                        <div className="min-w-0">
+                          <div className="font-black text-white uppercase tracking-tight truncate">{away?.name}</div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase">{away?.record.wins}-{away?.record.losses}</div>
                         </div>
                       </div>
+                      
+                      <div className="text-[10px] font-black text-zinc-700 uppercase italic">at</div>
 
-                      {/* Teams */}
-                      <div className="flex-1 grid grid-cols-3 gap-4 items-center">
-                        <div className="flex items-center gap-3">
-                          <img
-                            src={away?.image}
-                            alt={away?.name}
-                            className="w-12 h-12 rounded-lg object-cover"
-                          />
-                          <div>
-                            <div className="font-semibold">{away?.name}</div>
-                            <div className="text-sm text-zinc-400">
-                              {away?.record.wins}-{away?.record.losses}
-                            </div>
-                          </div>
+                      <div className="flex items-center gap-4 flex-1 justify-end text-right">
+                        <div className="min-w-0">
+                          <div className="font-black text-white uppercase tracking-tight truncate">{home?.name}</div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase">{home?.record.wins}-{home?.record.losses}</div>
                         </div>
-
-                        <div className="text-center text-zinc-500 font-medium">
-                          at
-                        </div>
-
-                        <div className="flex items-center gap-3">
-                          <img
-                            src={home?.image}
-                            alt={home?.name}
-                            className="w-12 h-12 rounded-lg object-cover"
-                          />
-                          <div>
-                            <div className="font-semibold">{home?.name}</div>
-                            <div className="text-sm text-zinc-400">
-                              {home?.record.wins}-{home?.record.losses}
-                            </div>
-                          </div>
-                        </div>
+                        <img src={home?.image} className="w-10 h-10 rounded-lg object-cover border border-zinc-800" alt="" />
                       </div>
+                    </div>
 
-                      {/* Stadium */}
-                      <div className="w-48 text-right">
-                        <div className="flex items-center justify-end gap-2 text-zinc-400 text-sm">
-                          <MapPin className="w-4 h-4" />
-                          <span className="truncate">{game.stadium}</span>
-                        </div>
+                    {/* Stadium */}
+                    <div className="md:w-48 flex items-center justify-between md:justify-end gap-4 shrink-0">
+                      <div className="flex items-center gap-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest truncate max-w-[120px]">
+                        <MapPin className="w-3 h-3" /> {game.stadium}
                       </div>
-
-                      {/* Watch Button */}
-                      {game.videoUrl && (
-                        <button className="bg-blue-600 hover:bg-blue-700 p-2 rounded-full transition-colors">
-                          <Play className="w-4 h-4" fill="white" />
-                        </button>
-                      )}
-                    </Link>
-                  );
-                })}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                      <div className="w-8 h-8 rounded-full bg-zinc-800 group-hover:bg-green-600 flex items-center justify-center transition-all">
+                        <ChevronRight className="w-4 h-4 text-zinc-500 group-hover:text-white" />
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </section>
     </div>
   );
