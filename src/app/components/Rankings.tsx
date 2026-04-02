@@ -50,8 +50,8 @@ export function Rankings() {
             <div className="inline-flex items-center gap-2 bg-blue-600 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest text-white mb-2">
               <Trophy className="w-3 h-3 fill-white" /> 2025-2026 Rankings
             </div>
-            <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-none">
-              CCS POWER <br/><span className="text-blue-500">INDEX</span>
+            <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none">
+              CCS Power <br/><span className="text-blue-500 font-black">Index</span>
             </h1>
             <p className="text-zinc-400 text-sm font-medium max-w-md">
               Real-time performance metrics synchronized with official CIF, MaxPreps, and CalPreps data.
@@ -80,10 +80,10 @@ export function Rankings() {
             <button
               key={division}
               onClick={() => setSelectedDivision(division)}
-              className={`px-6 py-2.5 rounded-xl font-black text-xs uppercase tracking-widest transition-all whitespace-nowrap border ${
+              className={`px-6 py-2.5 rounded-xl font-bold text-xs tracking-wide transition-all whitespace-nowrap border ${
                 selectedDivision === division
                   ? "bg-white text-zinc-950 border-white shadow-lg"
-                  : "bg-zinc-900 text-zinc-500 border-zinc-800 hover:text-zinc-300 hover:border-zinc-700"
+                  : "bg-zinc-900 text-zinc-500 border-zinc-800 hover:text-zinc-300"
               }`}
             >
               {division === "all" ? "All Divisions" : division}
@@ -91,7 +91,7 @@ export function Rankings() {
           ))}
         </div>
 
-        <div className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.2em] flex items-center gap-2">
+        <div className="text-[10px] font-black text-zinc-600 uppercase tracking-widest flex items-center gap-2">
           <Filter className="w-3 h-3" /> Showing {sortedTeams.length} Teams
         </div>
       </div>
@@ -152,7 +152,7 @@ export function Rankings() {
                         </div>
                       </div>
                       <div className="min-w-0">
-                        <div className="font-black text-white group-hover:text-blue-400 transition-colors truncate uppercase tracking-tight">{team.name}</div>
+                        <div className="font-bold text-white group-hover:text-blue-400 transition-colors truncate tracking-tight uppercase">{team.name}</div>
                         <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest truncate">
                           {team.mascot} • {team.league}
                         </div>
@@ -164,7 +164,7 @@ export function Rankings() {
                       <div className="font-black text-xl text-white tracking-tighter">
                         {team.record.wins}-{team.record.losses}
                       </div>
-                      <div className="text-[10px] font-bold text-zinc-600 uppercase">
+                      <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-wide">
                         {((team.record.wins / (team.record.wins + team.record.losses)) * 100).toFixed(0)}% Win Rate
                       </div>
                     </div>
@@ -214,7 +214,7 @@ export function Rankings() {
         </div>
       </motion.div>
 
-      {/* Stats Summary - Polished */}
+      {/* Stats Summary */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
           { label: "Total Schools", value: teams.length, icon: Trophy },
@@ -229,7 +229,7 @@ export function Rankings() {
             transition={{ delay: 0.4 + idx * 0.05 }}
             className="bg-zinc-900/80 backdrop-blur-sm rounded-3xl p-6 border border-zinc-800 shadow-lg group hover:border-blue-500/30 transition-colors"
           >
-            <div className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-3 group-hover:text-blue-400 transition-colors">{stat.label}</div>
+            <div className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-3 group-hover:text-blue-400 transition-colors">{stat.label}</div>
             <div className="text-4xl font-black text-white tracking-tighter">{stat.value}</div>
           </motion.div>
         ))}

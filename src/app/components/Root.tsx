@@ -34,7 +34,7 @@ export function Root() {
               </div>
               <div>
                 <h1 className="text-xl font-bold tracking-tight text-white leading-tight">CIF CCS</h1>
-                <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">Football Portal</p>
+                <p className="text-[10px] text-zinc-500 font-bold tracking-wide">Football Portal</p>
               </div>
             </Link>
 
@@ -153,7 +153,7 @@ export function Root() {
       {homeTeam && (
         <div className="bg-blue-600/10 border-b border-blue-500/20 py-2">
           <div className="max-w-7xl mx-auto px-4">
-            <p className="text-center text-[11px] font-bold text-blue-400 uppercase tracking-widest flex items-center justify-center gap-2">
+            <p className="text-center text-[11px] font-bold text-blue-400 tracking-wide flex items-center justify-center gap-2">
               <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></span>
               Priority alerts enabled for your home team
             </p>

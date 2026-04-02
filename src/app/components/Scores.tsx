@@ -47,13 +47,13 @@ export function Scores() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-purple-600/40 to-transparent"></div>
         </div>
-        
+
         <div className="relative p-10 md:p-16">
           <div className="inline-flex items-center gap-2 bg-purple-600 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest text-white mb-4">
             <Trophy className="w-3 h-3 fill-white" /> Historical Archive
           </div>
-          <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter leading-[0.85] mb-4 uppercase">
-            GAME <br/><span className="text-purple-500">SCORES</span>
+          <h1 className="text-5xl md:text-6xl font-black text-white tracking-tight leading-[0.85] mb-4">
+            Game <br/><span className="text-purple-500 font-black">Scores</span>
           </h1>
           <p className="text-zinc-400 text-sm font-medium max-w-sm">
             Complete results archive including box scores, attendance, and key performance highlights.
@@ -68,7 +68,7 @@ export function Scores() {
             <button
               key={level}
               onClick={() => setSelectedLevel(level)}
-              className={`px-6 py-2.5 rounded-xl font-black text-xs uppercase tracking-widest transition-all whitespace-nowrap border ${
+              className={`px-6 py-2.5 rounded-xl font-bold text-xs tracking-wide transition-all whitespace-nowrap border ${
                 selectedLevel === level
                   ? "bg-white text-zinc-950 border-white shadow-lg"
                   : "bg-zinc-900 text-zinc-500 border-zinc-800 hover:text-zinc-300"
@@ -78,8 +78,8 @@ export function Scores() {
             </button>
           ))}
         </div>
-        
-        <div className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.2em] flex items-center gap-2">
+
+        <div className="text-[10px] font-black text-zinc-600 uppercase tracking-widest flex items-center gap-2">
           <Filter className="w-3 h-3" /> Showing {finalGames.length} Results
         </div>
       </div>
@@ -92,7 +92,7 @@ export function Scores() {
               <h3 className="text-sm font-black text-purple-500 uppercase tracking-[0.3em] whitespace-nowrap">{date}</h3>
               <div className="h-[1px] w-full bg-zinc-800/50"></div>
             </div>
-            
+
             <div className="grid gap-6">
               {dateGames.map((game) => {
                 const home = getTeam(game.homeTeam);
@@ -108,7 +108,7 @@ export function Scores() {
                       <span className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">{game.level} • FINAL</span>
                       <div className="flex items-center gap-4">
                         <span className="flex items-center gap-1.5 text-[10px] font-bold text-zinc-600 uppercase">
-                          <MapPin className="w-3 h-3" /> {game.stadium}
+                          <MapPin className="w-3 h-3 text-red-500" /> {game.stadium}
                         </span>
                         {game.attendance && (
                           <span className="flex items-center gap-1.5 text-[10px] font-bold text-zinc-600 uppercase">
@@ -126,8 +126,8 @@ export function Scores() {
                           {awayWon && <Trophy className="absolute -top-2 -left-2 w-6 h-6 text-yellow-500 bg-zinc-900 rounded-full p-1 border border-zinc-800" />}
                         </div>
                         <div className="flex-1">
-                          <div className="font-black text-xl text-white uppercase tracking-tighter leading-none mb-1">{away?.name}</div>
-                          <div className="text-[10px] font-bold text-zinc-500 uppercase">{away?.mascot}</div>
+                          <div className="font-black text-xl text-white uppercase tracking-tight leading-none mb-1">{away?.name}</div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{away?.mascot}</div>
                         </div>
                         <div className="text-4xl font-black text-white tabular-nums">{game.awayScore}</div>
                       </div>
@@ -138,8 +138,8 @@ export function Scores() {
                       <div className={`flex items-center gap-6 flex-row-reverse md:flex-row ${!awayWon ? 'opacity-100' : 'opacity-40'}`}>
                         <div className="text-4xl font-black text-white tabular-nums">{game.homeScore}</div>
                         <div className="flex-1 text-right md:text-left">
-                          <div className="font-black text-xl text-white uppercase tracking-tighter leading-none mb-1">{home?.name}</div>
-                          <div className="text-[10px] font-bold text-zinc-500 uppercase">{home?.mascot}</div>
+                          <div className="font-black text-xl text-white uppercase tracking-tight leading-none mb-1">{home?.name}</div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{home?.mascot}</div>
                         </div>
                         <div className="relative">
                           <img src={home?.image} className="w-16 h-16 rounded-2xl object-cover border-2 border-zinc-800" alt="" />

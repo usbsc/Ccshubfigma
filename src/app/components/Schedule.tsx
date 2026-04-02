@@ -49,13 +49,13 @@ export function Schedule() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-green-600/40 to-transparent"></div>
         </div>
-        
+
         <div className="relative p-10 md:p-16">
           <div className="inline-flex items-center gap-2 bg-green-600 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest text-white mb-4">
             <Calendar className="w-3 h-3 fill-white" /> Seasonal Schedule
           </div>
-          <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter leading-[0.85] mb-4 uppercase">
-            GAME <br/><span className="text-green-500">PLAN</span>
+          <h1 className="text-5xl md:text-6xl font-black text-white tracking-tight leading-[0.85] mb-4">
+            Game <br/><span className="text-green-500 font-black">Plan</span>
           </h1>
           <p className="text-zinc-400 text-sm font-medium max-w-sm">
             Complete broadcast schedule and stadium locations for all CCS competition levels.
@@ -70,7 +70,7 @@ export function Schedule() {
             <button
               key={level}
               onClick={() => setSelectedLevel(level)}
-              className={`px-6 py-2.5 rounded-xl font-black text-xs uppercase tracking-widest transition-all whitespace-nowrap border ${
+              className={`px-6 py-2.5 rounded-xl font-bold text-xs tracking-wide transition-all whitespace-nowrap border ${
                 selectedLevel === level
                   ? "bg-white text-zinc-950 border-white shadow-lg"
                   : "bg-zinc-900 text-zinc-500 border-zinc-800 hover:text-zinc-300"
@@ -80,13 +80,13 @@ export function Schedule() {
             </button>
           ))}
         </div>
-        
-        <div className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.2em] flex items-center gap-2">
+
+        <div className="text-[10px] font-black text-zinc-600 uppercase tracking-widest flex items-center gap-2">
           <Filter className="w-3 h-3" /> Showing {upcomingGames.length} Upcoming
         </div>
       </div>
 
-      {/* Live Now Section (Premium) */}
+      {/* Live Section */}
       {liveGames.length > 0 && (
         <section>
           <div className="flex items-center gap-3 mb-8">
@@ -108,25 +108,25 @@ export function Schedule() {
                       <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                       Broadcast Live
                     </span>
-                    <div className="flex items-center gap-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                    <div className="flex items-center gap-2 text-[10px] font-black text-zinc-500 tracking-widest uppercase">
                       {game.quarter} • {game.timeRemaining}
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-[1fr,auto,1fr] items-center gap-4 mb-8">
                     <div className="text-right">
-                      <div className="font-black text-2xl text-white uppercase tracking-tighter leading-none mb-1">{away?.name}</div>
-                      <div className="text-[10px] font-bold text-zinc-500 uppercase">{away?.mascot}</div>
+                      <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">{away?.name}</div>
+                      <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{away?.mascot}</div>
                     </div>
-                    <div className="px-4 py-2 bg-zinc-950 rounded-xl font-black text-xl text-red-500 border border-zinc-800">VS</div>
+                    <div className="px-4 py-2 bg-zinc-950 rounded-xl font-black text-xl text-red-500 border border-zinc-800 tracking-tighter">VS</div>
                     <div className="text-left">
-                      <div className="font-black text-2xl text-white uppercase tracking-tighter leading-none mb-1">{home?.name}</div>
-                      <div className="text-[10px] font-bold text-zinc-500 uppercase">{home?.mascot}</div>
+                      <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">{home?.name}</div>
+                      <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{home?.mascot}</div>
                     </div>
                   </div>
 
                   <div className="pt-6 border-t border-zinc-800 flex justify-between items-center">
-                    <div className="flex items-center gap-2 text-[10px] font-bold text-zinc-500 uppercase">
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
                       <MapPin className="w-3 h-3 text-red-500" /> {game.stadium}
                     </div>
                     <ChevronRight className="w-5 h-5 text-zinc-700 group-hover:text-red-500 group-hover:translate-x-1 transition-all" />
@@ -143,10 +143,10 @@ export function Schedule() {
         {Object.entries(gamesByDate).map(([date, dateGames]) => (
           <div key={date} className="space-y-6">
             <div className="flex items-center gap-4">
-              <h3 className="text-sm font-black text-blue-500 uppercase tracking-[0.3em] whitespace-nowrap">{date}</h3>
+              <h3 className="text-sm font-black text-blue-500 uppercase tracking-widest whitespace-nowrap">{date}</h3>
               <div className="h-[1px] w-full bg-zinc-800/50"></div>
             </div>
-            
+
             <div className="grid gap-4">
               {dateGames.map((game) => {
                 const home = getTeam(game.homeTeam);
@@ -173,16 +173,16 @@ export function Schedule() {
                         <img src={away?.image} className="w-10 h-10 rounded-lg object-cover border border-zinc-800" alt="" />
                         <div className="min-w-0">
                           <div className="font-black text-white uppercase tracking-tight truncate">{away?.name}</div>
-                          <div className="text-[10px] font-bold text-zinc-500 uppercase">{away?.record.wins}-{away?.record.losses}</div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{away?.record.wins}-{away?.record.losses}</div>
                         </div>
                       </div>
-                      
+
                       <div className="text-[10px] font-black text-zinc-700 uppercase italic">at</div>
 
                       <div className="flex items-center gap-4 flex-1 justify-end text-right">
                         <div className="min-w-0">
                           <div className="font-black text-white uppercase tracking-tight truncate">{home?.name}</div>
-                          <div className="text-[10px] font-bold text-zinc-500 uppercase">{home?.record.wins}-{home?.record.losses}</div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{home?.record.wins}-{home?.record.losses}</div>
                         </div>
                         <img src={home?.image} className="w-10 h-10 rounded-lg object-cover border border-zinc-800" alt="" />
                       </div>
