@@ -3,6 +3,7 @@ import { Award, TrendingUp, TrendingDown, Minus, Search, Filter, ArrowRight, Sta
 import { teams } from "../data/teams";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Rankings() {
   const [selectedDivision, setSelectedDivision] = useState<string>("all");
@@ -139,7 +140,7 @@ export function Rankings() {
                   {/* Team */}
                   <div className="col-span-7 md:col-span-5 flex items-center gap-4">
                     <div className="relative w-14 h-14 shrink-0">
-                      <img
+                      <ImageWithFallback
                         src={team.image}
                         alt={team.name}
                         className="w-full h-full rounded-xl object-contain bg-zinc-800 p-2 border-2 border-zinc-800 group-hover:border-blue-500/50 transition-all shadow-md"

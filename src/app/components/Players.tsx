@@ -4,6 +4,7 @@ import { players, Player } from "../data/players";
 import { teams } from "../data/teams";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Players() {
   const [selectedPosition, setSelectedPosition] = useState<string>("all");
@@ -139,11 +140,13 @@ export function Players() {
                 {/* Content Section */}
                 <div className="p-8">
                   <div className="flex items-center gap-3 mb-8">
-                    <img
-                      src={team?.image}
-                      alt=""
-                      className="w-10 h-10 rounded-xl object-cover border-2 border-zinc-800"
-                    />
+                    <div className="w-10 h-10 rounded-xl overflow-hidden border-2 border-zinc-800 bg-zinc-800">
+                      <ImageWithFallback
+                        src={team?.image}
+                        alt=""
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                     <div>
                       <div className="font-bold text-sm text-white uppercase tracking-tight">{team?.name}</div>
                       <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{team?.mascot}</div>
@@ -213,7 +216,7 @@ export function Players() {
               <div className="grid md:grid-cols-2">
                 <div className="relative h-80 md:h-auto">
                   <img src={activePlayer.image} className="w-full h-full object-cover" alt="" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
                   <div className="absolute bottom-8 left-8">
                     <div className="bg-orange-600 inline-block px-4 py-1 rounded-lg font-black text-white text-xl mb-2 italic">#{activePlayer.number}</div>
                     <h2 className="text-5xl font-black text-white tracking-tighter uppercase">{activePlayer.name}</h2>
@@ -275,7 +278,7 @@ export function Players() {
       >
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-3xl font-black text-white tracking-tighter uppercase flex items-center gap-3">
-            <Award className="w-8 h-8 text-yellow-500" /> Statistical Leaders
+            <Award className="w-8 h-8 text-yellow-500" /> Statistical Leaders (2025-26)
           </h2>
         </div>
 
@@ -295,9 +298,18 @@ export function Players() {
                   .map((player, idx) => (
                     <div key={player.id} className="flex items-center gap-4 bg-zinc-950/50 rounded-2xl p-4 border border-zinc-800/50 hover:border-zinc-700 transition-colors cursor-pointer" onClick={() => setActivePlayer(player)}>
                       <div className="text-xl font-black text-zinc-800 w-4">{idx + 1}</div>
-                      <div className="flex-1 min-w-0">
-                        <div className="font-black text-sm text-white truncate uppercase">{player.name}</div>
-                        <div className="text-[10px] font-bold text-zinc-600 truncate uppercase">{getTeam(player.team)?.name}</div>
+                      <div className="flex-1 min-w-0 flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg overflow-hidden bg-zinc-800 p-1 flex-shrink-0">
+                          <ImageWithFallback
+                            src={getTeam(player.team)?.image}
+                            alt=""
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        <div>
+                          <div className="font-black text-sm text-white truncate uppercase">{player.name}</div>
+                          <div className="text-[10px] font-bold text-zinc-600 truncate uppercase">{getTeam(player.team)?.name}</div>
+                        </div>
                       </div>
                       <div className={`font-black ${leaderGroup.color}`}>{player.stats.yards}</div>
                     </div>

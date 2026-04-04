@@ -4,6 +4,7 @@ import { teams } from "../data/teams";
 import { games } from "../data/games";
 import { players } from "../data/players";
 import { motion } from "motion/react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function TeamDetail() {
   const { teamId } = useParams();
@@ -39,7 +40,7 @@ export function TeamDetail() {
         <div className="relative h-80 bg-zinc-900">
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-transparent z-10"></div>
           <div className="flex items-center justify-center h-full p-12">
-            <img
+            <ImageWithFallback
               src={team.image}
               alt={team.name}
               className="h-full object-contain filter drop-shadow-2xl"
@@ -103,7 +104,7 @@ export function TeamDetail() {
       >
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
           <Users className="w-6 h-6 text-blue-400" />
-          All Levels
+          All Levels (2025-26)
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {Object.entries(team.levels).map(([level, record]) => (

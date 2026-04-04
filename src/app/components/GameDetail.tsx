@@ -3,6 +3,7 @@ import { MapPin, Users, Clock, TrendingUp, Award, Play } from "lucide-react";
 import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function GameDetail() {
   const { gameId } = useParams();
@@ -96,7 +97,7 @@ export function GameDetail() {
                   })} • {game.time}
                 </div>
               </div>
-              <div className="text-sm font-medium text-blue-300">{game.level}</div>
+              <div className="text-sm font-medium text-blue-300">2025-26 Season • {game.level}</div>
             </div>
           </div>
         </motion.div>
@@ -116,7 +117,7 @@ export function GameDetail() {
             className="text-center hover:opacity-80 transition-opacity"
           >
             <div className="w-24 h-24 bg-zinc-800 rounded-full mx-auto mb-4 border-4 border-zinc-700 flex items-center justify-center p-4 overflow-hidden">
-              <img
+              <ImageWithFallback
                 src={away?.image}
                 alt={away?.name}
                 className="w-full h-full object-contain"
@@ -154,7 +155,7 @@ export function GameDetail() {
             className="text-center hover:opacity-80 transition-opacity"
           >
             <div className="w-24 h-24 bg-zinc-800 rounded-full mx-auto mb-4 border-4 border-zinc-700 flex items-center justify-center p-4 overflow-hidden">
-              <img
+              <ImageWithFallback
                 src={home?.image}
                 alt={home?.name}
                 className="w-full h-full object-contain"

@@ -5,6 +5,7 @@ import { teams } from "../data/teams";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { useAutoUpdate } from "../hooks/useAutoUpdate";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -60,7 +61,7 @@ export function Home() {
         <div className="absolute top-6 left-6 right-6 flex justify-between items-start">
           <div className="bg-blue-600/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg border border-white/10">
             <Zap className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-            <span className="text-[10px] font-bold tracking-widest text-white uppercase">Season 2026 Countdown</span>
+            <span className="text-[10px] font-bold tracking-widest text-white uppercase">Season 2025-26 Countdown</span>
           </div>
         </div>
 
@@ -119,7 +120,7 @@ export function Home() {
                         </div>
                         <div className="flex items-center gap-4">
                           <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-2 overflow-hidden border-2 border-white/20">
-                            <img src={opponent?.image} className="w-full h-full object-contain" alt="" />
+                            <ImageWithFallback src={opponent?.image} className="w-full h-full object-contain" alt="" />
                           </div>
                           <div>
                             <p className="text-xs text-zinc-300 font-bold uppercase tracking-tight">vs {opponent?.name}</p>
@@ -181,14 +182,18 @@ export function Home() {
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
-                            <img src={away?.image} className="w-8 h-8 rounded-lg object-contain bg-zinc-800 p-1" alt="" />
+                            <div className="w-8 h-8 rounded-lg overflow-hidden bg-zinc-800 p-1">
+                              <ImageWithFallback src={away?.image} className="w-full h-full object-contain" alt="" />
+                            </div>
                             <span className="font-bold text-lg truncate pr-4 text-zinc-100 uppercase tracking-tight">{away?.name || "Away Team"}</span>
                           </div>
                           <span className="text-2xl font-black text-white">{game.awayScore}</span>
                         </div>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
-                            <img src={home?.image} className="w-8 h-8 rounded-lg object-contain bg-zinc-800 p-1" alt="" />
+                            <div className="w-8 h-8 rounded-lg overflow-hidden bg-zinc-800 p-1">
+                              <ImageWithFallback src={home?.image} className="w-full h-full object-contain" alt="" />
+                            </div>
                             <span className="font-bold text-lg truncate pr-4 text-zinc-100 uppercase tracking-tight">{home?.name || "Home Team"}</span>
                           </div>
                           <span className="text-2xl font-black text-white">{game.homeScore}</span>
@@ -247,10 +252,15 @@ export function Home() {
                   <div className="text-2xl font-black text-zinc-700 group-hover:text-blue-500 transition-colors w-6">
                     {idx + 1}
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="font-bold text-white group-hover:translate-x-1 transition-transform uppercase tracking-tight truncate">{team.name}</div>
-                    <div className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">
-                      {team.record.wins}-{team.record.losses} • {team.division}
+                  <div className="flex-1 min-w-0 flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-zinc-800 p-1 flex-shrink-0">
+                      <ImageWithFallback src={team.image} className="w-full h-full object-contain" alt="" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-white group-hover:translate-x-1 transition-transform uppercase tracking-tight truncate">{team.name}</div>
+                      <div className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                        {team.record.wins}-{team.record.losses} • {team.division}
+                      </div>
                     </div>
                   </div>
                   <ChevronRight className="w-4 h-4 text-zinc-700 group-hover:text-blue-500" />

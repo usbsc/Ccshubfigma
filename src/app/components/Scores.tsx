@@ -4,6 +4,7 @@ import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Scores() {
   const [selectedLevel, setSelectedLevel] = useState<string>("all");
@@ -50,7 +51,7 @@ export function Scores() {
 
         <div className="relative p-10 md:p-16">
           <div className="inline-flex items-center gap-2 bg-purple-600 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest text-white mb-4">
-            <Award className="w-3 h-3 fill-white" /> Historical Archive
+            <Award className="w-3 h-3 fill-white" /> 2025-26 Season Archive
           </div>
           <h1 className="text-5xl md:text-6xl font-black text-white tracking-tight leading-[0.85] mb-4">
             Game <br/><span className="text-purple-500 font-black">Scores</span>
@@ -122,7 +123,9 @@ export function Scores() {
                       {/* Away Team */}
                       <div className={`flex items-center gap-6 ${awayWon ? 'opacity-100' : 'opacity-40'}`}>
                         <div className="relative">
-                          <img src={away?.image} className="w-16 h-16 rounded-2xl object-contain bg-zinc-800 p-2 border-2 border-zinc-800" alt="" />
+                          <div className="w-16 h-16 rounded-2xl overflow-hidden bg-zinc-800 p-2 border-2 border-zinc-800">
+                            <ImageWithFallback src={away?.image} className="w-full h-full object-contain" alt="" />
+                          </div>
                           {awayWon && <Award className="absolute -top-2 -left-2 w-6 h-6 text-yellow-500 bg-zinc-900 rounded-full p-1 border border-zinc-800" />}
                         </div>
                         <div className="flex-1">
@@ -142,7 +145,9 @@ export function Scores() {
                           <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{home?.mascot || "Mascot"}</div>
                         </div>
                         <div className="relative">
-                          <img src={home?.image} className="w-16 h-16 rounded-2xl object-contain bg-zinc-800 p-2 border-2 border-zinc-800" alt="" />
+                          <div className="w-16 h-16 rounded-2xl overflow-hidden bg-zinc-800 p-2 border-2 border-zinc-800">
+                            <ImageWithFallback src={home?.image} className="w-full h-full object-contain" alt="" />
+                          </div>
                           {!awayWon && <Award className="absolute -top-2 -right-2 md:-left-2 w-6 h-6 text-yellow-500 bg-zinc-900 rounded-full p-1 border border-zinc-800" />}
                         </div>
                       </div>

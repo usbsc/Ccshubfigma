@@ -4,6 +4,7 @@ import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Schedule() {
   const [selectedLevel, setSelectedLevel] = useState<string>("all");
@@ -52,7 +53,7 @@ export function Schedule() {
 
         <div className="relative p-10 md:p-16">
           <div className="inline-flex items-center gap-2 bg-green-600 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest text-white mb-4">
-            <Calendar className="w-3 h-3 fill-white" /> Seasonal Schedule
+            <Calendar className="w-3 h-3 fill-white" /> 2025-26 Season Schedule
           </div>
           <h1 className="text-5xl md:text-6xl font-black text-white tracking-tight leading-[0.85] mb-4">
             Game <br/><span className="text-green-500 font-black">Plan</span>
@@ -116,7 +117,7 @@ export function Schedule() {
                   <div className="grid grid-cols-[1fr,auto,1fr] items-center gap-4 mb-8">
                     <div className="flex flex-col items-end gap-3 text-right">
                       <div className="w-16 h-16 bg-zinc-800 rounded-2xl flex items-center justify-center p-2 border-2 border-zinc-700 overflow-hidden">
-                        <img src={away?.image} className="w-full h-full object-contain" alt="" />
+                        <ImageWithFallback src={away?.image} className="w-full h-full object-contain" alt="" />
                       </div>
                       <div>
                         <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">{away?.name}</div>
@@ -126,7 +127,7 @@ export function Schedule() {
                     <div className="px-4 py-2 bg-zinc-950 rounded-xl font-black text-xl text-red-500 border border-zinc-800 tracking-tighter">VS</div>
                     <div className="flex flex-col items-start gap-3 text-left">
                       <div className="w-16 h-16 bg-zinc-800 rounded-2xl flex items-center justify-center p-2 border-2 border-zinc-700 overflow-hidden">
-                        <img src={home?.image} className="w-full h-full object-contain" alt="" />
+                        <ImageWithFallback src={home?.image} className="w-full h-full object-contain" alt="" />
                       </div>
                       <div>
                         <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">{home?.name}</div>
@@ -180,7 +181,9 @@ export function Schedule() {
                     {/* Matchup */}
                     <div className="flex-1 flex items-center gap-6">
                       <div className="flex items-center gap-4 flex-1">
-                        <img src={away?.image} className="w-10 h-10 rounded-lg object-cover border border-zinc-800" alt="" />
+                        <div className="w-10 h-10 rounded-lg overflow-hidden border border-zinc-800">
+                          <ImageWithFallback src={away?.image} className="w-full h-full object-contain" alt="" />
+                        </div>
                         <div className="min-w-0">
                           <div className="font-black text-white uppercase tracking-tight truncate">{away?.name || "Away"}</div>
                           <div className="text-[10px] font-bold text-zinc-500 uppercase">{away?.record ? `${away.record.wins}-${away.record.losses}` : "0-0"}</div>
@@ -194,7 +197,9 @@ export function Schedule() {
                           <div className="font-black text-white uppercase tracking-tight truncate">{home?.name || "Home"}</div>
                           <div className="text-[10px] font-bold text-zinc-500 uppercase">{home?.record ? `${home.record.wins}-${home.record.losses}` : "0-0"}</div>
                         </div>
-                        <img src={home?.image} className="w-10 h-10 rounded-lg object-cover border border-zinc-800" alt="" />
+                        <div className="w-10 h-10 rounded-lg overflow-hidden border border-zinc-800">
+                          <ImageWithFallback src={home?.image} className="w-full h-full object-contain" alt="" />
+                        </div>
                       </div>
                     </div>
 
