@@ -1,9 +1,8 @@
-import { Outlet, Link, useLocation } from "react-router";
-import { Bell, Trophy, Calendar, Users, BarChart3, Settings } from "lucide-react";
+import { Outlet, Link, NavLink } from "react-router";
+import { Bell, Award, Calendar, Users, BarChart3, Settings } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function Root() {
-  const location = useLocation();
   const [homeTeam, setHomeTeam] = useState<string | null>(
     localStorage.getItem("homeTeam")
   );
@@ -18,14 +17,13 @@ export function Root() {
     }
   }, [homeTeam]);
 
-  const isActive = (path: string) => {
-    // Standardize paths by removing leading/trailing slashes for comparison
-    const currentPath = location.pathname.replace(/^\/ccshub/, "").replace(/\/$/, "") || "/";
-    const targetPath = path.replace(/\/$/, "") || "/";
-    
-    if (targetPath === "/") return currentPath === "/";
-    return currentPath.startsWith(targetPath);
-  };
+  const navItems = [
+    { path: "/", label: "Broadcasts", icon: Award },
+    { path: "/rankings", label: "Rankings", icon: BarChart3 },
+    { path: "/schedule", label: "Schedule", icon: Calendar },
+    { path: "/scores", label: "Scores", icon: Award },
+    { path: "/players", label: "Players", icon: Users },
+  ];
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-blue-500/30 font-sans">
@@ -34,12 +32,12 @@ export function Root() {
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
             <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-all active:scale-95 group">
-              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:rotate-3 transition-transform">
-                <Trophy className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:rotate-3 transition-transform overflow-hidden p-1">
+                <img src="https://www.cifccs.org/images/logo.png" alt="CIF CCS" className="w-full h-full object-contain" />
               </div>
               <div>
-                <h1 className="text-xl font-bold tracking-tight text-white leading-tight">CIF CCS</h1>
-                <p className="text-[10px] text-zinc-500 font-bold tracking-wide">Football Portal</p>
+                <h1 className="text-xl font-black tracking-tight text-white leading-tight uppercase">CCSHUB</h1>
+                <p className="text-[10px] text-zinc-500 font-bold tracking-widest uppercase">Central Coast Section</p>
               </div>
             </Link>
 
@@ -62,50 +60,40 @@ export function Root() {
 
           {/* Desktop Navigation */}
           <nav className="mt-4 hidden md:flex items-center gap-1">
-            {[
-              { path: "/", label: "Broadcasts", icon: Trophy },
-              { path: "/rankings", label: "Rankings", icon: BarChart3 },
-              { path: "/schedule", label: "Schedule", icon: Calendar },
-              { path: "/scores", label: "Scores", icon: Trophy },
-              { path: "/players", label: "Players", icon: Users },
-            ].map(({ path, label, icon: Icon }) => (
-              <Link
+            {navItems.map(({ path, label, icon: Icon }) => (
+              <NavLink
                 key={path}
                 to={path}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
-                  isActive(path)
+                end={path === "/"}
+                className={({ isActive }) => `flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
+                  isActive
                     ? "bg-zinc-100 text-zinc-950 shadow-lg"
                     : "text-zinc-400 hover:text-white hover:bg-zinc-900"
                 }`}
               >
                 <Icon className="w-4 h-4" />
                 {label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
         </div>
 
         {/* Mobile Navigation Bar (Scrollable) */}
         <div className="md:hidden border-t border-zinc-900 px-2 py-2 flex gap-1 overflow-x-auto no-scrollbar">
-          {[
-            { path: "/", label: "Broadcasts", icon: Trophy },
-            { path: "/rankings", label: "Rankings", icon: BarChart3 },
-            { path: "/schedule", label: "Schedule", icon: Calendar },
-            { path: "/scores", label: "Scores", icon: Trophy },
-            { path: "/players", label: "Players", icon: Users },
-          ].map(({ path, label, icon: Icon }) => (
-            <Link
+          {navItems.map(({ path, label, icon: Icon }) => (
+            <NavLink
               key={path}
               to={path}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-xs whitespace-nowrap transition-all ${
-                isActive(path)
+              end={path === "/"}
+              className={({ isActive }) => `flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-xs whitespace-nowrap transition-all ${
+                isActive
                   ? "bg-blue-600 text-white shadow-lg"
                   : "bg-zinc-900 text-zinc-400"
               }`}
             >
               <Icon className="w-3.5 h-3.5" />
               {label}
-            </Link>
+            </NavLink>
           ))}
         </div>
 
@@ -177,13 +165,13 @@ export function Root() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-zinc-800 rounded-lg flex items-center justify-center">
-                  <Trophy className="w-5 h-5 text-zinc-400" />
+                <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1">
+                  <img src="https://www.cifccs.org/images/logo.png" alt="CIF CCS" className="w-full h-full object-contain" />
                 </div>
-                <h3 className="font-bold text-xl text-white">CIF CCS Football</h3>
+                <h3 className="font-black text-2xl text-white uppercase tracking-tighter">CCSHUB</h3>
               </div>
-              <p className="text-zinc-500 text-sm max-w-sm leading-relaxed">
-                The ultimate digital destination for Central Coast Section high school football. Real-time scores, in-depth rankings, and player spotlights.
+              <p className="text-zinc-500 text-sm max-w-sm leading-relaxed font-medium">
+                The premier digital destination for Central Coast Section athletics. Real-time scores, in-depth rankings, and elite player spotlights.
               </p>
             </div>
 
@@ -208,7 +196,7 @@ export function Root() {
             </div>
           </div>
           <div className="mt-12 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-zinc-600 uppercase tracking-widest">
-            <div>© 2026 CIF Central Coast Section Football</div>
+            <div>© 2026 CCSHUB • Central Coast Section</div>
             <div className="flex gap-6">
               <a href="#" className="hover:text-zinc-400">Privacy</a>
               <a href="#" className="hover:text-zinc-400">Terms</a>

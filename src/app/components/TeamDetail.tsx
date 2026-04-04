@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router";
-import { Trophy, Users, MapPin, Target, Shield, Zap, Calendar } from "lucide-react";
+import { Users, MapPin, Target, Shield, Zap, Calendar, Award } from "lucide-react";
 import { teams } from "../data/teams";
 import { games } from "../data/games";
 import { players } from "../data/players";
@@ -36,29 +36,31 @@ export function TeamDetail() {
         animate={{ opacity: 1, y: 0 }}
         className="relative rounded-2xl overflow-hidden"
       >
-        <div className="relative h-80">
-          <img
-            src={team.image}
-            alt={team.name}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-transparent"></div>
-          <div className="absolute top-4 left-4">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center font-bold text-3xl text-zinc-900">
+        <div className="relative h-80 bg-zinc-900">
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-transparent z-10"></div>
+          <div className="flex items-center justify-center h-full p-12">
+            <img
+              src={team.image}
+              alt={team.name}
+              className="h-full object-contain filter drop-shadow-2xl"
+            />
+          </div>
+          <div className="absolute top-4 left-4 z-20">
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center font-bold text-3xl text-zinc-900 shadow-xl border-4 border-blue-600">
               {team.ranking}
             </div>
           </div>
-          <div className="absolute bottom-6 left-6 right-6">
-            <h1 className="text-4xl font-bold mb-2">{team.name}</h1>
-            <div className="flex flex-wrap items-center gap-4 text-sm">
-              <span className="bg-blue-600 px-3 py-1 rounded-full font-medium">
+          <div className="absolute bottom-6 left-6 right-6 z-20">
+            <h1 className="text-4xl font-black mb-2 uppercase tracking-tighter">{team.name}</h1>
+            <div className="flex flex-wrap items-center gap-4 text-sm font-bold">
+              <span className="bg-blue-600 px-3 py-1 rounded-full uppercase tracking-widest">
                 {team.mascot}
               </span>
               <span className="text-zinc-300">
                 {team.record.wins}-{team.record.losses}
               </span>
-              <span className="text-zinc-300">{team.division}</span>
-              <span className="text-zinc-300">{team.league}</span>
+              <span className="text-zinc-300 uppercase">{team.division}</span>
+              <span className="text-zinc-300 uppercase">{team.league}</span>
             </div>
           </div>
         </div>
@@ -67,7 +69,7 @@ export function TeamDetail() {
       {/* Quick Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: "Ranking", value: `#${team.ranking}`, icon: Trophy },
+          { label: "Ranking", value: `#${team.ranking}`, icon: Award },
           {
             label: "Record",
             value: `${team.record.wins}-${team.record.losses}`,
@@ -199,7 +201,7 @@ export function TeamDetail() {
         className="bg-gradient-to-br from-blue-900/30 to-blue-800/30 rounded-2xl p-6 border border-blue-700"
       >
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-          <Trophy className="w-6 h-6 text-blue-400" />
+          <Award className="w-6 h-6 text-blue-400" />
           Team Strengths
         </h2>
         <ul className="grid md:grid-cols-2 gap-3">
@@ -296,7 +298,7 @@ export function TeamDetail() {
           className="bg-zinc-900 rounded-2xl p-6 border border-zinc-800"
         >
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-            <Trophy className="w-5 h-5 text-blue-400" />
+            <Award className="w-5 h-5 text-blue-400" />
             Recent Results
           </h2>
           <div className="space-y-3">

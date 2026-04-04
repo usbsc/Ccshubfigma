@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Calendar, MapPin, Users, TrendingUp, Clock, Zap, Star, ChevronRight } from "lucide-react";
+import { Calendar, MapPin, Users, TrendingUp, Clock, Zap, Star, ChevronRight, Award } from "lucide-react";
 import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
@@ -66,8 +66,8 @@ export function Home() {
 
         <div className="absolute bottom-0 left-0 right-0 p-10 md:p-16">
           <motion.div variants={itemVariants} className="max-w-2xl">
-            <h2 className="text-5xl md:text-6xl font-black mb-4 text-white leading-[0.9] tracking-tight">
-              Central Coast <br/><span className="text-blue-500 italic font-black">Football</span>
+            <h2 className="text-5xl md:text-7xl font-black mb-4 text-white leading-[0.85] tracking-tighter uppercase">
+              CCS <br/><span className="text-blue-500 italic font-black">HUB</span>
             </h2>
             <div className="flex flex-wrap items-center gap-4 text-zinc-300 font-medium">
               <span className="flex items-center gap-2">
@@ -118,10 +118,12 @@ export function Home() {
                           <ChevronRight className="w-4 h-4 text-white/40 group-hover/card:translate-x-1 transition-transform" />
                         </div>
                         <div className="flex items-center gap-4">
-                          <img src={opponent?.image} className="w-12 h-12 rounded-full object-cover border-2 border-white/20" alt="" />
+                          <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-2 overflow-hidden border-2 border-white/20">
+                            <img src={opponent?.image} className="w-full h-full object-contain" alt="" />
+                          </div>
                           <div>
-                            <p className="text-xs text-zinc-300 font-medium">vs {opponent?.name}</p>
-                            <p className="text-lg font-bold text-white">
+                            <p className="text-xs text-zinc-300 font-bold uppercase tracking-tight">vs {opponent?.name}</p>
+                            <p className="text-2xl font-black text-white">
                               {game.homeScore} - {game.awayScore}
                             </p>
                           </div>
@@ -178,11 +180,17 @@ export function Home() {
 
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <span className="font-bold text-lg truncate pr-4 text-zinc-100 uppercase tracking-tight">{away?.name || "Away Team"}</span>
+                          <div className="flex items-center gap-3">
+                            <img src={away?.image} className="w-8 h-8 rounded-lg object-contain bg-zinc-800 p-1" alt="" />
+                            <span className="font-bold text-lg truncate pr-4 text-zinc-100 uppercase tracking-tight">{away?.name || "Away Team"}</span>
+                          </div>
                           <span className="text-2xl font-black text-white">{game.awayScore}</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="font-bold text-lg truncate pr-4 text-zinc-100 uppercase tracking-tight">{home?.name || "Home Team"}</span>
+                          <div className="flex items-center gap-3">
+                            <img src={home?.image} className="w-8 h-8 rounded-lg object-contain bg-zinc-800 p-1" alt="" />
+                            <span className="font-bold text-lg truncate pr-4 text-zinc-100 uppercase tracking-tight">{home?.name || "Home Team"}</span>
+                          </div>
                           <span className="text-2xl font-black text-white">{game.homeScore}</span>
                         </div>
                       </div>
@@ -226,7 +234,7 @@ export function Home() {
           {/* Top Power Rankings */}
           <section>
             <h2 className="text-2xl font-black mb-8 tracking-tight flex items-center gap-2">
-              <Trophy className="w-6 h-6 text-yellow-500" />
+              <Award className="w-6 h-6 text-yellow-500" />
               Power Top 5
             </h2>
             <div className="bg-zinc-900 rounded-3xl border border-zinc-800 overflow-hidden shadow-xl">

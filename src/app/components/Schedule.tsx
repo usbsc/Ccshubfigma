@@ -114,14 +114,24 @@ export function Schedule() {
                   </div>
 
                   <div className="grid grid-cols-[1fr,auto,1fr] items-center gap-4 mb-8">
-                    <div className="text-right">
-                      <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">{away?.name}</div>
-                      <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{away?.mascot}</div>
+                    <div className="flex flex-col items-end gap-3 text-right">
+                      <div className="w-16 h-16 bg-zinc-800 rounded-2xl flex items-center justify-center p-2 border-2 border-zinc-700 overflow-hidden">
+                        <img src={away?.image} className="w-full h-full object-contain" alt="" />
+                      </div>
+                      <div>
+                        <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">{away?.name}</div>
+                        <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{away?.mascot}</div>
+                      </div>
                     </div>
                     <div className="px-4 py-2 bg-zinc-950 rounded-xl font-black text-xl text-red-500 border border-zinc-800 tracking-tighter">VS</div>
-                    <div className="text-left">
-                      <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">{home?.name}</div>
-                      <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{home?.mascot}</div>
+                    <div className="flex flex-col items-start gap-3 text-left">
+                      <div className="w-16 h-16 bg-zinc-800 rounded-2xl flex items-center justify-center p-2 border-2 border-zinc-700 overflow-hidden">
+                        <img src={home?.image} className="w-full h-full object-contain" alt="" />
+                      </div>
+                      <div>
+                        <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">{home?.name}</div>
+                        <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{home?.mascot}</div>
+                      </div>
                     </div>
                   </div>
 

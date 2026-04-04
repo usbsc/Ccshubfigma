@@ -1,11 +1,11 @@
 
-  # CCS Football Rankings Website
+  # CCSHUB - Central Coast Section Athletics
 
-  This is a code bundle for CCS Football Rankings Website. The original project is available at https://www.figma.com/design/THyH5PHrGOWNvfwBqsKD8m/CCS-Football-Rankings-Website.
+  CCSHUB is the premier digital destination for high school athletics in the CIF Central Coast Section. This portal provides real-time scores, in-depth power rankings, and elite player spotlights.
 
   ## Running the code
 
   Run `npm i` to install the dependencies.
 
-  Run `npm run dev` to start the development server.
+  Run `npm run dev` to start the development server. Access the site at `http://localhost:5173/ccshub/`.
   

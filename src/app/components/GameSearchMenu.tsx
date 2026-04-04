@@ -105,33 +105,37 @@ export function GameSearchMenu({ onClose }: GameSearchMenuProps) {
 
                     <div className="grid grid-cols-2 gap-4 mb-2">
                       <div className="flex items-center gap-2">
-                        <img
-                          src={away?.image}
-                          alt={away?.name}
-                          className="w-8 h-8 rounded object-cover"
-                        />
+                        <div className="w-8 h-8 bg-white rounded flex items-center justify-center p-1 overflow-hidden border border-zinc-700">
+                          <img
+                            src={away?.image}
+                            alt={away?.name}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
                         <div className="flex-1 min-w-0">
-                          <div className="text-sm font-medium truncate">
+                          <div className="text-sm font-black truncate uppercase tracking-tight">
                             {away?.name}
                           </div>
                           {game.status !== "upcoming" && (
-                            <div className="text-lg font-bold">{game.awayScore}</div>
+                            <div className="text-lg font-black text-white">{game.awayScore}</div>
                           )}
                         </div>
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <img
-                          src={home?.image}
-                          alt={home?.name}
-                          className="w-8 h-8 rounded object-cover"
-                        />
+                        <div className="w-8 h-8 bg-white rounded flex items-center justify-center p-1 overflow-hidden border border-zinc-700">
+                          <img
+                            src={home?.image}
+                            alt={home?.name}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
                         <div className="flex-1 min-w-0">
-                          <div className="text-sm font-medium truncate">
+                          <div className="text-sm font-black truncate uppercase tracking-tight">
                             {home?.name}
                           </div>
                           {game.status !== "upcoming" && (
-                            <div className="text-lg font-bold">{game.homeScore}</div>
+                            <div className="text-lg font-black text-white">{game.homeScore}</div>
                           )}
                         </div>
                       </div>

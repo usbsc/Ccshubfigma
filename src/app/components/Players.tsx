@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Award, TrendingUp, User, Trophy, Search, ChevronRight, Star, X } from "lucide-react";
+import { Award, TrendingUp, User, Search, ChevronRight, Star, X } from "lucide-react";
 import { players, Player } from "../data/players";
 import { teams } from "../data/teams";
 import { motion, AnimatePresence } from "motion/react";
@@ -275,7 +275,7 @@ export function Players() {
       >
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-3xl font-black text-white tracking-tighter uppercase flex items-center gap-3">
-            <Trophy className="w-8 h-8 text-yellow-500" /> Statistical Leaders
+            <Award className="w-8 h-8 text-yellow-500" /> Statistical Leaders
           </h2>
         </div>
 

@@ -3,7 +3,7 @@ export interface Player {
   name: string;
   team: string;
   position: string;
-  subPosition?: string; // SS/FS/Nickel/Power Back/3rd Down Back/Blocking TE/Receiving TE/NT/DT/DE/Strongside/Weakside
+  subPosition?: string;
   number: number;
   grade: number;
   height: string;
@@ -15,8 +15,6 @@ export interface Player {
   image: string;
   highlights?: string[];
 }
-
-const GENERIC_PLAYER_IMAGE = "https://images.unsplash.com/photo-1774188626785-29524a40ebd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbWVyaWNhbiUyMGZvb3RiYWxsJTIwcGxheWVyJTIwdW5pZm9ybSUyMGFjdGlvbnxlbnwxfHx8fDE3NzQzMTE3OTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
 export const players: Player[] = [
   {
@@ -35,7 +33,7 @@ export const players: Player[] = [
       touchdowns: 34,
       interceptions: 6,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=400&h=400&fit=crop",
     highlights: ["WCAL Offensive Player of the Year", "Led Riordan to #1 ranking"],
   },
   {
@@ -53,7 +51,7 @@ export const players: Player[] = [
       yards: 1452,
       touchdowns: 22,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1508962913221-80d085c6a281?q=80&w=400&h=400&fit=crop",
   },
   {
     id: "player-1",
@@ -74,7 +72,7 @@ export const players: Player[] = [
       interceptions: 8,
       rating: 142.5,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=400&h=400&fit=crop",
     highlights: ["CCS Offensive Player of the Year candidate", "School record 5 TD passes in one game"],
   },
   {
@@ -96,7 +94,7 @@ export const players: Player[] = [
       receptions: 24,
       receivingYards: 312,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?q=80&w=400&h=400&fit=crop",
     highlights: ["1,500+ all-purpose yards", "4.4 40-yard dash"],
   },
   {
@@ -117,7 +115,7 @@ export const players: Player[] = [
       average: 17.6,
       longReception: 78,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=400&h=400&fit=crop",
     highlights: ["Stanford commit", "10+ TD receptions"],
   },
   {
@@ -139,7 +137,7 @@ export const players: Player[] = [
       interceptions: 11,
       rating: 128.4,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&h=400&fit=crop",
     highlights: ["Strong arm, cannon for deep ball", "Dual-threat capability"],
   },
   {
@@ -160,7 +158,7 @@ export const players: Player[] = [
       interceptions: 9,
       rating: 156.8,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&h=400&fit=crop",
     highlights: ["CCS passing yards leader", "USC commit"],
   },
   {
@@ -180,7 +178,7 @@ export const players: Player[] = [
       average: 17.2,
       longReception: 85,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&h=400&fit=crop",
     highlights: ["Oregon commit", "CCS receptions leader"],
   },
   {
@@ -201,7 +199,7 @@ export const players: Player[] = [
       touchdowns: 2,
       fumbleRecoveries: 1,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&h=400&fit=crop",
     highlights: ["CCS interceptions leader", "Lockdown corner"],
   },
   {
@@ -222,7 +220,7 @@ export const players: Player[] = [
       forcedFumbles: 3,
       fumbleRecoveries: 2,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&h=400&fit=crop",
     highlights: ["CCS Defensive Player of the Year candidate", "Notre Dame commit"],
   },
   {
@@ -242,7 +240,7 @@ export const players: Player[] = [
       average: 16.5,
       longReception: 72,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&h=400&fit=crop",
     highlights: ["All-WCAL First Team", "Speed threat"],
   },
   {
@@ -264,7 +262,7 @@ export const players: Player[] = [
       receptions: 32,
       receivingYards: 425,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&h=400&fit=crop",
     highlights: ["All-purpose weapon", "Great hands out of backfield"],
   },
   {
@@ -285,154 +283,7 @@ export const players: Player[] = [
       forcedFumbles: 4,
       fumbleRecoveries: 2,
     },
-    image: GENERIC_PLAYER_IMAGE,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&h=400&fit=crop",
     highlights: ["CCS sacks leader", "UCLA commit"],
-  },
-  {
-    id: "player-12",
-    name: "Anthony Davis",
-    team: "serra",
-    position: "QB",
-    subPosition: "Dual-Threat",
-    number: 5,
-    grade: 11,
-    height: "6'1\"",
-    weight: 190,
-    stats: {
-      games: 11,
-      completions: 148,
-      attempts: 242,
-      yards: 2156,
-      touchdowns: 21,
-      interceptions: 7,
-      rating: 135.2,
-    },
-    image: GENERIC_PLAYER_IMAGE,
-    highlights: ["Dual-threat QB", "Over 500 rushing yards"],
-  },
-  {
-    id: "player-13",
-    name: "Kevin Martinez",
-    team: "serra",
-    position: "LB",
-    subPosition: "Weakside",
-    number: 42,
-    grade: 12,
-    height: "6'0\"",
-    weight: 205,
-    stats: {
-      games: 11,
-      tackles: 98,
-      sacks: 5,
-      tacklesForLoss: 14,
-      interceptions: 2,
-      forcedFumbles: 2,
-    },
-    image: GENERIC_PLAYER_IMAGE,
-    highlights: ["Team captain", "All-WCAL selection"],
-  },
-  {
-    id: "player-14",
-    name: "Eric Thompson",
-    team: "sacred-heart",
-    position: "QB",
-    number: 11,
-    grade: 12,
-    height: "6'2\"",
-    weight: 200,
-    stats: {
-      games: 10,
-      completions: 172,
-      attempts: 285,
-      yards: 2489,
-      touchdowns: 28,
-      interceptions: 9,
-      rating: 138.7,
-    },
-    image: GENERIC_PLAYER_IMAGE,
-    highlights: ["Cal Poly commit", "Mobile quarterback"],
-  },
-  {
-    id: "player-15",
-    name: "Daniel Kim",
-    team: "sacred-heart",
-    position: "S",
-    subPosition: "Free Safety",
-    number: 20,
-    grade: 11,
-    height: "6'0\"",
-    weight: 185,
-    stats: {
-      games: 10,
-      tackles: 72,
-      interceptions: 5,
-      passBreakups: 11,
-      tacklesForLoss: 8,
-      forcedFumbles: 2,
-    },
-    image: GENERIC_PLAYER_IMAGE,
-    highlights: ["Ball hawk safety", "Team leader in INTs"],
-  },
-  {
-    id: "player-16",
-    name: "Justin Clark",
-    team: "serra",
-    position: "TE",
-    subPosition: "Receiving TE",
-    number: 88,
-    grade: 12,
-    height: "6'5\"",
-    weight: 225,
-    stats: {
-      games: 11,
-      receptions: 38,
-      yards: 612,
-      touchdowns: 8,
-      average: 16.1,
-      longReception: 58,
-    },
-    image: GENERIC_PLAYER_IMAGE,
-    highlights: ["Mismatch nightmare", "Red zone target"],
-  },
-  {
-    id: "player-17",
-    name: "Carlos Sanchez",
-    team: "wilcox",
-    position: "FB",
-    number: 32,
-    grade: 12,
-    height: "6'0\"",
-    weight: 215,
-    stats: {
-      games: 10,
-      rushes: 112,
-      yards: 756,
-      touchdowns: 14,
-      average: 6.8,
-      blocks: 45,
-    },
-    image: GENERIC_PLAYER_IMAGE,
-    highlights: ["Bruising runner", "Dominant blocker"],
-  },
-  {
-    id: "player-18",
-    name: "Robert Chang",
-    team: "wilcox",
-    position: "DL",
-    subPosition: "Nose Tackle",
-    number: 91,
-    grade: 11,
-    height: "6'2\"",
-    weight: 285,
-    stats: {
-      games: 10,
-      tackles: 64,
-      sacks: 4,
-      tacklesForLoss: 12,
-      fumbleRecoveries: 3,
-      blockedKicks: 1,
-    },
-    image: GENERIC_PLAYER_IMAGE,
-    highlights: ["Run stuffer", "Anchor of D-line"],
   },
 ];

@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router";
-import { MapPin, Users, Clock, TrendingUp, Award } from "lucide-react";
+import { MapPin, Users, Clock, TrendingUp, Award, Play } from "lucide-react";
 import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
@@ -24,53 +24,83 @@ export function GameDetail() {
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">
-      {/* Game Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-2xl overflow-hidden border border-zinc-700"
-      >
-        <div className="relative h-64">
-          <img
-            src="https://images.unsplash.com/photo-1581588535512-4dbe198fbbee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb290YmFsbCUyMHN0YWRpdW0lMjBsaWdodHN8ZW58MXx8fHwxNzc0MDExODExfDA&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Stadium"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/70 to-transparent"></div>
-          {game.status === "live" && (
-            <div className="absolute top-4 left-4">
-              <span className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2">
-                <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                LIVE
-              </span>
-            </div>
-          )}
-          <div className="absolute bottom-4 left-4 right-4">
-            <div className="flex items-center gap-4 text-sm text-zinc-300 mb-2">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                {game.stadium}
-              </div>
-              {game.attendance && (
-                <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4" />
-                  {game.attendance.toLocaleString()} fans
-                </div>
-              )}
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                {new Date(game.date).toLocaleDateString("en-US", {
-                  weekday: "long",
-                  month: "long",
-                  day: "numeric",
-                  year: "numeric",
-                })} • {game.time}
-              </div>
-            </div>
-            <div className="text-sm font-medium text-blue-300">{game.level}</div>
+      {/* Broadcast Video Section */}
+      {game.videoUrl && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="bg-zinc-900 rounded-[2.5rem] overflow-hidden border border-zinc-800 shadow-2xl relative group"
+        >
+          <div className="aspect-video w-full bg-zinc-950">
+            <iframe
+              src={game.videoUrl}
+              className="w-full h-full border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
-        </div>
-      </motion.div>
+          <div className="absolute top-6 left-6 flex items-center gap-3">
+             <div className="bg-red-600 px-4 py-1.5 rounded-full flex items-center gap-2 shadow-xl border border-white/10">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <span className="text-xs font-black tracking-widest text-white uppercase">Live Broadcast</span>
+             </div>
+             <div className="bg-zinc-900/80 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 border border-white/5">
+                <Users className="w-3.5 h-3.5 text-zinc-400" />
+                <span className="text-[10px] font-bold text-zinc-100 uppercase tracking-tighter">12.5k watching</span>
+             </div>
+          </div>
+        </motion.div>
+      )}
+
+      {/* Game Header (only if no video or smaller version) */}
+      {!game.videoUrl && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-2xl overflow-hidden border border-zinc-700"
+        >
+          <div className="relative h-64">
+            <img
+              src="https://images.unsplash.com/photo-1581588535512-4dbe198fbbee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb290YmFsbCUyMHN0YWRpdW0lMjBsaWdodHN8ZW58MXx8fHwxNzc0MDExODExfDA&ixlib=rb-4.1.0&q=80&w=1080"
+              alt="Stadium"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/70 to-transparent"></div>
+            {game.status === "live" && (
+              <div className="absolute top-4 left-4">
+                <span className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2">
+                  <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+            )}
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="flex items-center gap-4 text-sm text-zinc-300 mb-2">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4" />
+                  {game.stadium}
+                </div>
+                {game.attendance && (
+                  <div className="flex items-center gap-2">
+                    <Users className="w-4 h-4" />
+                    {game.attendance.toLocaleString()} fans
+                  </div>
+                )}
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  {new Date(game.date).toLocaleDateString("en-US", {
+                    weekday: "long",
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })} • {game.time}
+                </div>
+              </div>
+              <div className="text-sm font-medium text-blue-300">{game.level}</div>
+            </div>
+          </div>
+        </motion.div>
+      )}
 
       {/* Score Display */}
       <motion.div
@@ -85,11 +115,13 @@ export function GameDetail() {
             to={`/team/${away?.id}`}
             className="text-center hover:opacity-80 transition-opacity"
           >
-            <img
-              src={away?.image}
-              alt={away?.name}
-              className="w-24 h-24 object-cover rounded-full mx-auto mb-4 border-4 border-zinc-700"
-            />
+            <div className="w-24 h-24 bg-zinc-800 rounded-full mx-auto mb-4 border-4 border-zinc-700 flex items-center justify-center p-4 overflow-hidden">
+              <img
+                src={away?.image}
+                alt={away?.name}
+                className="w-full h-full object-contain"
+              />
+            </div>
             <h3 className="font-bold text-xl mb-1">{away?.name || "Away Team"}</h3>
             <p className="text-sm text-zinc-400">
               {away?.record ? `${away.record.wins}-${away.record.losses}` : "0-0"}
@@ -99,20 +131,20 @@ export function GameDetail() {
           {/* Score */}
           <div className="text-center">
             <div className="flex items-center justify-center gap-6 mb-4">
-              <div className="text-6xl font-bold">{game.awayScore}</div>
-              <div className="text-2xl text-zinc-500">-</div>
-              <div className="text-6xl font-bold">{game.homeScore}</div>
+              <div className="text-6xl font-black text-white">{game.awayScore}</div>
+              <div className="text-2xl font-black text-zinc-700">-</div>
+              <div className="text-6xl font-black text-white">{game.homeScore}</div>
             </div>
             {game.status === "live" && (
-              <div className="text-lg font-medium text-red-400">
+              <div className="text-lg font-black text-red-500 uppercase tracking-widest">
                 {game.quarter} • {game.timeRemaining}
               </div>
             )}
             {game.status === "final" && (
-              <div className="text-lg font-medium text-zinc-400">Final</div>
+              <div className="text-lg font-black text-zinc-500 uppercase tracking-widest italic">Final</div>
             )}
             {game.status === "upcoming" && (
-              <div className="text-lg font-medium text-blue-400">Upcoming</div>
+              <div className="text-lg font-black text-blue-500 uppercase tracking-widest">Upcoming</div>
             )}
           </div>
 
@@ -121,11 +153,13 @@ export function GameDetail() {
             to={`/team/${home?.id}`}
             className="text-center hover:opacity-80 transition-opacity"
           >
-            <img
-              src={home?.image}
-              alt={home?.name}
-              className="w-24 h-24 object-cover rounded-full mx-auto mb-4 border-4 border-zinc-700"
-            />
+            <div className="w-24 h-24 bg-zinc-800 rounded-full mx-auto mb-4 border-4 border-zinc-700 flex items-center justify-center p-4 overflow-hidden">
+              <img
+                src={home?.image}
+                alt={home?.name}
+                className="w-full h-full object-contain"
+              />
+            </div>
             <h3 className="font-bold text-xl mb-1">{home?.name || "Home Team"}</h3>
             <p className="text-sm text-zinc-400">
               {home?.record ? `${home.record.wins}-${home.record.losses}` : "0-0"}

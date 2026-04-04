@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Trophy, TrendingUp, TrendingDown, Minus, Search, Filter, ArrowRight } from "lucide-react";
+import { Award, TrendingUp, TrendingDown, Minus, Search, Filter, ArrowRight, Star, Target } from "lucide-react";
 import { teams } from "../data/teams";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
@@ -48,7 +48,7 @@ export function Rankings() {
         <div className="relative p-8 md:p-12 flex flex-col md:flex-row justify-between items-end gap-8">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 bg-blue-600 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest text-white mb-2">
-              <Trophy className="w-3 h-3 fill-white" /> 2025-2026 Rankings
+              <Award className="w-3 h-3 fill-white" /> 2025-2026 Rankings
             </div>
             <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none">
               CCS Power <br/><span className="text-blue-500 font-black">Index</span>
@@ -142,7 +142,7 @@ export function Rankings() {
                       <img
                         src={team.image}
                         alt={team.name}
-                        className="w-full h-full rounded-xl object-cover border-2 border-zinc-800 group-hover:border-blue-500/50 transition-all shadow-md"
+                        className="w-full h-full rounded-xl object-contain bg-zinc-800 p-2 border-2 border-zinc-800 group-hover:border-blue-500/50 transition-all shadow-md"
                       />
                       <div className="absolute -top-1 -right-1 w-4 h-4 bg-zinc-900 border border-zinc-800 rounded-full flex items-center justify-center">
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
@@ -213,7 +213,7 @@ export function Rankings() {
       {/* Stats Summary */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: "Total Schools", value: teams.length, icon: Trophy },
+          { label: "Total Schools", value: teams.length, icon: Award },
           { label: "Elite (DI)", value: teams.filter((t) => t.division === "Division I").length, icon: Star },
           { label: "Competitive (DII)", value: teams.filter((t) => t.division === "Division II").length, icon: TrendingUp },
           { label: "Emerging (DIII)", value: teams.filter((t) => t.division === "Division III").length, icon: Target },
