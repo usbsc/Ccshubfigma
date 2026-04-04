@@ -43,7 +43,7 @@ export const teams: Team[] = [
     defensiveSystem: "4-3 Defense",
     commonPlays: ["Power Run", "Deep Post", "Screen Pass", "Boot Action"],
     strengths: ["Tough defense", "Physical play", "Elite skill players"],
-    keyPlayers: ["QB Michael Greco #8", "DE Tommy Nguyen #96", "RB Chris Reyes #23"],
+    keyPlayers: ["QB Michael Mitchell Jr. #10", "WR Wesley Winn #1", "WR Chris Lawson #2"],
     levels: {
       varsity: { wins: 0, losses: 0 },
       jv: { wins: 0, losses: 0 },
@@ -68,7 +68,7 @@ export const teams: Team[] = [
     defensiveSystem: "3-3-5 Defense",
     commonPlays: ["Pistol Formation", "Jet Sweep", "Curl Route", "Draw Play"],
     strengths: ["Versatile schemes", "Fast linebackers", "Red zone efficiency"],
-    keyPlayers: ["QB Anthony Davis #5", "LB Kevin Martinez #42", "TE Justin Clark #88"],
+    keyPlayers: ["RB Jeovanni Henley #4", "LB Kevin Martinez #42", "TE Justin Clark #88"],
     levels: {
       varsity: { wins: 0, losses: 0 },
       jv: { wins: 0, losses: 0 },
@@ -93,7 +93,7 @@ export const teams: Team[] = [
     defensiveSystem: "3-4 Defense",
     commonPlays: ["Power Run", "Deep Post", "Screen Pass", "Boot Action"],
     strengths: ["Physical run game", "Strong defensive line", "Special teams excellence"],
-    keyPlayers: ["QB Ryan Miller #7", "LB Chris Anderson #44", "WR Tyler Johnson #3"],
+    keyPlayers: ["RB Kingston Keanaaina #22", "LB Chris Anderson #44", "WR Tyler Johnson #3"],
     levels: {
       varsity: { wins: 0, losses: 0 },
       jv: { wins: 0, losses: 0 },
@@ -118,7 +118,7 @@ export const teams: Team[] = [
     defensiveSystem: "4-3 Under Defense",
     commonPlays: ["Quick Slant", "Sprint Out", "Z-Spot", "Toss Sweep"],
     strengths: ["Precision passing", "Quick reads", "Disciplined defense"],
-    keyPlayers: ["QB Matt Rogers #9", "WR Sean Murphy #18", "LB Adam Foster #35"],
+    keyPlayers: ["QB Henry Masters #12", "WR Sean Murphy #18", "LB Adam Foster #35"],
     levels: {
       varsity: { wins: 0, losses: 0 },
       jv: { wins: 0, losses: 0 },

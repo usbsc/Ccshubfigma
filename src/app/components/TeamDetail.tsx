@@ -234,11 +234,13 @@ export function TeamDetail() {
                 to="/players"
                 className="bg-zinc-800 rounded-xl p-4 hover:bg-zinc-700 transition-colors"
               >
-                <img
-                  src={player.image}
-                  alt={player.name}
-                  className="w-full h-48 object-cover rounded-lg mb-3"
-                />
+                <div className="w-full h-48 overflow-hidden rounded-lg mb-3">
+                  <ImageWithFallback
+                    src={player.image}
+                    alt={player.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="font-bold text-lg">
                   #{player.number} {player.name}
                 </div>

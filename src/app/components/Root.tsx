@@ -1,6 +1,7 @@
 import { Outlet, Link, NavLink } from "react-router";
 import { Bell, Award, Calendar, Users, BarChart3, Settings } from "lucide-react";
 import { useState, useEffect } from "react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Root() {
   const [homeTeam, setHomeTeam] = useState<string | null>(
@@ -33,7 +34,11 @@ export function Root() {
           <div className="flex items-center justify-between gap-4">
             <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-all active:scale-95 group">
               <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:rotate-3 transition-transform overflow-hidden p-1">
-                <img src="https://www.cifccs.org/images/logo.png" alt="CIF CCS" className="w-full h-full object-contain" />
+                <ImageWithFallback 
+                  src="https://www.cifccs.org/images/logo.png" 
+                  alt="CIF CCS" 
+                  className="w-full h-full object-contain" 
+                />
               </div>
               <div>
                 <h1 className="text-xl font-black tracking-tight text-white leading-tight uppercase">CCSHUB</h1>
@@ -115,7 +120,7 @@ export function Root() {
                 >
                   <option value="">No team selected</option>
                   <optgroup label="WCAL">
-                    <option value="bellarmine">Bellarmine College Prep</option>
+                    <option value="riordan">Archbishop Riordan</option>
                     <option value="st-francis">St. Francis High School</option>
                     <option value="valley-christian">Valley Christian</option>
                     <option value="mitty">Archbishop Mitty</option>
@@ -166,7 +171,11 @@ export function Root() {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1">
-                  <img src="https://www.cifccs.org/images/logo.png" alt="CIF CCS" className="w-full h-full object-contain" />
+                  <ImageWithFallback 
+                    src="https://www.cifccs.org/images/logo.png" 
+                    alt="CIF CCS" 
+                    className="w-full h-full object-contain" 
+                  />
                 </div>
                 <h3 className="font-black text-2xl text-white uppercase tracking-tighter">CCSHUB</h3>
               </div>

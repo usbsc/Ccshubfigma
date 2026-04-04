@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { Search, X, Calendar, MapPin } from "lucide-react";
 import { games } from "../data/games";
 import { teams } from "../data/teams";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 interface GameSearchMenuProps {
   onClose: () => void;
@@ -95,7 +96,7 @@ export function GameSearchMenu({ onClose }: GameSearchMenuProps) {
                         <span className="text-xs text-blue-300">{game.level}</span>
                       </div>
                       <span className="text-xs text-blue-300 flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
+                        <Calendar className="w-3" />
                         {new Date(game.date).toLocaleDateString("en-US", {
                           month: "short",
                           day: "numeric",
@@ -106,7 +107,7 @@ export function GameSearchMenu({ onClose }: GameSearchMenuProps) {
                     <div className="grid grid-cols-2 gap-4 mb-2">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 bg-white rounded flex items-center justify-center p-1 overflow-hidden border border-zinc-700">
-                          <img
+                          <ImageWithFallback
                             src={away?.image}
                             alt={away?.name}
                             className="w-full h-full object-contain"
@@ -124,7 +125,7 @@ export function GameSearchMenu({ onClose }: GameSearchMenuProps) {
 
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 bg-white rounded flex items-center justify-center p-1 overflow-hidden border border-zinc-700">
-                          <img
+                          <ImageWithFallback
                             src={home?.image}
                             alt={home?.name}
                             className="w-full h-full object-contain"

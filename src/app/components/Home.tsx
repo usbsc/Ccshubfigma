@@ -216,15 +216,19 @@ export function Home() {
             <div className="absolute -right-4 -bottom-4 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl group-hover:bg-blue-600/10 transition-colors"></div>
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-full md:w-48 h-48 rounded-2xl overflow-hidden shadow-xl ring-4 ring-zinc-800 group-hover:ring-blue-600/20 transition-all">
-                <img src="https://images.unsplash.com/photo-1568540825978-73021c06dad6?q=80&w=400&h=400&fit=crop" className="w-full h-full object-cover" alt="" />
+                <ImageWithFallback 
+                  src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=400&h=400&fit=crop" 
+                  className="w-full h-full object-cover" 
+                  alt="Michael Mitchell Jr." 
+                />
               </div>
               <div className="flex-1 text-center md:text-left">
                 <div className="inline-flex items-center gap-2 bg-blue-600/10 text-blue-400 px-3 py-1 rounded-lg text-[10px] font-black mb-4 tracking-tight">
                   <Star className="w-3 h-3 fill-blue-400" /> Player of the Week
                 </div>
-                <h3 className="text-3xl font-black text-white mb-2 tracking-tighter uppercase">Jake Morrison</h3>
+                <h3 className="text-3xl font-black text-white mb-2 tracking-tighter uppercase">Michael Mitchell Jr.</h3>
                 <p className="text-zinc-400 text-sm mb-6 leading-relaxed font-medium">
-                  The Bellarmine senior quarterback led his team to a stunning 28-24 victory, throwing for 315 yards and 3 touchdowns in the championship game.
+                  The Archbishop Riordan standout quarterback led the Crusaders to a historic start, demonstrating elite dual-threat capabilities and leadership on and off the field.
                 </p>
                 <Link to="/players" className="inline-flex items-center gap-2 text-sm font-bold text-white bg-zinc-800 hover:bg-blue-600 px-6 py-2.5 rounded-xl transition-all shadow-lg border border-white/5">
                   View Player Profile
