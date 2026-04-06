@@ -1,9 +1,19 @@
 import { Link } from "react-router";
-import { Award, TrendingUp, TrendingDown, Minus, Search, Filter, ArrowRight, Star, Target } from "lucide-react";
+import {
+  Award,
+  TrendingUp,
+  TrendingDown,
+  Minus,
+  Search,
+  Filter,
+  ArrowRight,
+  Star,
+  Target,
+} from "lucide-react";
 import { teams } from "../data/teams";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./common/ImageWithFallback";
 
 export function Rankings() {
   const [selectedDivision, setSelectedDivision] = useState<string>("all");
@@ -13,8 +23,9 @@ export function Rankings() {
 
   const filteredTeams = teams.filter((t) => {
     const matchesDivision = selectedDivision === "all" || t.division === selectedDivision;
-    const matchesSearch = t.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                         t.mascot.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch =
+      t.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      t.mascot.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesDivision && matchesSearch;
   });
 
@@ -24,13 +35,13 @@ export function Rankings() {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.05 }
-    }
+      transition: { staggerChildren: 0.05 },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, x: -10 },
-    show: { opacity: 1, x: 0 }
+    show: { opacity: 1, x: 0 },
   };
 
   return (
@@ -52,17 +63,19 @@ export function Rankings() {
               <Award className="w-3 h-3 fill-white" /> 2025-2026 Rankings
             </div>
             <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none">
-              CCS Power <br/><span className="text-blue-500 font-black">Index</span>
+              CCS Power <br />
+              <span className="text-blue-500 font-black">Index</span>
             </h1>
             <p className="text-zinc-400 text-sm font-medium max-w-md">
-              Real-time performance metrics synchronized with official CIF, MaxPreps, and CalPreps data.
+              Real-time performance metrics synchronized with official CIF, MaxPreps, and CalPreps
+              data.
             </p>
           </div>
 
           <div className="w-full md:w-auto">
             <div className="relative group">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500 group-focus-within:text-blue-500 transition-colors" />
-              <input 
+              <input
                 type="text"
                 placeholder="Search school or mascot..."
                 value={searchQuery}
@@ -118,21 +131,20 @@ export function Rankings() {
           {sortedTeams.map((team, idx) => {
             const trend = team.ranking <= 3 ? "up" : team.ranking <= 10 ? "same" : "down";
             return (
-              <div
-                key={team.id}
-                className="group"
-              >
+              <div key={team.id} className="group">
                 <Link
                   to={`/team/${team.id}`}
                   className="grid grid-cols-12 gap-4 px-6 md:px-8 py-6 hover:bg-blue-600/5 transition-all items-center"
                 >
                   {/* Rank */}
                   <div className="col-span-2 md:col-span-1">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg transition-all ${
-                      team.ranking <= 3
-                        ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30 rotate-3"
-                        : "bg-zinc-800 text-zinc-400 group-hover:bg-zinc-700"
-                    }`}>
+                    <div
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg transition-all ${
+                        team.ranking <= 3
+                          ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30 rotate-3"
+                          : "bg-zinc-800 text-zinc-400 group-hover:bg-zinc-700"
+                      }`}
+                    >
                       {team.ranking}
                     </div>
                   </div>
@@ -150,7 +162,9 @@ export function Rankings() {
                       </div>
                     </div>
                     <div className="min-w-0">
-                      <div className="font-bold text-white group-hover:text-blue-400 transition-colors truncate tracking-tight uppercase">{team.name}</div>
+                      <div className="font-bold text-white group-hover:text-blue-400 transition-colors truncate tracking-tight uppercase">
+                        {team.name}
+                      </div>
                       <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest truncate">
                         {team.mascot} • {team.league}
                       </div>
@@ -163,7 +177,10 @@ export function Rankings() {
                       {team.record.wins}-{team.record.losses}
                     </div>
                     <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-wide">
-                      {((team.record.wins / (team.record.wins + team.record.losses)) * 100).toFixed(0)}% Win Rate
+                      {((team.record.wins / (team.record.wins + team.record.losses)) * 100).toFixed(
+                        0
+                      )}
+                      % Win Rate
                     </div>
                   </div>
 
@@ -179,19 +196,25 @@ export function Rankings() {
                     {trend === "up" && (
                       <div className="flex items-center gap-1.5 text-green-500">
                         <TrendingUp className="w-4 h-4" />
-                        <span className="text-[10px] font-black uppercase hidden md:inline">Rising</span>
+                        <span className="text-[10px] font-black uppercase hidden md:inline">
+                          Rising
+                        </span>
                       </div>
                     )}
                     {trend === "down" && (
                       <div className="flex items-center gap-1.5 text-red-500">
                         <TrendingDown className="w-4 h-4" />
-                        <span className="text-[10px] font-black uppercase hidden md:inline">Falling</span>
+                        <span className="text-[10px] font-black uppercase hidden md:inline">
+                          Falling
+                        </span>
                       </div>
                     )}
                     {trend === "same" && (
                       <div className="flex items-center gap-1.5 text-zinc-600">
                         <Minus className="w-4 h-4" />
-                        <span className="text-[10px] font-black uppercase hidden md:inline">Steady</span>
+                        <span className="text-[10px] font-black uppercase hidden md:inline">
+                          Steady
+                        </span>
                       </div>
                     )}
                     <ArrowRight className="w-4 h-4 text-zinc-800 group-hover:text-blue-500 group-hover:translate-x-1 transition-all mt-1" />
@@ -204,8 +227,12 @@ export function Rankings() {
           {sortedTeams.length === 0 && (
             <div className="p-20 text-center">
               <Search className="w-12 h-12 text-zinc-800 mx-auto mb-4" />
-              <h3 className="text-xl font-black text-white uppercase tracking-widest">No matching teams</h3>
-              <p className="text-zinc-500 text-sm mt-2">Try adjusting your search or division filters.</p>
+              <h3 className="text-xl font-black text-white uppercase tracking-widest">
+                No matching teams
+              </h3>
+              <p className="text-zinc-500 text-sm mt-2">
+                Try adjusting your search or division filters.
+              </p>
             </div>
           )}
         </div>
@@ -215,9 +242,21 @@ export function Rankings() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
           { label: "Total Schools", value: teams.length, icon: Award },
-          { label: "Elite (DI)", value: teams.filter((t) => t.division === "Division I").length, icon: Star },
-          { label: "Competitive (DII)", value: teams.filter((t) => t.division === "Division II").length, icon: TrendingUp },
-          { label: "Emerging (DIII)", value: teams.filter((t) => t.division === "Division III").length, icon: Target },
+          {
+            label: "Elite (DI)",
+            value: teams.filter((t) => t.division === "Division I").length,
+            icon: Star,
+          },
+          {
+            label: "Competitive (DII)",
+            value: teams.filter((t) => t.division === "Division II").length,
+            icon: TrendingUp,
+          },
+          {
+            label: "Emerging (DIII)",
+            value: teams.filter((t) => t.division === "Division III").length,
+            icon: Target,
+          },
         ].map((stat, idx) => (
           <motion.div
             key={stat.label}
@@ -226,7 +265,9 @@ export function Rankings() {
             transition={{ delay: 0.4 + idx * 0.05 }}
             className="bg-zinc-900/80 backdrop-blur-sm rounded-3xl p-6 border border-zinc-800 shadow-lg group hover:border-blue-500/30 transition-colors"
           >
-            <div className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-3 group-hover:text-blue-400 transition-colors">{stat.label}</div>
+            <div className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-3 group-hover:text-blue-400 transition-colors">
+              {stat.label}
+            </div>
             <div className="text-4xl font-black text-white tracking-tighter">{stat.value}</div>
           </motion.div>
         ))}

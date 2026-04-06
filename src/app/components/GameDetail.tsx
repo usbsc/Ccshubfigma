@@ -3,7 +3,7 @@ import { MapPin, Users, Clock, TrendingUp, Award, Play } from "lucide-react";
 import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./common/ImageWithFallback";
 
 export function GameDetail() {
   const { gameId } = useParams();
@@ -41,14 +41,18 @@ export function GameDetail() {
             ></iframe>
           </div>
           <div className="absolute top-6 left-6 flex items-center gap-3">
-             <div className="bg-red-600 px-4 py-1.5 rounded-full flex items-center gap-2 shadow-xl border border-white/10">
-                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                <span className="text-xs font-black tracking-widest text-white uppercase">Live Broadcast</span>
-             </div>
-             <div className="bg-zinc-900/80 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 border border-white/5">
-                <Users className="w-3.5 h-3.5 text-zinc-400" />
-                <span className="text-[10px] font-bold text-zinc-100 uppercase tracking-tighter">12.5k watching</span>
-             </div>
+            <div className="bg-red-600 px-4 py-1.5 rounded-full flex items-center gap-2 shadow-xl border border-white/10">
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              <span className="text-xs font-black tracking-widest text-white uppercase">
+                Live Broadcast
+              </span>
+            </div>
+            <div className="bg-zinc-900/80 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 border border-white/5">
+              <Users className="w-3.5 h-3.5 text-zinc-400" />
+              <span className="text-[10px] font-bold text-zinc-100 uppercase tracking-tighter">
+                12.5k watching
+              </span>
+            </div>
           </div>
         </motion.div>
       )}
@@ -94,7 +98,8 @@ export function GameDetail() {
                     month: "long",
                     day: "numeric",
                     year: "numeric",
-                  })} • {game.time}
+                  })}{" "}
+                  • {game.time}
                 </div>
               </div>
               <div className="text-sm font-medium text-blue-300">2025-26 Season • {game.level}</div>
@@ -142,10 +147,14 @@ export function GameDetail() {
               </div>
             )}
             {game.status === "final" && (
-              <div className="text-lg font-black text-zinc-500 uppercase tracking-widest italic">Final</div>
+              <div className="text-lg font-black text-zinc-500 uppercase tracking-widest italic">
+                Final
+              </div>
             )}
             {game.status === "upcoming" && (
-              <div className="text-lg font-black text-blue-500 uppercase tracking-widest">Upcoming</div>
+              <div className="text-lg font-black text-blue-500 uppercase tracking-widest">
+                Upcoming
+              </div>
             )}
           </div>
 
@@ -219,10 +228,7 @@ export function GameDetail() {
               <span className="text-zinc-400">Common Plays:</span>
               <div className="flex flex-wrap gap-2 mt-2">
                 {away?.commonPlays.map((play, idx) => (
-                  <span
-                    key={idx}
-                    className="bg-zinc-800 px-3 py-1 rounded-full text-xs"
-                  >
+                  <span key={idx} className="bg-zinc-800 px-3 py-1 rounded-full text-xs">
                     {play}
                   </span>
                 ))}
@@ -266,10 +272,7 @@ export function GameDetail() {
               <span className="text-zinc-400">Common Plays:</span>
               <div className="flex flex-wrap gap-2 mt-2">
                 {home?.commonPlays.map((play, idx) => (
-                  <span
-                    key={idx}
-                    className="bg-zinc-800 px-3 py-1 rounded-full text-xs"
-                  >
+                  <span key={idx} className="bg-zinc-800 px-3 py-1 rounded-full text-xs">
                     {play}
                   </span>
                 ))}

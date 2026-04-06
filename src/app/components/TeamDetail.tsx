@@ -1,10 +1,21 @@
 import { useParams, Link } from "react-router";
-import { Users, MapPin, Target, Shield, Zap, Calendar, Award } from "lucide-react";
+import {
+  Users,
+  MapPin,
+  Target,
+  Shield,
+  Zap,
+  Calendar,
+  Award,
+  Twitter,
+  Instagram,
+  ExternalLink,
+} from "lucide-react";
 import { teams } from "../data/teams";
 import { games } from "../data/games";
 import { players } from "../data/players";
 import { motion } from "motion/react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./common/ImageWithFallback";
 
 export function TeamDetail() {
   const { teamId } = useParams();
@@ -21,9 +32,7 @@ export function TeamDetail() {
     );
   }
 
-  const teamGames = games.filter(
-    (g) => g.homeTeam === team.id || g.awayTeam === team.id
-  );
+  const teamGames = games.filter((g) => g.homeTeam === team.id || g.awayTeam === team.id);
   const teamPlayers = players.filter((p) => p.team === team.id);
 
   const upcomingGames = teamGames.filter((g) => g.status === "upcoming");
@@ -53,15 +62,52 @@ export function TeamDetail() {
           </div>
           <div className="absolute bottom-6 left-6 right-6 z-20">
             <h1 className="text-4xl font-black mb-2 uppercase tracking-tighter">{team.name}</h1>
-            <div className="flex flex-wrap items-center gap-4 text-sm font-bold">
-              <span className="bg-blue-600 px-3 py-1 rounded-full uppercase tracking-widest">
-                {team.mascot}
-              </span>
-              <span className="text-zinc-300">
-                {team.record.wins}-{team.record.losses}
-              </span>
-              <span className="text-zinc-300 uppercase">{team.division}</span>
-              <span className="text-zinc-300 uppercase">{team.league}</span>
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex flex-wrap items-center gap-4 text-sm font-bold">
+                <span className="bg-blue-600 px-3 py-1 rounded-full uppercase tracking-widest">
+                  {team.mascot}
+                </span>
+                <span className="text-zinc-300">
+                  {team.record.wins}-{team.record.losses}
+                </span>
+                <span className="text-zinc-300 uppercase">{team.division}</span>
+                <span className="text-zinc-300 uppercase">{team.league}</span>
+              </div>
+
+              {team.socials && (
+                <div className="flex items-center gap-4">
+                  {team.socials.twitter && (
+                    <a
+                      href={`https://twitter.com/${team.socials.twitter}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-zinc-800/80 hover:bg-blue-400/20 rounded-full transition-all group"
+                    >
+                      <Twitter className="w-5 h-5 text-zinc-300 group-hover:text-blue-400" />
+                    </a>
+                  )}
+                  {team.socials.instagram && (
+                    <a
+                      href={`https://instagram.com/${team.socials.instagram}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-zinc-800/80 hover:bg-pink-500/20 rounded-full transition-all group"
+                    >
+                      <Instagram className="w-5 h-5 text-zinc-300 group-hover:text-pink-500" />
+                    </a>
+                  )}
+                  {team.socials.maxpreps && (
+                    <a
+                      href={team.socials.maxpreps}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-zinc-800/80 hover:bg-green-500/20 rounded-full transition-all group"
+                    >
+                      <ExternalLink className="w-5 h-5 text-zinc-300 group-hover:text-green-500" />
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -269,8 +315,7 @@ export function TeamDetail() {
             </h2>
             <div className="space-y-3">
               {upcomingGames.map((game) => {
-                const opponent =
-                  game.homeTeam === team.id ? game.awayTeam : game.homeTeam;
+                const opponent = game.homeTeam === team.id ? game.awayTeam : game.homeTeam;
                 const isHome = game.homeTeam === team.id;
                 const opponentTeam = teams.find((t) => t.id === opponent);
                 return (
@@ -306,8 +351,7 @@ export function TeamDetail() {
           </h2>
           <div className="space-y-3">
             {recentGames.map((game) => {
-              const opponent =
-                game.homeTeam === team.id ? game.awayTeam : game.homeTeam;
+              const opponent = game.homeTeam === team.id ? game.awayTeam : game.homeTeam;
               const isHome = game.homeTeam === team.id;
               const opponentTeam = teams.find((t) => t.id === opponent);
               const teamScore = isHome ? game.homeScore : game.awayScore;
@@ -324,9 +368,7 @@ export function TeamDetail() {
                       {new Date(game.date).toLocaleDateString()}
                     </span>
                     <span
-                      className={`text-xs font-bold ${
-                        won ? "text-green-400" : "text-red-400"
-                      }`}
+                      className={`text-xs font-bold ${won ? "text-green-400" : "text-red-400"}`}
                     >
                       {won ? "W" : "L"}
                     </span>

@@ -4,7 +4,7 @@ import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
 import { useState } from "react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./common/ImageWithFallback";
 
 export function Scores() {
   const [selectedLevel, setSelectedLevel] = useState<string>("all");
@@ -12,9 +12,7 @@ export function Scores() {
   const levels = ["all", "Varsity", "JV", "Freshman"];
 
   const filteredGames =
-    selectedLevel === "all"
-      ? games
-      : games.filter((g) => g.level === selectedLevel);
+    selectedLevel === "all" ? games : games.filter((g) => g.level === selectedLevel);
 
   const finalGames = filteredGames
     .filter((g) => g.status === "final")
@@ -23,18 +21,21 @@ export function Scores() {
   const getTeam = (id: string) => teams.find((t) => t.id === id);
 
   // Group games by date
-  const gamesByDate = finalGames.reduce((acc, game) => {
-    const date = new Date(game.date).toLocaleDateString("en-US", {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-    });
-    if (!acc[date]) {
-      acc[date] = [];
-    }
-    acc[date].push(game);
-    return acc;
-  }, {} as Record<string, typeof finalGames>);
+  const gamesByDate = finalGames.reduce(
+    (acc, game) => {
+      const date = new Date(game.date).toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+      });
+      if (!acc[date]) {
+        acc[date] = [];
+      }
+      acc[date].push(game);
+      return acc;
+    },
+    {} as Record<string, typeof finalGames>
+  );
 
   return (
     <div className="max-w-6xl mx-auto space-y-12 pb-20">
@@ -54,10 +55,12 @@ export function Scores() {
             <Award className="w-3 h-3 fill-white" /> 2025-26 Season Archive
           </div>
           <h1 className="text-5xl md:text-6xl font-black text-white tracking-tight leading-[0.85] mb-4">
-            Game <br/><span className="text-purple-500 font-black">Scores</span>
+            Game <br />
+            <span className="text-purple-500 font-black">Scores</span>
           </h1>
           <p className="text-zinc-400 text-sm font-medium max-w-sm">
-            Complete results archive including box scores, attendance, and key performance highlights.
+            Complete results archive including box scores, attendance, and key performance
+            highlights.
           </p>
         </div>
       </div>
@@ -90,7 +93,9 @@ export function Scores() {
         {Object.entries(gamesByDate).map(([date, dateGames]) => (
           <div key={date} className="space-y-6">
             <div className="flex items-center gap-4">
-              <h3 className="text-sm font-black text-purple-500 uppercase tracking-[0.3em] whitespace-nowrap">{date}</h3>
+              <h3 className="text-sm font-black text-purple-500 uppercase tracking-[0.3em] whitespace-nowrap">
+                {date}
+              </h3>
               <div className="h-[1px] w-full bg-zinc-800/50"></div>
             </div>
 
@@ -106,7 +111,9 @@ export function Scores() {
                     className="group bg-zinc-900/50 hover:bg-zinc-900 border border-zinc-800 rounded-[2rem] p-8 transition-all"
                   >
                     <div className="flex items-center justify-between mb-8 pb-4 border-b border-zinc-800/50">
-                      <span className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">{game.level} • FINAL</span>
+                      <span className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                        {game.level} • FINAL
+                      </span>
                       <div className="flex items-center gap-4">
                         <span className="flex items-center gap-1.5 text-[10px] font-bold text-zinc-600 uppercase">
                           <MapPin className="w-3 h-3 text-red-500" /> {game.stadium}
@@ -121,34 +128,64 @@ export function Scores() {
 
                     <div className="grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 md:gap-12">
                       {/* Away Team */}
-                      <div className={`flex items-center gap-6 ${awayWon ? 'opacity-100' : 'opacity-40'}`}>
+                      <div
+                        className={`flex items-center gap-6 ${awayWon ? "opacity-100" : "opacity-40"}`}
+                      >
                         <div className="relative">
                           <div className="w-16 h-16 rounded-2xl overflow-hidden bg-zinc-800 p-2 border-2 border-zinc-800">
-                            <ImageWithFallback src={away?.image} className="w-full h-full object-contain" alt="" />
+                            <ImageWithFallback
+                              src={away?.image}
+                              className="w-full h-full object-contain"
+                              alt=""
+                            />
                           </div>
-                          {awayWon && <Award className="absolute -top-2 -left-2 w-6 h-6 text-yellow-500 bg-zinc-900 rounded-full p-1 border border-zinc-800" />}
+                          {awayWon && (
+                            <Award className="absolute -top-2 -left-2 w-6 h-6 text-yellow-500 bg-zinc-900 rounded-full p-1 border border-zinc-800" />
+                          )}
                         </div>
                         <div className="flex-1">
-                          <div className="font-black text-xl text-white uppercase tracking-tight leading-none mb-1">{away?.name || "Away"}</div>
-                          <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{away?.mascot || "Mascot"}</div>
+                          <div className="font-black text-xl text-white uppercase tracking-tight leading-none mb-1">
+                            {away?.name || "Away"}
+                          </div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                            {away?.mascot || "Mascot"}
+                          </div>
                         </div>
-                        <div className="text-4xl font-black text-white tabular-nums">{game.awayScore}</div>
+                        <div className="text-4xl font-black text-white tabular-nums">
+                          {game.awayScore}
+                        </div>
                       </div>
 
-                      <div className="hidden md:block text-[10px] font-black text-zinc-800 uppercase italic">FINAL</div>
+                      <div className="hidden md:block text-[10px] font-black text-zinc-800 uppercase italic">
+                        FINAL
+                      </div>
 
                       {/* Home Team */}
-                      <div className={`flex items-center gap-6 flex-row-reverse md:flex-row ${!awayWon ? 'opacity-100' : 'opacity-40'}`}>
-                        <div className="text-4xl font-black text-white tabular-nums">{game.homeScore}</div>
+                      <div
+                        className={`flex items-center gap-6 flex-row-reverse md:flex-row ${!awayWon ? "opacity-100" : "opacity-40"}`}
+                      >
+                        <div className="text-4xl font-black text-white tabular-nums">
+                          {game.homeScore}
+                        </div>
                         <div className="flex-1 text-right md:text-left">
-                          <div className="font-black text-xl text-white uppercase tracking-tight leading-none mb-1">{home?.name || "Home"}</div>
-                          <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{home?.mascot || "Mascot"}</div>
+                          <div className="font-black text-xl text-white uppercase tracking-tight leading-none mb-1">
+                            {home?.name || "Home"}
+                          </div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                            {home?.mascot || "Mascot"}
+                          </div>
                         </div>
                         <div className="relative">
                           <div className="w-16 h-16 rounded-2xl overflow-hidden bg-zinc-800 p-2 border-2 border-zinc-800">
-                            <ImageWithFallback src={home?.image} className="w-full h-full object-contain" alt="" />
+                            <ImageWithFallback
+                              src={home?.image}
+                              className="w-full h-full object-contain"
+                              alt=""
+                            />
                           </div>
-                          {!awayWon && <Award className="absolute -top-2 -right-2 md:-left-2 w-6 h-6 text-yellow-500 bg-zinc-900 rounded-full p-1 border border-zinc-800" />}
+                          {!awayWon && (
+                            <Award className="absolute -top-2 -right-2 md:-left-2 w-6 h-6 text-yellow-500 bg-zinc-900 rounded-full p-1 border border-zinc-800" />
+                          )}
                         </div>
                       </div>
                     </div>
@@ -156,7 +193,10 @@ export function Scores() {
                     {game.highlights && game.highlights.length > 0 && (
                       <div className="mt-8 pt-6 border-t border-zinc-800/50 flex flex-wrap gap-2">
                         {game.highlights.slice(0, 3).map((h, i) => (
-                          <span key={i} className="px-3 py-1 bg-zinc-950 text-zinc-500 rounded-lg text-[9px] font-black uppercase tracking-widest border border-zinc-800">
+                          <span
+                            key={i}
+                            className="px-3 py-1 bg-zinc-950 text-zinc-500 rounded-lg text-[9px] font-black uppercase tracking-widest border border-zinc-800"
+                          >
                             {h}
                           </span>
                         ))}

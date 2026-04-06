@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { Search, X, Calendar, MapPin } from "lucide-react";
 import { games } from "../data/games";
 import { teams } from "../data/teams";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./common/ImageWithFallback";
 
 interface GameSearchMenuProps {
   onClose: () => void;
@@ -49,10 +49,7 @@ export function GameSearchMenu({ onClose }: GameSearchMenuProps) {
               autoFocus
             />
           </div>
-          <button
-            onClick={onClose}
-            className="p-2 hover:bg-blue-700 rounded-lg transition-colors"
-          >
+          <button onClick={onClose} className="p-2 hover:bg-blue-700 rounded-lg transition-colors">
             <X className="w-6 h-6" />
           </button>
         </div>
@@ -146,9 +143,7 @@ export function GameSearchMenu({ onClose }: GameSearchMenuProps) {
                       <MapPin className="w-3 h-3" />
                       {game.stadium}
                       {game.time && ` • ${game.time}`}
-                      <span className="ml-auto text-blue-400">
-                        {game.dataSource}
-                      </span>
+                      <span className="ml-auto text-blue-400">{game.dataSource}</span>
                     </div>
                   </Link>
                 );

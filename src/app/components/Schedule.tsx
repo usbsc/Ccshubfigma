@@ -4,7 +4,7 @@ import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
 import { useState } from "react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./common/ImageWithFallback";
 
 export function Schedule() {
   const [selectedLevel, setSelectedLevel] = useState<string>("all");
@@ -12,9 +12,7 @@ export function Schedule() {
   const levels = ["all", "Varsity", "JV", "Freshman"];
 
   const filteredGames =
-    selectedLevel === "all"
-      ? games
-      : games.filter((g) => g.level === selectedLevel);
+    selectedLevel === "all" ? games : games.filter((g) => g.level === selectedLevel);
 
   const upcomingGames = filteredGames
     .filter((g) => g.status === "upcoming")
@@ -25,18 +23,21 @@ export function Schedule() {
   const getTeam = (id: string) => teams.find((t) => t.id === id);
 
   // Group games by date
-  const gamesByDate = upcomingGames.reduce((acc, game) => {
-    const date = new Date(game.date).toLocaleDateString("en-US", {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-    });
-    if (!acc[date]) {
-      acc[date] = [];
-    }
-    acc[date].push(game);
-    return acc;
-  }, {} as Record<string, typeof upcomingGames>);
+  const gamesByDate = upcomingGames.reduce(
+    (acc, game) => {
+      const date = new Date(game.date).toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+      });
+      if (!acc[date]) {
+        acc[date] = [];
+      }
+      acc[date].push(game);
+      return acc;
+    },
+    {} as Record<string, typeof upcomingGames>
+  );
 
   return (
     <div className="max-w-6xl mx-auto space-y-12 pb-20">
@@ -56,7 +57,8 @@ export function Schedule() {
             <Calendar className="w-3 h-3 fill-white" /> 2025-26 Season Schedule
           </div>
           <h1 className="text-5xl md:text-6xl font-black text-white tracking-tight leading-[0.85] mb-4">
-            Game <br/><span className="text-green-500 font-black">Plan</span>
+            Game <br />
+            <span className="text-green-500 font-black">Plan</span>
           </h1>
           <p className="text-zinc-400 text-sm font-medium max-w-sm">
             Complete broadcast schedule and stadium locations for all CCS competition levels.
@@ -92,7 +94,9 @@ export function Schedule() {
         <section>
           <div className="flex items-center gap-3 mb-8">
             <span className="w-2 h-8 bg-red-600 rounded-full"></span>
-            <h2 className="text-3xl font-black tracking-tighter text-white uppercase">Live Broadcasts</h2>
+            <h2 className="text-3xl font-black tracking-tighter text-white uppercase">
+              Live Broadcasts
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {liveGames.map((game) => {
@@ -117,21 +121,39 @@ export function Schedule() {
                   <div className="grid grid-cols-[1fr,auto,1fr] items-center gap-4 mb-8">
                     <div className="flex flex-col items-end gap-3 text-right">
                       <div className="w-16 h-16 bg-zinc-800 rounded-2xl flex items-center justify-center p-2 border-2 border-zinc-700 overflow-hidden">
-                        <ImageWithFallback src={away?.image} className="w-full h-full object-contain" alt="" />
+                        <ImageWithFallback
+                          src={away?.image}
+                          className="w-full h-full object-contain"
+                          alt=""
+                        />
                       </div>
                       <div>
-                        <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">{away?.name}</div>
-                        <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{away?.mascot}</div>
+                        <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">
+                          {away?.name}
+                        </div>
+                        <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                          {away?.mascot}
+                        </div>
                       </div>
                     </div>
-                    <div className="px-4 py-2 bg-zinc-950 rounded-xl font-black text-xl text-red-500 border border-zinc-800 tracking-tighter">VS</div>
+                    <div className="px-4 py-2 bg-zinc-950 rounded-xl font-black text-xl text-red-500 border border-zinc-800 tracking-tighter">
+                      VS
+                    </div>
                     <div className="flex flex-col items-start gap-3 text-left">
                       <div className="w-16 h-16 bg-zinc-800 rounded-2xl flex items-center justify-center p-2 border-2 border-zinc-700 overflow-hidden">
-                        <ImageWithFallback src={home?.image} className="w-full h-full object-contain" alt="" />
+                        <ImageWithFallback
+                          src={home?.image}
+                          className="w-full h-full object-contain"
+                          alt=""
+                        />
                       </div>
                       <div>
-                        <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">{home?.name}</div>
-                        <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{home?.mascot}</div>
+                        <div className="font-black text-2xl text-white uppercase tracking-tight leading-none mb-1">
+                          {home?.name}
+                        </div>
+                        <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                          {home?.mascot}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -154,7 +176,9 @@ export function Schedule() {
         {Object.entries(gamesByDate).map(([date, dateGames]) => (
           <div key={date} className="space-y-6">
             <div className="flex items-center gap-4">
-              <h3 className="text-sm font-black text-blue-500 uppercase tracking-widest whitespace-nowrap">{date}</h3>
+              <h3 className="text-sm font-black text-blue-500 uppercase tracking-widest whitespace-nowrap">
+                {date}
+              </h3>
               <div className="h-[1px] w-full bg-zinc-800/50"></div>
             </div>
 
@@ -182,27 +206,44 @@ export function Schedule() {
                     <div className="flex-1 flex items-center gap-6">
                       <div className="flex items-center gap-4 flex-1">
                         <div className="w-10 h-10 rounded-lg overflow-hidden border border-zinc-800">
-                          <ImageWithFallback src={away?.image} className="w-full h-full object-contain" alt="" />
+                          <ImageWithFallback
+                            src={away?.image}
+                            className="w-full h-full object-contain"
+                            alt=""
+                          />
                         </div>
                         <div className="min-w-0">
-                          <div className="font-black text-white uppercase tracking-tight truncate">{away?.name || "Away"}</div>
-                          <div className="text-[10px] font-bold text-zinc-500 uppercase">{away?.record ? `${away.record.wins}-${away.record.losses}` : "0-0"}</div>
+                          <div className="font-black text-white uppercase tracking-tight truncate">
+                            {away?.name || "Away"}
+                          </div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase">
+                            {away?.record ? `${away.record.wins}-${away.record.losses}` : "0-0"}
+                          </div>
                         </div>
                       </div>
 
-                      <div className="text-[10px] font-black text-zinc-700 uppercase italic">at</div>
+                      <div className="text-[10px] font-black text-zinc-700 uppercase italic">
+                        at
+                      </div>
 
                       <div className="flex items-center gap-4 flex-1 justify-end text-right">
                         <div className="min-w-0">
-                          <div className="font-black text-white uppercase tracking-tight truncate">{home?.name || "Home"}</div>
-                          <div className="text-[10px] font-bold text-zinc-500 uppercase">{home?.record ? `${home.record.wins}-${home.record.losses}` : "0-0"}</div>
+                          <div className="font-black text-white uppercase tracking-tight truncate">
+                            {home?.name || "Home"}
+                          </div>
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase">
+                            {home?.record ? `${home.record.wins}-${home.record.losses}` : "0-0"}
+                          </div>
                         </div>
                         <div className="w-10 h-10 rounded-lg overflow-hidden border border-zinc-800">
-                          <ImageWithFallback src={home?.image} className="w-full h-full object-contain" alt="" />
+                          <ImageWithFallback
+                            src={home?.image}
+                            className="w-full h-full object-contain"
+                            alt=""
+                          />
                         </div>
                       </div>
                     </div>
-
 
                     {/* Stadium */}
                     <div className="md:w-48 flex items-center justify-between md:justify-end gap-4 shrink-0">

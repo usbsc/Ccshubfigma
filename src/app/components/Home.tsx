@@ -1,16 +1,28 @@
 import { Link } from "react-router";
-import { Calendar, MapPin, Users, TrendingUp, Clock, Zap, Star, ChevronRight, Award } from "lucide-react";
+import {
+  Calendar,
+  MapPin,
+  Users,
+  TrendingUp,
+  Clock,
+  Zap,
+  Star,
+  ChevronRight,
+  Award,
+} from "lucide-react";
 import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { useAutoUpdate } from "../hooks/useAutoUpdate";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./common/ImageWithFallback";
+import { UPDATE_INTERVALS, DISPLAY_LIMITS } from "../constants";
+import { homeTeamStorage } from "../services/storage";
 
 export function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const homeTeam = localStorage.getItem("homeTeam");
-  const lastUpdate = useAutoUpdate(60000); 
+  const homeTeam = homeTeamStorage.get();
+  useAutoUpdate(UPDATE_INTERVALS.SCORES);
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
@@ -18,31 +30,37 @@ export function Home() {
   }, []);
 
   const liveGames = games.filter((g) => g.status === "live");
-  const upcomingGames = games.filter((g) => g.status === "upcoming").slice(0, 4);
-  const recentGames = games.filter((g) => g.status === "final").slice(0, 3);
+  const upcomingGames = games
+    .filter((g) => g.status === "upcoming")
+    .slice(0, DISPLAY_LIMITS.UPCOMING_GAMES);
+  const recentGames = games
+    .filter((g) => g.status === "final")
+    .slice(0, DISPLAY_LIMITS.RECENT_GAMES);
 
   const homeTeamGames = homeTeam
     ? games.filter((g) => g.homeTeam === homeTeam || g.awayTeam === homeTeam)
     : [];
 
   const getTeam = (id: string) => teams.find((t) => t.id === id);
-  const topRankedTeams = [...teams].sort((a, b) => a.ranking - b.ranking).slice(0, 5);
+  const topRankedTeams = [...teams]
+    .sort((a, b) => a.ranking - b.ranking)
+    .slice(0, DISPLAY_LIMITS.TOP_RANKED_TEAMS);
 
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
+      transition: { staggerChildren: 0.1 },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
+    show: { opacity: 1, y: 0 },
   };
 
   return (
-    <motion.div 
+    <motion.div
       variants={containerVariants}
       initial="hidden"
       animate="show"
@@ -61,14 +79,17 @@ export function Home() {
         <div className="absolute top-6 left-6 right-6 flex justify-between items-start">
           <div className="bg-blue-600/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg border border-white/10">
             <Zap className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-            <span className="text-[10px] font-bold tracking-widest text-white uppercase">Season 2025-26 Countdown</span>
+            <span className="text-[10px] font-bold tracking-widest text-white uppercase">
+              Season 2025-26 Countdown
+            </span>
           </div>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 p-10 md:p-16">
           <motion.div variants={itemVariants} className="max-w-2xl">
             <h2 className="text-5xl md:text-7xl font-black mb-4 text-white leading-[0.85] tracking-tighter uppercase">
-              CCS <br/><span className="text-blue-500 italic font-black">HUB</span>
+              CCS <br />
+              <span className="text-blue-500 italic font-black">HUB</span>
             </h2>
             <div className="flex flex-wrap items-center gap-4 text-zinc-300 font-medium">
               <span className="flex items-center gap-2">
@@ -78,7 +99,7 @@ export function Home() {
               <span className="w-1.5 h-1.5 bg-zinc-700 rounded-full"></span>
               <span className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-blue-500" />
-                {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                {currentTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
               </span>
               <span className="bg-zinc-800/80 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-blue-400 border border-zinc-700">
                 Off-Season
@@ -115,15 +136,23 @@ export function Home() {
                         className="bg-zinc-950/40 hover:bg-zinc-950/60 backdrop-blur-md rounded-2xl p-5 transition-all border border-white/10 group/card"
                       >
                         <div className="flex justify-between items-center mb-3">
-                          <span className="text-[10px] font-bold text-blue-200 tracking-wide">{game.status} • {game.level}</span>
+                          <span className="text-[10px] font-bold text-blue-200 tracking-wide">
+                            {game.status} • {game.level}
+                          </span>
                           <ChevronRight className="w-4 h-4 text-white/40 group-hover/card:translate-x-1 transition-transform" />
                         </div>
                         <div className="flex items-center gap-4">
                           <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-2 overflow-hidden border-2 border-white/20">
-                            <ImageWithFallback src={opponent?.image} className="w-full h-full object-contain" alt="" />
+                            <ImageWithFallback
+                              src={opponent?.image}
+                              className="w-full h-full object-contain"
+                              alt=""
+                            />
                           </div>
                           <div>
-                            <p className="text-xs text-zinc-300 font-bold uppercase tracking-tight">vs {opponent?.name}</p>
+                            <p className="text-xs text-zinc-300 font-bold uppercase tracking-tight">
+                              vs {opponent?.name}
+                            </p>
                             <p className="text-2xl font-black text-white">
                               {game.homeScore} - {game.awayScore}
                             </p>
@@ -151,8 +180,12 @@ export function Home() {
                 <span className="w-2 h-8 bg-blue-600 rounded-full"></span>
                 {liveGames.length > 0 ? "Live Broadcasts" : "Upcoming Matches"}
               </h2>
-              <Link to="/schedule" className="text-sm font-bold text-blue-500 hover:text-blue-400 flex items-center gap-1 group">
-                Full Schedule <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Link
+                to="/schedule"
+                className="text-sm font-bold text-blue-500 hover:text-blue-400 flex items-center gap-1 group"
+              >
+                Full Schedule{" "}
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
 
@@ -183,26 +216,42 @@ export function Home() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
                             <div className="w-8 h-8 rounded-lg overflow-hidden bg-zinc-800 p-1">
-                              <ImageWithFallback src={away?.image} className="w-full h-full object-contain" alt="" />
+                              <ImageWithFallback
+                                src={away?.image}
+                                className="w-full h-full object-contain"
+                                alt=""
+                              />
                             </div>
-                            <span className="font-bold text-lg truncate pr-4 text-zinc-100 uppercase tracking-tight">{away?.name || "Away Team"}</span>
+                            <span className="font-bold text-lg truncate pr-4 text-zinc-100 uppercase tracking-tight">
+                              {away?.name || "Away Team"}
+                            </span>
                           </div>
                           <span className="text-2xl font-black text-white">{game.awayScore}</span>
                         </div>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
                             <div className="w-8 h-8 rounded-lg overflow-hidden bg-zinc-800 p-1">
-                              <ImageWithFallback src={home?.image} className="w-full h-full object-contain" alt="" />
+                              <ImageWithFallback
+                                src={home?.image}
+                                className="w-full h-full object-contain"
+                                alt=""
+                              />
                             </div>
-                            <span className="font-bold text-lg truncate pr-4 text-zinc-100 uppercase tracking-tight">{home?.name || "Home Team"}</span>
+                            <span className="font-bold text-lg truncate pr-4 text-zinc-100 uppercase tracking-tight">
+                              {home?.name || "Home Team"}
+                            </span>
                           </div>
                           <span className="text-2xl font-black text-white">{game.homeScore}</span>
                         </div>
                       </div>
 
                       <div className="mt-6 pt-6 border-t border-zinc-800 flex items-center justify-between text-[10px] font-bold text-zinc-500 tracking-wide">
-                        <span className="flex items-center gap-1.5 uppercase"><MapPin className="w-3 h-3" /> {game.stadium}</span>
-                        <span className="flex items-center gap-1.5 uppercase"><Users className="w-3 h-3" /> {game.attendance?.toLocaleString()}</span>
+                        <span className="flex items-center gap-1.5 uppercase">
+                          <MapPin className="w-3 h-3" /> {game.stadium}
+                        </span>
+                        <span className="flex items-center gap-1.5 uppercase">
+                          <Users className="w-3 h-3" /> {game.attendance?.toLocaleString()}
+                        </span>
                       </div>
                     </div>
                   </Link>
@@ -216,21 +265,27 @@ export function Home() {
             <div className="absolute -right-4 -bottom-4 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl group-hover:bg-blue-600/10 transition-colors"></div>
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-full md:w-48 h-48 rounded-2xl overflow-hidden shadow-xl ring-4 ring-zinc-800 group-hover:ring-blue-600/20 transition-all">
-                <ImageWithFallback 
-                  src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=400&h=400&fit=crop" 
-                  className="w-full h-full object-cover" 
-                  alt="Michael Mitchell Jr." 
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=400&h=400&fit=crop"
+                  className="w-full h-full object-cover"
+                  alt="Michael Mitchell Jr."
                 />
               </div>
               <div className="flex-1 text-center md:text-left">
                 <div className="inline-flex items-center gap-2 bg-blue-600/10 text-blue-400 px-3 py-1 rounded-lg text-[10px] font-black mb-4 tracking-tight">
                   <Star className="w-3 h-3 fill-blue-400" /> Player of the Week
                 </div>
-                <h3 className="text-3xl font-black text-white mb-2 tracking-tighter uppercase">Michael Mitchell Jr.</h3>
+                <h3 className="text-3xl font-black text-white mb-2 tracking-tighter uppercase">
+                  Michael Mitchell Jr.
+                </h3>
                 <p className="text-zinc-400 text-sm mb-6 leading-relaxed font-medium">
-                  The Archbishop Riordan standout quarterback led the Crusaders to a historic start, demonstrating elite dual-threat capabilities and leadership on and off the field.
+                  The Archbishop Riordan standout quarterback led the Crusaders to a historic start,
+                  demonstrating elite dual-threat capabilities and leadership on and off the field.
                 </p>
-                <Link to="/players" className="inline-flex items-center gap-2 text-sm font-bold text-white bg-zinc-800 hover:bg-blue-600 px-6 py-2.5 rounded-xl transition-all shadow-lg border border-white/5">
+                <Link
+                  to="/players"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-white bg-zinc-800 hover:bg-blue-600 px-6 py-2.5 rounded-xl transition-all shadow-lg border border-white/5"
+                >
                   View Player Profile
                 </Link>
               </div>
@@ -258,10 +313,16 @@ export function Home() {
                   </div>
                   <div className="flex-1 min-w-0 flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg overflow-hidden bg-zinc-800 p-1 flex-shrink-0">
-                      <ImageWithFallback src={team.image} className="w-full h-full object-contain" alt="" />
+                      <ImageWithFallback
+                        src={team.image}
+                        className="w-full h-full object-contain"
+                        alt=""
+                      />
                     </div>
                     <div>
-                      <div className="font-bold text-white group-hover:translate-x-1 transition-transform uppercase tracking-tight truncate">{team.name}</div>
+                      <div className="font-bold text-white group-hover:translate-x-1 transition-transform uppercase tracking-tight truncate">
+                        {team.name}
+                      </div>
                       <div className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">
                         {team.record.wins}-{team.record.losses} • {team.division}
                       </div>
@@ -284,11 +345,15 @@ export function Home() {
             <h3 className="text-white font-black text-lg mb-4 tracking-tight">SEASON RECAP</h3>
             <div className="space-y-4">
               <div className="bg-white/10 rounded-2xl p-4">
-                <p className="text-[10px] font-black text-blue-200 uppercase tracking-widest mb-1">Total Games Played</p>
+                <p className="text-[10px] font-black text-blue-200 uppercase tracking-widest mb-1">
+                  Total Games Played
+                </p>
                 <p className="text-2xl font-black text-white">482</p>
               </div>
               <div className="bg-white/10 rounded-2xl p-4">
-                <p className="text-[10px] font-black text-blue-200 uppercase tracking-widest mb-1">Average PPG</p>
+                <p className="text-[10px] font-black text-blue-200 uppercase tracking-widest mb-1">
+                  Average PPG
+                </p>
                 <p className="text-2xl font-black text-white">32.4</p>
               </div>
             </div>

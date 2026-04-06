@@ -1,20 +1,20 @@
 import { Outlet, Link, NavLink } from "react-router";
 import { Bell, Award, Calendar, Users, BarChart3, Settings } from "lucide-react";
 import { useState, useEffect } from "react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./common/ImageWithFallback";
+import { EXTERNAL_URLS } from "../constants";
+import { homeTeamStorage } from "../services/storage";
 
 export function Root() {
-  const [homeTeam, setHomeTeam] = useState<string | null>(
-    localStorage.getItem("homeTeam")
-  );
+  const [homeTeam, setHomeTeam] = useState<string | null>(homeTeamStorage.get());
   const [showSettings, setShowSettings] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.add('dark');
+    document.documentElement.classList.add("dark");
     if (homeTeam) {
-      localStorage.setItem("homeTeam", homeTeam);
+      homeTeamStorage.set(homeTeam);
     } else {
-      localStorage.removeItem("homeTeam");
+      homeTeamStorage.remove();
     }
   }, [homeTeam]);
 
@@ -32,17 +32,24 @@ export function Root() {
       <header className="bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/50 sticky top-0 z-50 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
-            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-all active:scale-95 group">
+            <Link
+              to="/"
+              className="flex items-center gap-3 hover:opacity-80 transition-all active:scale-95 group"
+            >
               <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:rotate-3 transition-transform overflow-hidden p-1">
-                <ImageWithFallback 
-                  src="https://www.cifccs.org/images/logo.png" 
-                  alt="CIF CCS" 
-                  className="w-full h-full object-contain" 
+                <ImageWithFallback
+                  src={EXTERNAL_URLS.CIF_CCS_LOGO}
+                  alt="CIF CCS"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div>
-                <h1 className="text-xl font-black tracking-tight text-white leading-tight uppercase">CCSHUB</h1>
-                <p className="text-[10px] text-zinc-500 font-bold tracking-widest uppercase">Central Coast Section</p>
+                <h1 className="text-xl font-black tracking-tight text-white leading-tight uppercase">
+                  CCSHUB
+                </h1>
+                <p className="text-[10px] text-zinc-500 font-bold tracking-widest uppercase">
+                  Central Coast Section
+                </p>
               </div>
             </Link>
 
@@ -50,8 +57,8 @@ export function Root() {
               <button
                 onClick={() => setShowSettings(!showSettings)}
                 className={`p-2.5 rounded-xl transition-all relative border ${
-                  showSettings 
-                    ? "bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-600/20" 
+                  showSettings
+                    ? "bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-600/20"
                     : "bg-zinc-900 border-zinc-800 text-zinc-400 hover:bg-zinc-800 hover:text-white"
                 }`}
               >
@@ -70,11 +77,13 @@ export function Root() {
                 key={path}
                 to={path}
                 end={path === "/"}
-                className={({ isActive }) => `flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
-                  isActive
-                    ? "bg-zinc-100 text-zinc-950 shadow-lg"
-                    : "text-zinc-400 hover:text-white hover:bg-zinc-900"
-                }`}
+                className={({ isActive }) =>
+                  `flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
+                    isActive
+                      ? "bg-zinc-100 text-zinc-950 shadow-lg"
+                      : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+                  }`
+                }
               >
                 <Icon className="w-4 h-4" />
                 {label}
@@ -90,11 +99,11 @@ export function Root() {
               key={path}
               to={path}
               end={path === "/"}
-              className={({ isActive }) => `flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-xs whitespace-nowrap transition-all ${
-                isActive
-                  ? "bg-blue-600 text-white shadow-lg"
-                  : "bg-zinc-900 text-zinc-400"
-              }`}
+              className={({ isActive }) =>
+                `flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-xs whitespace-nowrap transition-all ${
+                  isActive ? "bg-blue-600 text-white shadow-lg" : "bg-zinc-900 text-zinc-400"
+                }`
+              }
             >
               <Icon className="w-3.5 h-3.5" />
               {label}
@@ -110,7 +119,9 @@ export function Root() {
                 <Bell className="w-5 h-5 text-blue-400" />
                 Personalize Your Experience
               </h3>
-              <p className="text-zinc-400 text-sm mb-4">Select your home team to prioritize their games and news.</p>
+              <p className="text-zinc-400 text-sm mb-4">
+                Select your home team to prioritize their games and news.
+              </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <select
@@ -134,7 +145,7 @@ export function Root() {
                 </select>
 
                 {homeTeam && (
-                  <button 
+                  <button
                     onClick={() => setHomeTeam(null)}
                     className="px-4 py-2 text-sm text-zinc-500 hover:text-red-400 transition-colors"
                   >
@@ -171,45 +182,90 @@ export function Root() {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1">
-                  <ImageWithFallback 
-                    src="https://www.cifccs.org/images/logo.png" 
-                    alt="CIF CCS" 
-                    className="w-full h-full object-contain" 
+                  <ImageWithFallback
+                    src="https://www.cifccs.org/images/logo.png"
+                    alt="CIF CCS"
+                    className="w-full h-full object-contain"
                   />
                 </div>
-                <h3 className="font-black text-2xl text-white uppercase tracking-tighter">CCSHUB</h3>
+                <h3 className="font-black text-2xl text-white uppercase tracking-tighter">
+                  CCSHUB
+                </h3>
               </div>
               <p className="text-zinc-500 text-sm max-w-sm leading-relaxed font-medium">
-                The premier digital destination for Central Coast Section athletics. Real-time scores, in-depth rankings, and elite player spotlights.
+                The premier digital destination for Central Coast Section athletics. Real-time
+                scores, in-depth rankings, and elite player spotlights.
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold text-zinc-200 mb-4 text-sm uppercase tracking-wider">Resources</h4>
+              <h4 className="font-bold text-zinc-200 mb-4 text-sm uppercase tracking-wider">
+                Resources
+              </h4>
               <ul className="text-zinc-500 text-sm space-y-3 font-medium">
-                <li><a href="#" className="hover:text-blue-400 transition-colors">MaxPreps CCS</a></li>
-                <li><a href="#" className="hover:text-blue-400 transition-colors">CIF Official Stats</a></li>
-                <li><a href="#" className="hover:text-blue-400 transition-colors">Hudl Highlights</a></li>
-                <li><a href="#" className="hover:text-blue-400 transition-colors">CalPreps Rankings</a></li>
+                <li>
+                  <a href="#" className="hover:text-blue-400 transition-colors">
+                    MaxPreps CCS
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-blue-400 transition-colors">
+                    CIF Official Stats
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-blue-400 transition-colors">
+                    Hudl Highlights
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-blue-400 transition-colors">
+                    CalPreps Rankings
+                  </a>
+                </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-bold text-zinc-200 mb-4 text-sm uppercase tracking-wider">Navigation</h4>
+              <h4 className="font-bold text-zinc-200 mb-4 text-sm uppercase tracking-wider">
+                Navigation
+              </h4>
               <ul className="text-zinc-500 text-sm space-y-3 font-medium">
-                <li><Link to="/rankings" className="hover:text-white transition-colors">Rankings</Link></li>
-                <li><Link to="/schedule" className="hover:text-white transition-colors">Schedule</Link></li>
-                <li><Link to="/scores" className="hover:text-white transition-colors">Scores</Link></li>
-                <li><Link to="/players" className="hover:text-white transition-colors">Players</Link></li>
+                <li>
+                  <Link to="/rankings" className="hover:text-white transition-colors">
+                    Rankings
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/schedule" className="hover:text-white transition-colors">
+                    Schedule
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/scores" className="hover:text-white transition-colors">
+                    Scores
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/players" className="hover:text-white transition-colors">
+                    Players
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
           <div className="mt-12 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-zinc-600 uppercase tracking-widest">
             <div>© 2026 CCSHUB • Central Coast Section</div>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-zinc-400">Privacy</a>
-              <a href="#" className="hover:text-zinc-400">Terms</a>
-              <a href="#" className="hover:text-zinc-400">Contact</a>
+              <a href="#" className="hover:text-zinc-400">
+                Privacy
+              </a>
+              <a href="#" className="hover:text-zinc-400">
+                Terms
+              </a>
+              <a href="#" className="hover:text-zinc-400">
+                Contact
+              </a>
             </div>
           </div>
         </div>
