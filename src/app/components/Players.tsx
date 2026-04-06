@@ -161,7 +161,7 @@ export function Players() {
       >
         <AnimatePresence mode="popLayout">
           {visiblePlayers.map((player) => {
-            const team = getTeam(player.team);
+            const team = teamById.get(player.team);
             return (
               <motion.div
                 key={player.id}
@@ -457,7 +457,7 @@ export function Players() {
                       <div className="flex-1 min-w-0 flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg overflow-hidden bg-zinc-800 p-1 flex-shrink-0">
                           <ImageWithFallback
-                            src={getTeam(player.team)?.image}
+                            src={teamById.get(player.team)?.image}
                             alt=""
                             className="w-full h-full object-contain"
                           />
@@ -467,7 +467,7 @@ export function Players() {
                             {player.name}
                           </div>
                           <div className="text-[10px] font-bold text-zinc-600 truncate uppercase">
-                            {getTeam(player.team)?.name}
+                            {teamById.get(player.team)?.name}
                           </div>
                         </div>
                       </div>
