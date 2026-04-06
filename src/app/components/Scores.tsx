@@ -1,12 +1,21 @@
 import { Link } from "react-router";
 import { Award, MapPin, Users, ChevronRight, Filter } from "lucide-react";
-import { games } from "../data/games";
+import {
+  DEFAULT_GAMES_YEAR,
+  GAME_YEARS,
+  gamesByYear,
+  seasonLabel,
+  type GameYear,
+} from "../data/games";
 import { teams } from "../data/teams";
 import { useState } from "react";
 import { ImageWithFallback } from "./common/ImageWithFallback";
 
 export function Scores() {
   const [selectedLevel, setSelectedLevel] = useState<string>("all");
+  const [selectedYear, setSelectedYear] = useState<GameYear>(DEFAULT_GAMES_YEAR);
+
+  const games = gamesByYear[selectedYear] ?? [];
 
   const levels = ["all", "Varsity", "JV", "Freshman"];
 
@@ -51,7 +60,7 @@ export function Scores() {
 
         <div className="relative p-10 md:p-16">
           <div className="inline-flex items-center gap-2 bg-purple-600 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest text-white mb-4">
-            <Award className="w-3 h-3 fill-white" /> 2025-26 Season Archive
+            <Award className="w-3 h-3 fill-white" /> {seasonLabel(selectedYear)} Season Archive
           </div>
           <h1 className="text-5xl md:text-6xl font-black text-white tracking-tight leading-[0.85] mb-4">
             Game <br />
@@ -82,13 +91,34 @@ export function Scores() {
           ))}
         </div>
 
-        <div className="text-[10px] font-black text-zinc-600 uppercase tracking-widest flex items-center gap-2">
-          <Filter className="w-3 h-3" /> Showing {finalGames.length} Results
+        <div className="flex items-center gap-3">
+          <select
+            value={selectedYear}
+            onChange={(e) => setSelectedYear(Number(e.target.value) as GameYear)}
+            className="bg-zinc-900 text-zinc-300 border border-zinc-800 rounded-xl px-4 py-2 text-xs font-bold"
+            aria-label="Select season"
+          >
+            {[...GAME_YEARS].reverse().map((y) => (
+              <option key={y} value={y}>
+                {seasonLabel(y)}
+              </option>
+            ))}
+          </select>
+
+          <div className="text-[10px] font-black text-zinc-600 uppercase tracking-widest flex items-center gap-2">
+            <Filter className="w-3 h-3" /> Showing {finalGames.length} Results
+          </div>
         </div>
       </div>
 
       {/* Results by Date */}
       <section className="space-y-12">
+        {finalGames.length === 0 ? (
+          <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 text-zinc-400">
+            No final scores loaded for {seasonLabel(selectedYear)} yet.
+          </div>
+        ) : null}
+
         {Object.entries(gamesByDate).map(([date, dateGames]) => (
           <div key={date} className="space-y-6">
             <div className="flex items-center gap-4">

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router";
 import {
   Users,
@@ -12,13 +13,20 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { teams } from "../data/teams";
-import { games } from "../data/games";
+import {
+  DEFAULT_GAMES_YEAR,
+  GAME_YEARS,
+  gamesByYear,
+  seasonLabel,
+  type GameYear,
+} from "../data/games";
 import { players } from "../data/players";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./common/ImageWithFallback";
 
 export function TeamDetail() {
   const { teamId } = useParams();
+  const [selectedYear, setSelectedYear] = useState<GameYear>(DEFAULT_GAMES_YEAR);
   const team = teams.find((t) => t.id === teamId);
 
   if (!team) {
@@ -32,11 +40,19 @@ export function TeamDetail() {
     );
   }
 
-  const teamGames = games.filter((g) => g.homeTeam === team.id || g.awayTeam === team.id);
+  const teamGames = (gamesByYear[selectedYear] ?? []).filter(
+    (g) => g.homeTeam === team.id || g.awayTeam === team.id,
+  );
   const teamPlayers = players.filter((p) => p.team === team.id);
 
-  const upcomingGames = teamGames.filter((g) => g.status === "upcoming");
-  const recentGames = teamGames.filter((g) => g.status === "final").slice(0, 5);
+  const upcomingGames = teamGames
+    .filter((g) => g.status === "upcoming")
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+  const recentGames = teamGames
+    .filter((g) => g.status === "final")
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 5);
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">
@@ -158,7 +174,7 @@ export function TeamDetail() {
       >
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
           <Users className="w-6 h-6 text-blue-400" />
-          All Levels (2025-26)
+          All Levels
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {Object.entries(team.levels).map(([level, record]) => (
@@ -308,6 +324,24 @@ export function TeamDetail() {
       )}
 
       {/* Schedule */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2 className="text-2xl font-bold">Schedule</h2>
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-zinc-400">Season</span>
+          <select
+            value={selectedYear}
+            onChange={(e) => setSelectedYear(Number(e.target.value) as GameYear)}
+            className="bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            {GAME_YEARS.map((year) => (
+              <option key={year} value={year}>
+                {seasonLabel(year)}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
       <div className="grid md:grid-cols-2 gap-6">
         {/* Upcoming Games */}
         {upcomingGames.length > 0 && (
@@ -358,38 +392,42 @@ export function TeamDetail() {
             Recent Results
           </h2>
           <div className="space-y-3">
-            {recentGames.map((game) => {
-              const opponent = game.homeTeam === team.id ? game.awayTeam : game.homeTeam;
-              const isHome = game.homeTeam === team.id;
-              const opponentTeam = teams.find((t) => t.id === opponent);
-              const teamScore = isHome ? game.homeScore : game.awayScore;
-              const oppScore = isHome ? game.awayScore : game.homeScore;
-              const won = teamScore > oppScore;
-              return (
-                <Link
-                  key={game.id}
-                  to={`/game/${game.id}`}
-                  className="block bg-zinc-800 rounded-lg p-3 hover:bg-zinc-700 transition-colors"
-                >
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs text-zinc-400">
-                      {new Date(game.date).toLocaleDateString()}
-                    </span>
-                    <span
-                      className={`text-xs font-bold ${won ? "text-green-400" : "text-red-400"}`}
-                    >
-                      {won ? "W" : "L"}
-                    </span>
-                  </div>
-                  <div className="font-semibold">
-                    {isHome ? "vs" : "@"} {opponentTeam?.name || "Opponent"}
-                  </div>
-                  <div className="text-sm text-zinc-400">
-                    {teamScore} - {oppScore}
-                  </div>
-                </Link>
-              );
-            })}
+            {recentGames.length === 0 ? (
+              <div className="text-sm text-zinc-400">No final scores loaded for this season.</div>
+            ) : (
+              recentGames.map((game) => {
+                const opponent = game.homeTeam === team.id ? game.awayTeam : game.homeTeam;
+                const isHome = game.homeTeam === team.id;
+                const opponentTeam = teams.find((t) => t.id === opponent);
+                const teamScore = isHome ? game.homeScore : game.awayScore;
+                const oppScore = isHome ? game.awayScore : game.homeScore;
+                const won = teamScore > oppScore;
+                return (
+                  <Link
+                    key={game.id}
+                    to={`/game/${game.id}`}
+                    className="block bg-zinc-800 rounded-lg p-3 hover:bg-zinc-700 transition-colors"
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-xs text-zinc-400">
+                        {new Date(game.date).toLocaleDateString()}
+                      </span>
+                      <span
+                        className={`text-xs font-bold ${won ? "text-green-400" : "text-red-400"}`}
+                      >
+                        {won ? "W" : "L"}
+                      </span>
+                    </div>
+                    <div className="font-semibold">
+                      {isHome ? "vs" : "@"} {opponentTeam?.name || "Opponent"}
+                    </div>
+                    <div className="text-sm text-zinc-400">
+                      {teamScore} - {oppScore}
+                    </div>
+                  </Link>
+                );
+              })
+            )}
           </div>
         </motion.div>
       </div>

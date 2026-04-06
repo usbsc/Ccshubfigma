@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router";
 import { Search, X, Calendar, MapPin } from "lucide-react";
-import { games } from "../data/games";
+import { allGames } from "../data/games";
 import { teams } from "../data/teams";
 import { ImageWithFallback } from "./common/ImageWithFallback";
 
@@ -13,10 +13,10 @@ export function GameSearchMenu({ onClose }: GameSearchMenuProps) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredGames = useMemo(() => {
-    if (!searchQuery.trim()) return games;
+    if (!searchQuery.trim()) return allGames;
 
     const query = searchQuery.toLowerCase();
-    return games.filter((game) => {
+    return allGames.filter((game) => {
       const homeTeam = teams.find((t) => t.id === game.homeTeam);
       const awayTeam = teams.find((t) => t.id === game.awayTeam);
 

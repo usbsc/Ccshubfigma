@@ -1,13 +1,13 @@
 import { useParams, Link } from "react-router";
 import { MapPin, Users, Clock, TrendingUp, Award } from "lucide-react";
-import { games } from "../data/games";
+import { allGames } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./common/ImageWithFallback";
 
 export function GameDetail() {
   const { gameId } = useParams();
-  const game = games.find((g) => g.id === gameId);
+  const game = allGames.find((g) => g.id === gameId);
 
   if (!game) {
     return (

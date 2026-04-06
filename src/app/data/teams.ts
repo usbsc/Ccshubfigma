@@ -6602,6 +6602,7 @@ export const teams: Team[] = baseTeams.map((t) => {
   return {
     ...t,
     socials: Object.keys(socials).length ? socials : undefined,
+    record: mp.record ?? t.record,
     stateRank: mp.stateRank ?? t.stateRank,
     lastUpdated: mp.lastUpdated ?? t.lastUpdated,
   };

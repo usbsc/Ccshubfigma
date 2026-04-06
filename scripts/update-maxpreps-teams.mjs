@@ -137,6 +137,21 @@ function extractCaliforniaStateRank(nextData) {
   return typeof rank === "number" ? rank : undefined;
 }
 
+function extractOverallRecord(nextData) {
+  const recordText =
+    nextData?.props?.pageProps?.teamContext?.standingsData?.overallStanding?.overallWinLossTies;
+  if (typeof recordText !== "string") return undefined;
+
+  const m = recordText.trim().match(/^(\d+)-(\d+)(?:-(\d+))?$/);
+  if (!m) return undefined;
+
+  const wins = Number(m[1]);
+  const losses = Number(m[2]);
+  if (!Number.isFinite(wins) || !Number.isFinite(losses)) return undefined;
+
+  return { wins, losses };
+}
+
 function parseBaseTeams(tsText) {
   // We only need stable fields for discovery.
   const teams = [];
@@ -181,7 +196,7 @@ function renderTs(teamData, generatedAt) {
 
   const body =
     `export const MAXPREPS_TEAMS_GENERATED_AT = ${JSON.stringify(generatedAt)};\n\n` +
-    `export type MaxprepsTeamData = {\n  maxprepsUrl?: string;\n  stateRank?: number;\n  lastUpdated?: string;\n};\n\n` +
+    `export type MaxprepsTeamData = {\n  maxprepsUrl?: string;\n  stateRank?: number;\n  record?: { wins: number; losses: number };\n  lastUpdated?: string;\n};\n\n` +
     `export const maxprepsTeamData: Record<string, MaxprepsTeamData> = ${JSON.stringify(teamData, null, 2)};\n`;
 
   return header + body;
@@ -197,7 +212,7 @@ async function main() {
 
   console.log(`Found ${teams.length} teams`);
 
-  /** @type {Record<string, {maxprepsUrl?:string,stateRank?:number,lastUpdated?:string}>} */
+  /** @type {Record<string, {maxprepsUrl?:string,stateRank?:number,record?:{wins:number,losses:number},lastUpdated?:string}>} */
   const out = {};
 
   const generatedAt = new Date().toISOString();
@@ -227,12 +242,16 @@ async function main() {
 
     if (!maxprepsUrl) continue;
 
-    process.stdout.write(`Fetching rank: ${team.id} ... `);
+    process.stdout.write(`Fetching rank/record: ${team.id} ... `);
     try {
       const next = await fetchJsonWithRetry(maxprepsUrl);
       const stateRank = extractCaliforniaStateRank(next);
-      out[team.id] = { maxprepsUrl, stateRank, lastUpdated: generatedAt };
-      console.log(stateRank ? `CA #${stateRank}` : "no rank");
+      const record = extractOverallRecord(next);
+      out[team.id] = { maxprepsUrl, stateRank, record, lastUpdated: generatedAt };
+
+      const rankText = stateRank ? `CA #${stateRank}` : "no rank";
+      const recordText = record ? `${record.wins}-${record.losses}` : "no record";
+      console.log(`${rankText} • ${recordText}`);
     } catch {
       // Keep the discovered URL even if rank fetch/parsing fails (helps roster imports and avoids losing links).
       out[team.id] = { maxprepsUrl, lastUpdated: generatedAt };
