@@ -175,9 +175,11 @@ export function Rankings() {
                       {team.record.wins}-{team.record.losses}
                     </div>
                     <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-wide">
-                      {((team.record.wins / (team.record.wins + team.record.losses)) * 100).toFixed(
-                        0
-                      )}
+                      {(
+                        team.record.wins + team.record.losses > 0
+                          ? (team.record.wins / (team.record.wins + team.record.losses)) * 100
+                          : 0
+                      ).toFixed(0)}
                       % Win Rate
                     </div>
                   </div>

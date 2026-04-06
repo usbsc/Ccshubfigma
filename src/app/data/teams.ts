@@ -10,6 +10,9 @@ export interface Team {
   record: { wins: number; losses: number };
   ranking: number; // CCS ranking
   stateRank?: number; // California state ranking from MaxPreps
+  pointsFor?: number; // Varsity PF (MaxPreps)
+  pointsAgainst?: number; // Varsity PA (MaxPreps)
+  streak?: string; // e.g. "W3" / "L1" (MaxPreps)
   image: string;
   stadium: string;
   headCoach: string;
@@ -6604,6 +6607,9 @@ export const teams: Team[] = baseTeams.map((t) => {
     socials: Object.keys(socials).length ? socials : undefined,
     record: mp.record ?? t.record,
     stateRank: mp.stateRank ?? t.stateRank,
+    pointsFor: mp.pointsFor ?? t.pointsFor,
+    pointsAgainst: mp.pointsAgainst ?? t.pointsAgainst,
+    streak: mp.streak ?? t.streak,
     lastUpdated: mp.lastUpdated ?? t.lastUpdated,
   };
 });

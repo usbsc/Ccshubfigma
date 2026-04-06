@@ -8,6 +8,7 @@ import {
   Zap,
   Calendar,
   Award,
+  TrendingUp,
   Twitter,
   Instagram,
   ExternalLink,
@@ -133,7 +134,7 @@ export function TeamDetail() {
       </motion.div>
 
       {/* Quick Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-7 gap-4">
         {[
           { label: "Ranking", value: `#${team.ranking}`, icon: Award },
           {
@@ -146,6 +147,15 @@ export function TeamDetail() {
             value: `${team.record.wins}-${team.record.losses}`,
             icon: Target,
           },
+          {
+            label: "PF / PA",
+            value:
+              typeof team.pointsFor === "number" && typeof team.pointsAgainst === "number"
+                ? `${team.pointsFor} / ${team.pointsAgainst}`
+                : "—",
+            icon: TrendingUp,
+          },
+          { label: "Streak", value: team.streak ?? "—", icon: Zap },
           { label: "Division", value: team.division, icon: Shield },
           { label: "Stadium", value: team.stadium, icon: MapPin },
         ].map((stat, idx) => (

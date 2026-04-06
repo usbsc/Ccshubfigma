@@ -152,6 +152,26 @@ function extractOverallRecord(nextData) {
   return { wins, losses };
 }
 
+function extractPointsForAgainst(nextData) {
+  const overall = nextData?.props?.pageProps?.teamContext?.standingsData?.overallStanding;
+  const pointsFor = overall?.points;
+  const pointsAgainst = overall?.pointsAgainst;
+
+  return {
+    pointsFor: typeof pointsFor === "number" ? pointsFor : undefined,
+    pointsAgainst: typeof pointsAgainst === "number" ? pointsAgainst : undefined,
+  };
+}
+
+function extractStreak(nextData) {
+  const overall = nextData?.props?.pageProps?.teamContext?.standingsData?.overallStanding;
+  const streak = overall?.streak;
+  const streakResult = overall?.streakResult;
+  if (typeof streak !== "number" || !Number.isFinite(streak) || streak <= 0) return undefined;
+  if (typeof streakResult !== "string" || !streakResult.trim()) return undefined;
+  return `${streakResult.trim().toUpperCase()}${streak}`;
+}
+
 function parseBaseTeams(tsText) {
   // We only need stable fields for discovery.
   const teams = [];
@@ -196,7 +216,7 @@ function renderTs(teamData, generatedAt) {
 
   const body =
     `export const MAXPREPS_TEAMS_GENERATED_AT = ${JSON.stringify(generatedAt)};\n\n` +
-    `export type MaxprepsTeamData = {\n  maxprepsUrl?: string;\n  stateRank?: number;\n  record?: { wins: number; losses: number };\n  lastUpdated?: string;\n};\n\n` +
+    `export type MaxprepsTeamData = {\n  maxprepsUrl?: string;\n  stateRank?: number;\n  record?: { wins: number; losses: number };\n  pointsFor?: number;\n  pointsAgainst?: number;\n  streak?: string;\n  lastUpdated?: string;\n};\n\n` +
     `export const maxprepsTeamData: Record<string, MaxprepsTeamData> = ${JSON.stringify(teamData, null, 2)};\n`;
 
   return header + body;
@@ -212,7 +232,7 @@ async function main() {
 
   console.log(`Found ${teams.length} teams`);
 
-  /** @type {Record<string, {maxprepsUrl?:string,stateRank?:number,record?:{wins:number,losses:number},lastUpdated?:string}>} */
+  /** @type {Record<string, {maxprepsUrl?:string,stateRank?:number,record?:{wins:number,losses:number},pointsFor?:number,pointsAgainst?:number,streak?:string,lastUpdated?:string}>} */
   const out = {};
 
   const generatedAt = new Date().toISOString();
@@ -247,11 +267,27 @@ async function main() {
       const next = await fetchJsonWithRetry(maxprepsUrl);
       const stateRank = extractCaliforniaStateRank(next);
       const record = extractOverallRecord(next);
-      out[team.id] = { maxprepsUrl, stateRank, record, lastUpdated: generatedAt };
+      const { pointsFor, pointsAgainst } = extractPointsForAgainst(next);
+      const streak = extractStreak(next);
+
+      out[team.id] = {
+        maxprepsUrl,
+        stateRank,
+        record,
+        pointsFor,
+        pointsAgainst,
+        streak,
+        lastUpdated: generatedAt,
+      };
 
       const rankText = stateRank ? `CA #${stateRank}` : "no rank";
       const recordText = record ? `${record.wins}-${record.losses}` : "no record";
-      console.log(`${rankText} • ${recordText}`);
+      const pfpaText =
+        typeof pointsFor === "number" && typeof pointsAgainst === "number"
+          ? `PF ${pointsFor} / PA ${pointsAgainst}`
+          : "no PF/PA";
+      const streakText = streak ? `streak ${streak}` : "no streak";
+      console.log(`${rankText} • ${recordText} • ${pfpaText} • ${streakText}`);
     } catch {
       // Keep the discovered URL even if rank fetch/parsing fails (helps roster imports and avoids losing links).
       out[team.id] = { maxprepsUrl, lastUpdated: generatedAt };
