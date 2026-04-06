@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router";
-import { MapPin, Users, Clock, TrendingUp, Award, Play } from "lucide-react";
+import { MapPin, Users, Clock, TrendingUp, Award } from "lucide-react";
 import { games } from "../data/games";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";

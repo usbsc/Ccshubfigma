@@ -1,3 +1,5 @@
+import { maxprepsPlayers } from "./players.maxpreps.generated";
+
 export interface Player {
   id: string;
   name: string;
@@ -14,13 +16,16 @@ export interface Player {
   };
   image: string;
   highlights?: string[];
+  source?: "manual" | "maxpreps";
+  maxprepsUrl?: string;
+  hudlSearchUrl?: string;
 }
 
 // Using a stable, high-quality generic football player image for all profiles
 const GENERIC_PLAYER =
   "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=400&h=400&q=80";
 
-export const players: Player[] = [
+export const manualPlayers: Player[] = [
   {
     id: "player-riordan-1",
     name: "Michael Mitchell Jr.",
@@ -6999,3 +7004,20 @@ export const players: Player[] = [
     image: GENERIC_PLAYER,
   },
 ];
+
+const makePlayerKey = (p: Player) => `${p.team}|${p.name.toLowerCase()}`;
+
+export const players: Player[] = (() => {
+  const byKey = new Map<string, Player>();
+
+  for (const p of maxprepsPlayers) {
+    byKey.set(makePlayerKey(p), p);
+  }
+
+  // Manual data wins (more curated highlights)
+  for (const p of manualPlayers) {
+    byKey.set(makePlayerKey(p), { ...p, source: "manual" });
+  }
+
+  return Array.from(byKey.values());
+})();

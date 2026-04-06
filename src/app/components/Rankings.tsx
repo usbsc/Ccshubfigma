@@ -11,7 +11,7 @@ import {
   Target,
 } from "lucide-react";
 import { teams } from "../data/teams";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { useState } from "react";
 import { ImageWithFallback } from "./common/ImageWithFallback";
 
@@ -37,11 +37,6 @@ export function Rankings() {
       opacity: 1,
       transition: { staggerChildren: 0.05 },
     },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -10 },
-    show: { opacity: 1, x: 0 },
   };
 
   return (
@@ -128,7 +123,7 @@ export function Rankings() {
 
         {/* Table Body */}
         <div className="divide-y divide-zinc-800/50">
-          {sortedTeams.map((team, idx) => {
+          {sortedTeams.map((team) => {
             const trend = team.ranking <= 3 ? "up" : team.ranking <= 10 ? "same" : "down";
             return (
               <div key={team.id} className="group">

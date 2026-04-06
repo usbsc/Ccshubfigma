@@ -33,9 +33,6 @@ export function Home() {
   const upcomingGames = games
     .filter((g) => g.status === "upcoming")
     .slice(0, DISPLAY_LIMITS.UPCOMING_GAMES);
-  const recentGames = games
-    .filter((g) => g.status === "final")
-    .slice(0, DISPLAY_LIMITS.RECENT_GAMES);
 
   const homeTeamGames = homeTeam
     ? games.filter((g) => g.homeTeam === homeTeam || g.awayTeam === homeTeam)

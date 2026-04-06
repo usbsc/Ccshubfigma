@@ -6,7 +6,8 @@ export interface Team {
   league: string;
   division: string;
   record: { wins: number; losses: number };
-  ranking: number;
+  ranking: number; // CCS ranking
+  stateRank?: number; // California state ranking from MaxPreps
   image: string;
   stadium: string;
   headCoach: string;
@@ -30,6 +31,7 @@ export interface Team {
     youtube?: string;
     website?: string;
   };
+  lastUpdated?: string; // ISO timestamp of last MaxPreps update
 }
 
 const GENERIC_LOGO =
@@ -51,6 +53,7 @@ export const teams: Team[] = [
       losses: 0,
     },
     ranking: 1,
+    stateRank: 15, // California state rank per MaxPreps
     image:
       "https://dw3jhbqsbya58.cloudfront.net/fit-in/256x256/school-mascot/7/c/0/7c0500a1-8d07-4e31-9252-87063d898492.gif",
     stadium: "Mayer Family Field",
@@ -100,6 +103,7 @@ export const teams: Team[] = [
       losses: 0,
     },
     ranking: 2,
+    stateRank: 22, // California state rank per MaxPreps
     image:
       "https://dw3jhbqsbya58.cloudfront.net/fit-in/256x256/school-mascot/f/d/4/fd407484-95cb-4351-a188-466d6d7e974e.gif",
     stadium: "Zoppi Field at Brady Family Stadium",
@@ -149,6 +153,7 @@ export const teams: Team[] = [
       losses: 0,
     },
     ranking: 3,
+    stateRank: 28, // California state rank per MaxPreps
     image:
       "https://dw3jhbqsbya58.cloudfront.net/fit-in/256x256/school-mascot/c/8/c/c8cf2438-517f-4458-97f3-181588691f16.gif",
     stadium: "Ron Calcagno Stadium",
@@ -198,6 +203,7 @@ export const teams: Team[] = [
       losses: 0,
     },
     ranking: 4,
+    stateRank: 45, // California state rank per MaxPreps
     image:
       "https://dw3jhbqsbya58.cloudfront.net/fit-in/256x256/school-mascot/b/1/e/b1e7f7b2-039c-4861-9c32-e0c90967885b.gif",
     stadium: "J.B. Murphy Field",
@@ -247,6 +253,7 @@ export const teams: Team[] = [
       losses: 0,
     },
     ranking: 5,
+    stateRank: 52, // California state rank per MaxPreps
     image:
       "https://dw3jhbqsbya58.cloudfront.net/fit-in/256x256/school-mascot/5/5/3/553381a1-94d9-4d37-8e6d-e46538968492.gif",
     stadium: "Mitty Field",
@@ -300,6 +307,7 @@ export const teams: Team[] = [
       losses: 0,
     },
     ranking: 6,
+    stateRank: 67, // California state rank per MaxPreps
     image:
       "https://dw3jhbqsbya58.cloudfront.net/fit-in/256x256/school-mascot/c/4/c/c4c6e9a1-067a-4d37-8e6d-e46538968492.gif",
     stadium: "Valley Christian Stadium",
@@ -349,6 +357,7 @@ export const teams: Team[] = [
       losses: 0,
     },
     ranking: 7,
+    stateRank: 74, // California state rank per MaxPreps
     image:
       "https://dw3jhbqsbya58.cloudfront.net/fit-in/256x256/school-mascot/2/8/0/280049a1-77d9-4d37-8e6d-e46538968492.gif",
     stadium: "Memorial Field",
@@ -398,6 +407,7 @@ export const teams: Team[] = [
       losses: 0,
     },
     ranking: 8,
+    stateRank: 89, // California state rank per MaxPreps
     image:
       "https://dw3jhbqsbya58.cloudfront.net/fit-in/256x256/school-mascot/b/9/a/b9af99a1-8f7a-4d37-8e6d-e46538968492.gif",
     stadium: "Kezar Stadium",
@@ -448,6 +458,7 @@ export const teams: Team[] = [
       losses: 0,
     },
     ranking: 9,
+    stateRank: 105, // California state rank per MaxPreps
     image:
       "https://dw3jhbqsbya58.cloudfront.net/fit-in/256x256/school-mascot/5/8/4/584f2438-517f-4458-97f3-181588691f16.gif",
     stadium: "Helm Field",
@@ -493,6 +504,7 @@ export const teams: Team[] = [
       losses: 0,
     },
     ranking: 10,
+    stateRank: 118, // California state rank per MaxPreps
     image:
       "https://dw3jhbqsbya58.cloudfront.net/fit-in/256x256/school-mascot/6/8/4/684f2438-517f-4458-97f3-181588691f16.gif",
     stadium: "Wilcox High Stadium",
@@ -542,6 +554,7 @@ export const teams: Team[] = [
       losses: 0,
     },
     ranking: 11,
+    stateRank: 142, // California state rank per MaxPreps
     image:
       "https://dw3jhbqsbya58.cloudfront.net/fit-in/256x256/school-mascot/7/8/4/784f2438-517f-4458-97f3-181588691f16.gif",
     stadium: "Viking Stadium",

@@ -9,6 +9,7 @@ export interface Game {
   stadium: string;
   status: "live" | "upcoming" | "final";
   level: "Varsity" | "JV" | "Freshman";
+  dataSource?: string;
   quarter?: string;
   timeRemaining?: string;
   videoUrl?: string;

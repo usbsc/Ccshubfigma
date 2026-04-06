@@ -1,8 +1,7 @@
 import { Link } from "react-router";
-import { Calendar, MapPin, Clock, Play, ChevronRight, Filter } from "lucide-react";
+import { Calendar, MapPin, Clock, ChevronRight, Filter } from "lucide-react";
 import { games } from "../data/games";
 import { teams } from "../data/teams";
-import { motion } from "motion/react";
 import { useState } from "react";
 import { ImageWithFallback } from "./common/ImageWithFallback";
 

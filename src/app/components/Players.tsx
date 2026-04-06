@@ -1,27 +1,38 @@
-import { Link } from "react-router";
-import { Award, TrendingUp, User, Search, ChevronRight, Star, X } from "lucide-react";
+import { Award, TrendingUp, Search, Star, X } from "lucide-react";
 import { players, Player } from "../data/players";
 import { teams } from "../data/teams";
 import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ImageWithFallback } from "./common/ImageWithFallback";
 
 export function Players() {
   const [selectedPosition, setSelectedPosition] = useState<string>("all");
+  const [selectedTeam, setSelectedTeam] = useState<string>("all");
   const [searchQuery, setSearchTerm] = useState("");
   const [activePlayer, setActivePlayer] = useState<Player | null>(null);
 
-  const positions = ["all", "QB", "RB", "WR", "TE", "LB", "DB", "OL", "DL"];
+  const teamById = useMemo(() => new Map(teams.map((t) => [t.id, t])), []);
 
-  const filteredPlayers = players.filter((p) => {
-    const matchesPosition = selectedPosition === "all" || p.position === selectedPosition;
-    const matchesSearch =
-      p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.team.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesPosition && matchesSearch;
-  });
+  const positions = useMemo(() => {
+    const set = new Set<string>();
+    for (const p of players) set.add(p.position);
+    return ["all", ...Array.from(set).sort((a, b) => a.localeCompare(b))];
+  }, []);
 
-  const getTeam = (id: string) => teams.find((t) => t.id === id);
+  const filteredPlayers = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    return players.filter((p) => {
+      const matchesPosition = selectedPosition === "all" || p.position === selectedPosition;
+      const matchesTeam = selectedTeam === "all" || p.team === selectedTeam;
+      const teamName = (teamById.get(p.team)?.name || "").toLowerCase();
+      const matchesSearch =
+        q.length === 0 ||
+        p.name.toLowerCase().includes(q) ||
+        teamName.includes(q) ||
+        p.team.toLowerCase().includes(q);
+      return matchesPosition && matchesTeam && matchesSearch;
+    });
+  }, [searchQuery, selectedPosition, selectedTeam, teamById]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -35,6 +46,13 @@ export function Players() {
     hidden: { opacity: 0, scale: 0.95 },
     show: { opacity: 1, scale: 1 },
   };
+
+  const [visibleCount, setVisibleCount] = useState(60);
+
+  const visiblePlayers = useMemo(
+    () => filteredPlayers.slice(0, visibleCount),
+    [filteredPlayers, visibleCount]
+  );
 
   return (
     <div className="max-w-7xl mx-auto space-y-10 pb-20">
@@ -70,7 +88,10 @@ export function Players() {
                 type="text"
                 placeholder="Search athlete name..."
                 value={searchQuery}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  setVisibleCount(60);
+                }}
                 className="w-full md:w-80 bg-zinc-950 border border-zinc-800 rounded-2xl py-4 pl-12 pr-4 text-sm font-bold text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all shadow-xl"
               />
             </div>
@@ -79,20 +100,56 @@ export function Players() {
       </div>
 
       {/* Filter Controls */}
-      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2">
-        {positions.map((pos) => (
-          <button
-            key={pos}
-            onClick={() => setSelectedPosition(pos)}
-            className={`px-6 py-2.5 rounded-xl font-bold text-xs tracking-wide transition-all whitespace-nowrap border ${
-              selectedPosition === pos
-                ? "bg-white text-zinc-950 border-white shadow-lg"
-                : "bg-zinc-900 text-zinc-500 border-zinc-800 hover:text-zinc-300"
-            }`}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+        <div>
+          <label className="text-xs text-zinc-500 font-bold uppercase tracking-wider mb-2 block">
+            Position
+          </label>
+          <select
+            value={selectedPosition}
+            onChange={(e) => {
+              setSelectedPosition(e.target.value);
+              setVisibleCount(60);
+            }}
+            className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl py-3 px-4 text-sm font-bold text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all shadow-xl"
           >
-            {pos === "all" ? "All Positions" : pos}
-          </button>
-        ))}
+            {positions.map((pos) => (
+              <option key={pos} value={pos}>
+                {pos === "all" ? "All Positions" : pos}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label className="text-xs text-zinc-500 font-bold uppercase tracking-wider mb-2 block">
+            Team
+          </label>
+          <select
+            value={selectedTeam}
+            onChange={(e) => {
+              setSelectedTeam(e.target.value);
+              setVisibleCount(60);
+            }}
+            className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl py-3 px-4 text-sm font-bold text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all shadow-xl"
+          >
+            <option value="all">All Teams</option>
+            {teams
+              .slice()
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((team) => (
+                <option key={team.id} value={team.id}>
+                  {team.name}
+                </option>
+              ))}
+          </select>
+        </div>
+
+        <div className="text-sm text-zinc-500">
+          Showing <span className="text-white font-bold">{visiblePlayers.length}</span> of{" "}
+          <span className="text-white font-bold">{filteredPlayers.length}</span> filtered ({" "}
+          <span className="text-white font-bold">{players.length}</span> total)
+        </div>
       </div>
 
       {/* Player Grid */}
@@ -103,7 +160,7 @@ export function Players() {
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
         <AnimatePresence mode="popLayout">
-          {filteredPlayers.map((player) => {
+          {visiblePlayers.map((player) => {
             const team = getTeam(player.team);
             return (
               <motion.div
@@ -124,7 +181,9 @@ export function Players() {
 
                   <div className="absolute top-6 left-6">
                     <div className="w-14 h-14 bg-orange-600 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-600/40 rotate-3">
-                      <span className="text-2xl font-black text-white">#{player.number}</span>
+                      <span className="text-2xl font-black text-white">
+                        #{player.number || "—"}
+                      </span>
                     </div>
                   </div>
 
@@ -137,7 +196,7 @@ export function Players() {
                         {player.position}
                       </span>
                       <span className="text-zinc-300 text-xs font-bold tracking-widest">
-                        Grade {player.grade}
+                        Grade {player.grade || "—"}
                       </span>
                     </div>
                   </div>
@@ -168,13 +227,15 @@ export function Players() {
                       <div className="text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-1">
                         Height
                       </div>
-                      <div className="font-black text-white">{player.height}</div>
+                      <div className="font-black text-white">{player.height || "—"}</div>
                     </div>
                     <div className="bg-zinc-950/50 rounded-2xl p-4 border border-zinc-800/50">
                       <div className="text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-1">
                         Weight
                       </div>
-                      <div className="font-black text-white">{player.weight} lbs</div>
+                      <div className="font-black text-white">
+                        {player.weight ? `${player.weight} lbs` : "—"}
+                      </div>
                     </div>
                   </div>
 
@@ -210,6 +271,17 @@ export function Players() {
         </AnimatePresence>
       </motion.div>
 
+      {visiblePlayers.length < filteredPlayers.length && (
+        <div className="flex justify-center">
+          <button
+            onClick={() => setVisibleCount((c) => c + 60)}
+            className="px-8 py-3 rounded-2xl font-black text-sm tracking-wide transition-all border border-zinc-800 bg-zinc-900 text-white hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10"
+          >
+            Load more
+          </button>
+        </div>
+      )}
+
       {/* Player Detail Modal */}
       <AnimatePresence>
         {activePlayer && (
@@ -244,7 +316,7 @@ export function Players() {
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
                   <div className="absolute bottom-8 left-8">
                     <div className="bg-orange-600 inline-block px-4 py-1 rounded-lg font-black text-white text-xl mb-2 italic">
-                      #{activePlayer.number}
+                      #{activePlayer.number || "—"}
                     </div>
                     <h2 className="text-5xl font-black text-white tracking-tighter uppercase">
                       {activePlayer.name}
@@ -271,7 +343,9 @@ export function Players() {
                         <div className="text-[10px] font-bold text-zinc-600 uppercase mb-1">
                           Class
                         </div>
-                        <div className="font-black text-white">Grade {activePlayer.grade}</div>
+                        <div className="font-black text-white">
+                          Grade {activePlayer.grade || "—"}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -291,6 +365,36 @@ export function Players() {
                       ))}
                     </div>
                   </div>
+
+                  {(activePlayer.maxprepsUrl || activePlayer.hudlSearchUrl) && (
+                    <div>
+                      <div className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-4">
+                        Profiles
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {activePlayer.maxprepsUrl && (
+                          <a
+                            href={activePlayer.maxprepsUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-2 rounded-xl bg-zinc-950 border border-zinc-800 text-xs font-black text-white hover:border-orange-500/50 transition-colors"
+                          >
+                            MaxPreps
+                          </a>
+                        )}
+                        {activePlayer.hudlSearchUrl && (
+                          <a
+                            href={activePlayer.hudlSearchUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-2 rounded-xl bg-zinc-950 border border-zinc-800 text-xs font-black text-white hover:border-orange-500/50 transition-colors"
+                          >
+                            Hudl Search
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  )}
 
                   {activePlayer.highlights && (
                     <div>
