@@ -45,7 +45,7 @@ function ChartContainer({
   children: React.ComponentProps<typeof RechartsPrimitive.ResponsiveContainer>["children"];
 }) {
   const uniqueId = React.useId();
-  const chartId = `chart-${id || uniqueId.replace(/:/g, "")}`;
+  const chartId = `chart-${id || uniqueId}`.replace(/[^a-zA-Z0-9_-]/g, "");
 
   return (
     <ChartContext.Provider value={{ config }}>
@@ -72,26 +72,26 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     return null;
   }
 
-  return (
-    <style
-      dangerouslySetInnerHTML={{
-        __html: Object.entries(THEMES)
-          .map(
-            ([theme, prefix]) => `
-${prefix} [data-chart=${id}] {
-${colorConfig
-  .map(([key, itemConfig]) => {
-    const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
-    return color ? `  --color-${key}: ${color};` : null;
-  })
-  .join("\n")}
+  const cssText = Object.entries(THEMES)
+    .map(([theme, prefix]) => {
+      const varsText = colorConfig
+        .map(([key, itemConfig]) => {
+          const color =
+            itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
+          return color ? `  --color-${key}: ${color};` : null;
+        })
+        .filter((line): line is string => Boolean(line))
+        .join("\n");
+
+      return `
+${prefix} [data-chart="${id}"] {
+${varsText}
 }
-`
-          )
-          .join("\n"),
-      }}
-    />
-  );
+`;
+    })
+    .join("\n");
+
+  return <style>{cssText}</style>;
 };
 
 const ChartTooltip = RechartsPrimitive.Tooltip;
