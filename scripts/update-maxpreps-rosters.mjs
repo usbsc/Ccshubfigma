@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import * as vm from "node:vm";
 
 const TEAMS_PATH = path.join(process.cwd(), "src/app/data/teams.ts");
 const TEAMS_MAXPREPS_PATH = path.join(process.cwd(), "src/app/data/teams.maxpreps.generated.ts");
@@ -39,12 +40,43 @@ function parseTeams(tsText) {
   return teams.filter((t) => t.id);
 }
 
+function extractExportedObjectLiteral(text, exportName) {
+  const idx = text.indexOf(`export const ${exportName}`);
+  if (idx < 0) return null;
+
+  const eq = text.indexOf("=", idx);
+  if (eq < 0) return null;
+
+  const braceStart = text.indexOf("{", eq);
+  if (braceStart < 0) return null;
+
+  let depth = 0;
+  let i = braceStart;
+  for (; i < text.length; i += 1) {
+    const ch = text[i];
+    if (ch === "{") depth += 1;
+    else if (ch === "}") {
+      depth -= 1;
+      if (depth === 0) {
+        i += 1;
+        break;
+      }
+    }
+  }
+
+  const objText = text.slice(braceStart, i);
+  return objText;
+}
+
 async function readGeneratedTeamData() {
   try {
     const text = await fs.readFile(TEAMS_MAXPREPS_PATH, "utf8");
-    const m = text.match(/export const maxprepsTeamData:[^=]*=\s*(\{[\s\S]*?\});/);
-    if (!m) return {};
-    return JSON.parse(m[1]);
+    const objText = extractExportedObjectLiteral(text, "maxprepsTeamData");
+    if (!objText) return {};
+
+    // Prettier will strip quotes from object keys, so JSON.parse isn't safe.
+    // Evaluate the object literal in a sandboxed VM context instead.
+    return vm.runInNewContext(`(${objText})`, {});
   } catch {
     return {};
   }
@@ -107,7 +139,7 @@ function playerIdFromMaxprepsUrl(teamId, athleteUrl) {
   return `player-${teamId}-mp-${Math.random().toString(16).slice(2)}`;
 }
 
-async function fetchRoster(team) {
+async function fetchRoster(team, teamLogo) {
   const rosterUrl = rosterUrlFromMaxprepsUrl(team.maxpreps);
   if (!rosterUrl) return [];
 
@@ -184,7 +216,7 @@ async function fetchRoster(team) {
       height: entry.height || "",
       weight: entry.weight || 0,
       stats: { games: 0 },
-      image: GENERIC_PLAYER_IMAGE,
+      image: teamLogo || GENERIC_PLAYER_IMAGE,
       highlights: [],
       source: "maxpreps",
       maxprepsUrl: entry.athleteUrl,
@@ -220,7 +252,8 @@ async function main() {
   const allPlayers = [];
   for (const team of teamsWithMaxpreps) {
     console.log(`Fetching roster: ${team.id}`);
-    const rosterPlayers = await fetchRoster(team);
+    const teamLogo = generatedTeamData?.[team.id]?.schoolMascotUrl;
+    const rosterPlayers = await fetchRoster(team, teamLogo);
     console.log(`  players: ${rosterPlayers.length}`);
     allPlayers.push(...rosterPlayers);
   }

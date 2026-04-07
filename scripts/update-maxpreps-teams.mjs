@@ -134,6 +134,11 @@ function extractSchoolMascotUrl(nextData) {
   return typeof url === "string" && url.startsWith("http") ? url : undefined;
 }
 
+function extractLeagueName(nextData) {
+  const leagueName = nextData?.props?.pageProps?.teamContext?.data?.leagueName;
+  return typeof leagueName === "string" && leagueName.trim() ? leagueName.trim() : undefined;
+}
+
 function extractCaliforniaStateRank(nextData) {
   const rankings = nextData?.props?.pageProps?.teamContext?.rankingsData?.data;
   if (!Array.isArray(rankings)) return undefined;
@@ -221,7 +226,7 @@ function renderTs(teamData, generatedAt) {
 
   const body =
     `export const MAXPREPS_TEAMS_GENERATED_AT = ${JSON.stringify(generatedAt)};\n\n` +
-    `export type MaxprepsTeamData = {\n  maxprepsUrl?: string;\n  schoolMascotUrl?: string;\n  stateRank?: number;\n  record?: { wins: number; losses: number };\n  pointsFor?: number;\n  pointsAgainst?: number;\n  streak?: string;\n  lastUpdated?: string;\n};\n\n` +
+    `export type MaxprepsTeamData = {\n  maxprepsUrl?: string;\n  leagueName?: string;\n  schoolMascotUrl?: string;\n  stateRank?: number;\n  record?: { wins: number; losses: number };\n  pointsFor?: number;\n  pointsAgainst?: number;\n  streak?: string;\n  lastUpdated?: string;\n};\n\n` +
     `export const maxprepsTeamData: Record<string, MaxprepsTeamData> = ${JSON.stringify(teamData, null, 2)};\n`;
 
   return header + body;
@@ -237,7 +242,7 @@ async function main() {
 
   console.log(`Found ${teams.length} teams`);
 
-  /** @type {Record<string, {maxprepsUrl?:string,schoolMascotUrl?:string,stateRank?:number,record?:{wins:number,losses:number},pointsFor?:number,pointsAgainst?:number,streak?:string,lastUpdated?:string}>} */
+  /** @type {Record<string, {maxprepsUrl?:string,leagueName?:string,schoolMascotUrl?:string,stateRank?:number,record?:{wins:number,losses:number},pointsFor?:number,pointsAgainst?:number,streak?:string,lastUpdated?:string}>} */
   const out = {};
 
   const generatedAt = new Date().toISOString();
@@ -271,6 +276,7 @@ async function main() {
     try {
       const next = await fetchJsonWithRetry(maxprepsUrl);
       const schoolMascotUrl = extractSchoolMascotUrl(next);
+      const leagueName = extractLeagueName(next);
       const stateRank = extractCaliforniaStateRank(next);
       const record = extractOverallRecord(next);
       const { pointsFor, pointsAgainst } = extractPointsForAgainst(next);
@@ -278,6 +284,7 @@ async function main() {
 
       out[team.id] = {
         maxprepsUrl,
+        leagueName,
         schoolMascotUrl,
         stateRank,
         record,
