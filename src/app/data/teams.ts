@@ -3509,7 +3509,10 @@ function deriveLeagueAndDivision(leagueRaw: string): Pick<Team, "league" | "divi
   const raw = leagueRaw.trim();
   if (!raw) return { league: "Independent", division: "Independent" };
 
-  const parts = raw.split(" - ").map((p) => p.trim()).filter(Boolean);
+  const parts = raw
+    .split(" - ")
+    .map((p) => p.trim())
+    .filter(Boolean);
   if (parts.length >= 2) {
     const league = normalizeLeagueName(parts[0] ?? raw);
     const suffix = parts.slice(1).join(" - ");
