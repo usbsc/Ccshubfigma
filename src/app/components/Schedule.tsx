@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Calendar, MapPin, Clock, ChevronRight, Filter, Search } from "lucide-react";
+import { Calendar, MapPin, Clock, ChevronRight, Filter, Search, ExternalLink } from "lucide-react";
 import {
   DEFAULT_GAMES_YEAR,
   GAME_YEARS,
@@ -10,6 +10,7 @@ import {
 import { teams } from "../data/teams";
 import { players } from "../data/players";
 import { useMemo, useState } from "react";
+import { useNfhsCifccsBroadcasts } from "../hooks/useNfhsCifccsBroadcasts";
 import { ImageWithFallback } from "./common/ImageWithFallback";
 
 export function Schedule() {
@@ -21,6 +22,27 @@ export function Schedule() {
   const [playerQuery, setPlayerQuery] = useState("");
 
   const games = gamesByYear[selectedYear] ?? [];
+
+  const {
+    broadcasts: nfhsBroadcasts,
+    loading: nfhsLoading,
+    error: nfhsError,
+  } = useNfhsCifccsBroadcasts();
+
+  const filteredNfhsBroadcasts = useMemo(() => {
+    const tq = teamQuery.trim().toLowerCase();
+    const dlq = divisionLeagueQuery.trim().toLowerCase();
+
+    return nfhsBroadcasts
+      .filter((b) => {
+        const haystack =
+          `${b.title} ${b.publisherName ?? ""} ${b.publisherSlug ?? ""}`.toLowerCase();
+        const matchesTeam = tq.length === 0 || haystack.includes(tq);
+        const matchesDivisionLeague = dlq.length === 0 || haystack.includes(dlq);
+        return matchesTeam && matchesDivisionLeague;
+      })
+      .slice(0, 8);
+  }, [divisionLeagueQuery, nfhsBroadcasts, teamQuery]);
 
   const levels = ["all", "Varsity", "JV", "Freshman"];
 
@@ -204,6 +226,81 @@ export function Schedule() {
           />
         </div>
       </div>
+
+      {/* NFHS Network */}
+      <section className="bg-zinc-900/40 rounded-[2rem] border border-zinc-800 p-8">
+        <div className="flex items-center justify-between gap-4 mb-6">
+          <div>
+            <div className="text-[10px] font-black text-green-400 uppercase tracking-widest">
+              NFHS Network • CIFCCS
+            </div>
+            <h2 className="text-2xl font-black tracking-tighter text-white uppercase">
+              Broadcasts
+            </h2>
+          </div>
+          <div className="text-[10px] font-black text-zinc-600 uppercase tracking-widest">
+            {nfhsLoading
+              ? "Loading…"
+              : nfhsError
+                ? "Unavailable"
+                : `${filteredNfhsBroadcasts.length} shown`}
+          </div>
+        </div>
+
+        {nfhsError ? (
+          <div className="text-sm text-zinc-400">NFHS broadcasts unavailable: {nfhsError}</div>
+        ) : filteredNfhsBroadcasts.length === 0 ? (
+          <div className="text-sm text-zinc-400">
+            No NFHS broadcasts found for your current filters.
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {filteredNfhsBroadcasts.map((b) => (
+              <a
+                key={b.id}
+                href={b.pageUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="group rounded-2xl border border-zinc-800 bg-zinc-950/40 hover:bg-zinc-950/60 p-5 transition-colors"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <div className="font-black text-white uppercase tracking-tight truncate">
+                      {b.title}
+                    </div>
+                    <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">
+                      {new Date(b.startTime).toLocaleString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                        hour: "numeric",
+                        minute: "2-digit",
+                      })}
+                      {b.publisherName ? (
+                        <span className="text-zinc-600"> • {b.publisherName}</span>
+                      ) : null}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 shrink-0">
+                    {b.paymentRequired ? (
+                      <span className="bg-zinc-800 text-zinc-300 px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-widest">
+                        SUB
+                      </span>
+                    ) : null}
+                    {b.status === "live" ? (
+                      <span className="bg-red-600 text-white px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-widest">
+                        LIVE
+                      </span>
+                    ) : null}
+                    <ExternalLink className="w-4 h-4 text-zinc-600 group-hover:text-green-400 transition-colors" />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+      </section>
 
       {/* Live Section */}
       {liveGames.length > 0 && (

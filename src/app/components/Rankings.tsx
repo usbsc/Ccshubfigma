@@ -12,14 +12,25 @@ import {
 } from "lucide-react";
 import { teams } from "../data/teams";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ImageWithFallback } from "./common/ImageWithFallback";
 
 export function Rankings() {
   const [selectedDivision, setSelectedDivision] = useState<string>("all");
   const [searchQuery, setSearchTerm] = useState("");
 
-  const divisions = ["all", "Division I", "Division II", "Division III"];
+  const divisions = useMemo(() => {
+    const unique = Array.from(new Set(teams.map((t) => t.division).filter(Boolean))).sort();
+    return ["all", ...unique];
+  }, []);
+
+  const topDivisionCounts = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const t of teams) {
+      m.set(t.division, (m.get(t.division) || 0) + 1);
+    }
+    return [...m.entries()].sort((a, b) => b[1] - a[1]);
+  }, []);
 
   const filteredTeams = teams.filter((t) => {
     const matchesDivision = selectedDivision === "all" || t.division === selectedDivision;
@@ -241,21 +252,11 @@ export function Rankings() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
           { label: "Total Schools", value: teams.length, icon: Award },
-          {
-            label: "Elite (DI)",
-            value: teams.filter((t) => t.division === "Division I").length,
-            icon: Star,
-          },
-          {
-            label: "Competitive (DII)",
-            value: teams.filter((t) => t.division === "Division II").length,
-            icon: TrendingUp,
-          },
-          {
-            label: "Emerging (DIII)",
-            value: teams.filter((t) => t.division === "Division III").length,
-            icon: Target,
-          },
+          ...topDivisionCounts.slice(0, 3).map(([division, count], i) => ({
+            label: division,
+            value: count,
+            icon: i === 0 ? Star : i === 1 ? TrendingUp : Target,
+          })),
         ].map((stat, idx) => (
           <motion.div
             key={stat.label}
