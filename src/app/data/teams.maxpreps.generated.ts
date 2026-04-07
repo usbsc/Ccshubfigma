@@ -15,1412 +15,1422 @@ export type MaxprepsTeamData = {
 };
 
 export const maxprepsTeamData: Record<string, MaxprepsTeamData> = {
-  "riordan": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-francisco/archbishop-riordan-crusaders/football/",
-    "stateRank": 10,
-    "record": {
-      "wins": 12,
-      "losses": 1
+  riordan: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-francisco/archbishop-riordan-crusaders/football/",
+    stateRank: 10,
+    record: {
+      wins: 12,
+      losses: 1,
     },
-    "pointsFor": 550,
-    "pointsAgainst": 240,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 550,
+    pointsAgainst: 240,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "serra": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-mateo/serra-padres/football/",
-    "stateRank": 34,
-    "record": {
-      "wins": 8,
-      "losses": 6
+  serra: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-mateo/serra-padres/football/",
+    stateRank: 34,
+    record: {
+      wins: 8,
+      losses: 6,
     },
-    "pointsFor": 399,
-    "pointsAgainst": 342,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 399,
+    pointsAgainst: 342,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "st-francis": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/mountain-view/st-francis-lancers/football/",
-    "stateRank": 66,
-    "record": {
-      "wins": 5,
-      "losses": 6
+    maxprepsUrl: "https://www.maxpreps.com/ca/mountain-view/st-francis-lancers/football/",
+    stateRank: 66,
+    record: {
+      wins: 5,
+      losses: 6,
     },
-    "pointsFor": 240,
-    "pointsAgainst": 282,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 240,
+    pointsAgainst: 282,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "st-ignatius": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-francisco/st-ignatius-wildcats/football/",
-    "stateRank": 70,
-    "record": {
-      "wins": 9,
-      "losses": 6
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-francisco/st-ignatius-wildcats/football/",
+    stateRank: 70,
+    record: {
+      wins: 9,
+      losses: 6,
     },
-    "pointsFor": 397,
-    "pointsAgainst": 343,
-    "streak": "W7",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 397,
+    pointsAgainst: 343,
+    streak: "W7",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "mitty": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/archbishop-mitty-monarchs/football/",
-    "stateRank": 75,
-    "record": {
-      "wins": 6,
-      "losses": 5
+  mitty: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/archbishop-mitty-monarchs/football/",
+    stateRank: 75,
+    record: {
+      wins: 6,
+      losses: 5,
     },
-    "pointsFor": 270,
-    "pointsAgainst": 217,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 270,
+    pointsAgainst: 217,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "valley-christian": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/valley-christian-warriors/football/",
-    "stateRank": 150,
-    "record": {
-      "wins": 3,
-      "losses": 7
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/valley-christian-warriors/football/",
+    stateRank: 150,
+    record: {
+      wins: 3,
+      losses: 7,
     },
-    "pointsFor": 270,
-    "pointsAgainst": 274,
-    "streak": "L4",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 270,
+    pointsAgainst: 274,
+    streak: "L4",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "bellarmine": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/bellarmine-college-prep-bells/football/",
-    "stateRank": 300,
-    "record": {
-      "wins": 2,
-      "losses": 8
+  bellarmine: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/bellarmine-college-prep-bells/football/",
+    stateRank: 300,
+    record: {
+      wins: 2,
+      losses: 8,
     },
-    "pointsFor": 125,
-    "pointsAgainst": 383,
-    "streak": "L7",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 125,
+    pointsAgainst: 383,
+    streak: "L7",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "sacred-heart": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-francisco/sacred-heart-cathedral-preparatory-fightin-irish/football/",
-    "stateRank": 101,
-    "record": {
-      "wins": 6,
-      "losses": 7
+    maxprepsUrl:
+      "https://www.maxpreps.com/ca/san-francisco/sacred-heart-cathedral-preparatory-fightin-irish/football/",
+    stateRank: 101,
+    record: {
+      wins: 6,
+      losses: 7,
     },
-    "pointsFor": 418,
-    "pointsAgainst": 338,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 418,
+    pointsAgainst: 338,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "los-gatos": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/los-gatos/los-gatos-wildcats/football/",
-    "stateRank": 45,
-    "record": {
-      "wins": 9,
-      "losses": 4
+    maxprepsUrl: "https://www.maxpreps.com/ca/los-gatos/los-gatos-wildcats/football/",
+    stateRank: 45,
+    record: {
+      wins: 9,
+      losses: 4,
     },
-    "pointsFor": 488,
-    "pointsAgainst": 217,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 488,
+    pointsAgainst: 217,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "wilcox": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/santa-clara/wilcox-chargers/football/",
-    "stateRank": 211,
-    "record": {
-      "wins": 6,
-      "losses": 5
+  wilcox: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/santa-clara/wilcox-chargers/football/",
+    stateRank: 211,
+    record: {
+      wins: 6,
+      losses: 5,
     },
-    "pointsFor": 277,
-    "pointsAgainst": 190,
-    "streak": "L2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 277,
+    pointsAgainst: 190,
+    streak: "L2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "palo-alto": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/palo-alto/palo-alto-vikings/football/",
-    "stateRank": 691,
-    "record": {
-      "wins": 0,
-      "losses": 10
+    maxprepsUrl: "https://www.maxpreps.com/ca/palo-alto/palo-alto-vikings/football/",
+    stateRank: 691,
+    record: {
+      wins: 0,
+      losses: 10,
     },
-    "pointsFor": 167,
-    "pointsAgainst": 399,
-    "streak": "L10",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 167,
+    pointsAgainst: 399,
+    streak: "L10",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "menlo-atherton": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/atherton/menlo-atherton-bears/football/",
-    "stateRank": 200,
-    "record": {
-      "wins": 7,
-      "losses": 7
+    maxprepsUrl: "https://www.maxpreps.com/ca/atherton/menlo-atherton-bears/football/",
+    stateRank: 200,
+    record: {
+      wins: 7,
+      losses: 7,
     },
-    "pointsFor": 268,
-    "pointsAgainst": 377,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 268,
+    pointsAgainst: 377,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "christopher": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/gilroy/christopher-cougars/football/",
-    "stateRank": 432,
-    "record": {
-      "wins": 5,
-      "losses": 6
+  christopher: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/gilroy/christopher-cougars/football/",
+    stateRank: 432,
+    record: {
+      wins: 5,
+      losses: 6,
     },
-    "pointsFor": 291,
-    "pointsAgainst": 252,
-    "streak": "L2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 291,
+    pointsAgainst: 252,
+    streak: "L2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "leigh": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/leigh-longhorns/football/",
-    "stateRank": 356,
-    "record": {
-      "wins": 6,
-      "losses": 4
+  leigh: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/leigh-longhorns/football/",
+    stateRank: 356,
+    record: {
+      wins: 6,
+      losses: 4,
     },
-    "pointsFor": 301,
-    "pointsAgainst": 250,
-    "streak": "W2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 301,
+    pointsAgainst: 250,
+    streak: "W2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "leland": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/leland-chargers/football/",
-    "stateRank": 738,
-    "record": {
-      "wins": 3,
-      "losses": 7
+  leland: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/leland-chargers/football/",
+    stateRank: 738,
+    record: {
+      wins: 3,
+      losses: 7,
     },
-    "pointsFor": 124,
-    "pointsAgainst": 221,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 124,
+    pointsAgainst: 221,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "oak-grove": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/oak-grove-eagles/football/",
-    "stateRank": 880,
-    "record": {
-      "wins": 1,
-      "losses": 9
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/oak-grove-eagles/football/",
+    stateRank: 880,
+    record: {
+      wins: 1,
+      losses: 9,
     },
-    "pointsFor": 125,
-    "pointsAgainst": 272,
-    "streak": "L4",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 125,
+    pointsAgainst: 272,
+    streak: "L4",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "salinas": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/salinas/salinas-cowboys/football/",
-    "stateRank": 136,
-    "record": {
-      "wins": 7,
-      "losses": 4
+  salinas: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/salinas/salinas-cowboys/football/",
+    stateRank: 136,
+    record: {
+      wins: 7,
+      losses: 4,
     },
-    "pointsFor": 383,
-    "pointsAgainst": 326,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 383,
+    pointsAgainst: 326,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "palma": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/salinas/palma-chieftains/football/",
-    "stateRank": 87,
-    "record": {
-      "wins": 11,
-      "losses": 1
+  palma: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/salinas/palma-chieftains/football/",
+    stateRank: 87,
+    record: {
+      wins: 11,
+      losses: 1,
     },
-    "pointsFor": 467,
-    "pointsAgainst": 238,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 467,
+    pointsAgainst: 238,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "aptos": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/aptos/aptos-mariners/football/",
-    "stateRank": 638,
-    "record": {
-      "wins": 1,
-      "losses": 9
+  aptos: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/aptos/aptos-mariners/football/",
+    stateRank: 638,
+    record: {
+      wins: 1,
+      losses: 9,
     },
-    "pointsFor": 164,
-    "pointsAgainst": 400,
-    "streak": "L8",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 164,
+    pointsAgainst: 400,
+    streak: "L8",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "sacred-heart-prep": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/atherton/sacred-heart-prep-gators/football/",
-    "stateRank": 335,
-    "record": {
-      "wins": 6,
-      "losses": 6
+    maxprepsUrl: "https://www.maxpreps.com/ca/atherton/sacred-heart-prep-gators/football/",
+    stateRank: 335,
+    record: {
+      wins: 6,
+      losses: 6,
     },
-    "pointsFor": 266,
-    "pointsAgainst": 367,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 266,
+    pointsAgainst: 367,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "andrew-hill": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/hill-falcons/football/",
-    "stateRank": 1029,
-    "record": {
-      "wins": 0,
-      "losses": 10
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/hill-falcons/football/",
+    stateRank: 1029,
+    record: {
+      wins: 0,
+      losses: 10,
     },
-    "pointsFor": 81,
-    "pointsAgainst": 341,
-    "streak": "L10",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 81,
+    pointsAgainst: 341,
+    streak: "L10",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "branham": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/branham-bruins/football/",
-    "stateRank": 326,
-    "record": {
-      "wins": 7,
-      "losses": 6
+  branham: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/branham-bruins/football/",
+    stateRank: 326,
+    record: {
+      wins: 7,
+      losses: 6,
     },
-    "pointsFor": 460,
-    "pointsAgainst": 434,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 460,
+    pointsAgainst: 434,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "del-mar": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/del-mar-dons/football/",
-    "stateRank": 904,
-    "record": {
-      "wins": 2,
-      "losses": 8
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/del-mar-dons/football/",
+    stateRank: 904,
+    record: {
+      wins: 2,
+      losses: 8,
     },
-    "pointsFor": 208,
-    "pointsAgainst": 370,
-    "streak": "L7",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 208,
+    pointsAgainst: 370,
+    streak: "L7",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "evergreen-valley": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/evergreen-valley-cougars/football/",
-    "stateRank": 935,
-    "record": {
-      "wins": 5,
-      "losses": 5
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/evergreen-valley-cougars/football/",
+    stateRank: 935,
+    record: {
+      wins: 5,
+      losses: 5,
     },
-    "pointsFor": 249,
-    "pointsAgainst": 248,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 249,
+    pointsAgainst: 248,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "gunderson": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/gunderson-grizzlies/football/",
-    "stateRank": 599,
-    "record": {
-      "wins": 6,
-      "losses": 4
+  gunderson: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/gunderson-grizzlies/football/",
+    stateRank: 599,
+    record: {
+      wins: 6,
+      losses: 4,
     },
-    "pointsFor": 277,
-    "pointsAgainst": 229,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 277,
+    pointsAgainst: 229,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "independence": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/independence-76ers/football/",
-    "stateRank": 908,
-    "record": {
-      "wins": 5,
-      "losses": 5
+  independence: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/independence-76ers/football/",
+    stateRank: 908,
+    record: {
+      wins: 5,
+      losses: 5,
     },
-    "pointsFor": 226,
-    "pointsAgainst": 279,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 226,
+    pointsAgainst: 279,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "james-lick": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/james-lick-comets/football/",
-    "stateRank": 1021,
-    "record": {
-      "wins": 1,
-      "losses": 9
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/james-lick-comets/football/",
+    stateRank: 1021,
+    record: {
+      wins: 1,
+      losses: 9,
     },
-    "pointsFor": 136,
-    "pointsAgainst": 369,
-    "streak": "L4",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 136,
+    pointsAgainst: 369,
+    streak: "L4",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "lincoln": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/lincoln-lions/football/",
-    "stateRank": 233,
-    "record": {
-      "wins": 11,
-      "losses": 4
+  lincoln: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/lincoln-lions/football/",
+    stateRank: 233,
+    record: {
+      wins: 11,
+      losses: 4,
     },
-    "pointsFor": 542,
-    "pointsAgainst": 353,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 542,
+    pointsAgainst: 353,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "live-oak": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/morgan-hill/live-oak-acorns/football/",
-    "stateRank": 258,
-    "record": {
-      "wins": 9,
-      "losses": 3
+    maxprepsUrl: "https://www.maxpreps.com/ca/morgan-hill/live-oak-acorns/football/",
+    stateRank: 258,
+    record: {
+      wins: 9,
+      losses: 3,
     },
-    "pointsFor": 469,
-    "pointsAgainst": 305,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 469,
+    pointsAgainst: 305,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "mt-pleasant": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/mt-pleasant-cardinals/football/",
-    "stateRank": 1000,
-    "record": {
-      "wins": 2,
-      "losses": 7
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/mt-pleasant-cardinals/football/",
+    stateRank: 1000,
+    record: {
+      wins: 2,
+      losses: 7,
     },
-    "pointsFor": 161,
-    "pointsAgainst": 311,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 161,
+    pointsAgainst: 311,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "overfelt": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/overfelt-royals/football/",
-    "stateRank": 668,
-    "record": {
-      "wins": 5,
-      "losses": 5
+  overfelt: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/overfelt-royals/football/",
+    stateRank: 668,
+    record: {
+      wins: 5,
+      losses: 5,
     },
-    "pointsFor": 169,
-    "pointsAgainst": 159,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 169,
+    pointsAgainst: 159,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "piedmont-hills": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/piedmont-hills-pirates/football/",
-    "stateRank": 449,
-    "record": {
-      "wins": 10,
-      "losses": 4
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/piedmont-hills-pirates/football/",
+    stateRank: 449,
+    record: {
+      wins: 10,
+      losses: 4,
     },
-    "pointsFor": 411,
-    "pointsAgainst": 322,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 411,
+    pointsAgainst: 322,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "pioneer": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/pioneer-mustangs/football/",
-    "stateRank": 645,
-    "record": {
-      "wins": 6,
-      "losses": 5
+  pioneer: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/pioneer-mustangs/football/",
+    stateRank: 645,
+    record: {
+      wins: 6,
+      losses: 5,
     },
-    "pointsFor": 201,
-    "pointsAgainst": 224,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 201,
+    pointsAgainst: 224,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "prospect": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/saratoga/prospect-panthers/football/",
-    "stateRank": 892,
-    "record": {
-      "wins": 5,
-      "losses": 5
+  prospect: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/saratoga/prospect-panthers/football/",
+    stateRank: 892,
+    record: {
+      wins: 5,
+      losses: 5,
     },
-    "pointsFor": 208,
-    "pointsAgainst": 268,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 208,
+    pointsAgainst: 268,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "san-jose": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/san-jose-bulldogs/football/",
-    "stateRank": 812,
-    "record": {
-      "wins": 7,
-      "losses": 4
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/san-jose-bulldogs/football/",
+    stateRank: 812,
+    record: {
+      wins: 7,
+      losses: 4,
     },
-    "pointsFor": 295,
-    "pointsAgainst": 195,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 295,
+    pointsAgainst: 195,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "santa-teresa": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/santa-teresa-saints/football/",
-    "stateRank": 175,
-    "record": {
-      "wins": 11,
-      "losses": 1
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/santa-teresa-saints/football/",
+    stateRank: 175,
+    record: {
+      wins: 11,
+      losses: 1,
     },
-    "pointsFor": 459,
-    "pointsAgainst": 222,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 459,
+    pointsAgainst: 222,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "silver-creek": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/silver-creek-raiders/football/",
-    "stateRank": 682,
-    "record": {
-      "wins": 5,
-      "losses": 5
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/silver-creek-raiders/football/",
+    stateRank: 682,
+    record: {
+      wins: 5,
+      losses: 5,
     },
-    "pointsFor": 226,
-    "pointsAgainst": 155,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 226,
+    pointsAgainst: 155,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "sobrato": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/morgan-hill/ann-sobrato-bulldogs/football/",
-    "stateRank": 480,
-    "record": {
-      "wins": 8,
-      "losses": 5
+  sobrato: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/morgan-hill/ann-sobrato-bulldogs/football/",
+    stateRank: 480,
+    record: {
+      wins: 8,
+      losses: 5,
     },
-    "pointsFor": 350,
-    "pointsAgainst": 284,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 350,
+    pointsAgainst: 284,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "westmont": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/campbell/westmont-warriors/football/",
-    "stateRank": 839,
-    "record": {
-      "wins": 3,
-      "losses": 7
+  westmont: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/campbell/westmont-warriors/football/",
+    stateRank: 839,
+    record: {
+      wins: 3,
+      losses: 7,
     },
-    "pointsFor": 185,
-    "pointsAgainst": 333,
-    "streak": "L3",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 185,
+    pointsAgainst: 333,
+    streak: "L3",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "willow-glen": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/willow-glen-rams/football/",
-    "stateRank": 340,
-    "record": {
-      "wins": 9,
-      "losses": 3
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/willow-glen-rams/football/",
+    stateRank: 340,
+    record: {
+      wins: 9,
+      losses: 3,
     },
-    "pointsFor": 353,
-    "pointsAgainst": 199,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 353,
+    pointsAgainst: 199,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "yerba-buena": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/yerba-buena-aztec-warriors/football/",
-    "stateRank": 854,
-    "record": {
-      "wins": 7,
-      "losses": 3
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/yerba-buena-aztec-warriors/football/",
+    stateRank: 854,
+    record: {
+      wins: 7,
+      losses: 3,
     },
-    "pointsFor": 323,
-    "pointsAgainst": 270,
-    "streak": "W4",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 323,
+    pointsAgainst: 270,
+    streak: "W4",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "cupertino": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/cupertino/cupertino-pioneers/football/",
-    "stateRank": 1014,
-    "record": {
-      "wins": 0,
-      "losses": 10
+  cupertino: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/cupertino/cupertino-pioneers/football/",
+    stateRank: 1014,
+    record: {
+      wins: 0,
+      losses: 10,
     },
-    "pointsFor": 107,
-    "pointsAgainst": 370,
-    "streak": "L10",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 107,
+    pointsAgainst: 370,
+    streak: "L10",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "fremont": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/sunnyvale/fremont-firebirds/football/",
-    "stateRank": 868,
-    "record": {
-      "wins": 2,
-      "losses": 8
+  fremont: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/sunnyvale/fremont-firebirds/football/",
+    stateRank: 868,
+    record: {
+      wins: 2,
+      losses: 8,
     },
-    "pointsFor": 94,
-    "pointsAgainst": 257,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 94,
+    pointsAgainst: 257,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "gunn": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/palo-alto/gunn-titans/football/",
-    "stateRank": 938,
-    "record": {
-      "wins": 2,
-      "losses": 8
+  gunn: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/palo-alto/gunn-titans/football/",
+    stateRank: 938,
+    record: {
+      wins: 2,
+      losses: 8,
     },
-    "pointsFor": 112,
-    "pointsAgainst": 264,
-    "streak": "L7",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 112,
+    pointsAgainst: 264,
+    streak: "L7",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "homestead": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/cupertino/homestead-mustangs/football/",
-    "stateRank": 602,
-    "record": {
-      "wins": 7,
-      "losses": 3
+  homestead: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/cupertino/homestead-mustangs/football/",
+    stateRank: 602,
+    record: {
+      wins: 7,
+      losses: 3,
     },
-    "pointsFor": 266,
-    "pointsAgainst": 126,
-    "streak": "W2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 266,
+    pointsAgainst: 126,
+    streak: "W2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "los-altos": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/los-altos/los-altos-eagles/football/",
-    "stateRank": 817,
-    "record": {
-      "wins": 3,
-      "losses": 7
+    maxprepsUrl: "https://www.maxpreps.com/ca/los-altos/los-altos-eagles/football/",
+    stateRank: 817,
+    record: {
+      wins: 3,
+      losses: 7,
     },
-    "pointsFor": 134,
-    "pointsAgainst": 278,
-    "streak": "L2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 134,
+    pointsAgainst: 278,
+    streak: "L2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "lynbrook": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/lynbrook-vikings/football/",
-    "record": {
-      "wins": 0,
-      "losses": 0
+  lynbrook: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/lynbrook-vikings/football/",
+    record: {
+      wins: 0,
+      losses: 0,
     },
-    "pointsFor": 0,
-    "pointsAgainst": 0,
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 0,
+    pointsAgainst: 0,
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "milpitas": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/milpitas/milpitas-trojans/football/",
-    "stateRank": 649,
-    "record": {
-      "wins": 4,
-      "losses": 6
+  milpitas: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/milpitas/milpitas-trojans/football/",
+    stateRank: 649,
+    record: {
+      wins: 4,
+      losses: 6,
     },
-    "pointsFor": 207,
-    "pointsAgainst": 294,
-    "streak": "L4",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 207,
+    pointsAgainst: 294,
+    streak: "L4",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "monta-vista": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/cupertino/monta-vista-matadors/football/",
-    "stateRank": 905,
-    "record": {
-      "wins": 4,
-      "losses": 6
+    maxprepsUrl: "https://www.maxpreps.com/ca/cupertino/monta-vista-matadors/football/",
+    stateRank: 905,
+    record: {
+      wins: 4,
+      losses: 6,
     },
-    "pointsFor": 180,
-    "pointsAgainst": 224,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 180,
+    pointsAgainst: 224,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "mountain-view": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/mountain-view/mountain-view-spartans/football/",
-    "stateRank": 586,
-    "record": {
-      "wins": 3,
-      "losses": 7
+    maxprepsUrl: "https://www.maxpreps.com/ca/mountain-view/mountain-view-spartans/football/",
+    stateRank: 586,
+    record: {
+      wins: 3,
+      losses: 7,
     },
-    "pointsFor": 258,
-    "pointsAgainst": 385,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 258,
+    pointsAgainst: 385,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "santa-clara": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/santa-clara/santa-clara-bruins/football/",
-    "stateRank": 832,
-    "record": {
-      "wins": 4,
-      "losses": 6
+    maxprepsUrl: "https://www.maxpreps.com/ca/santa-clara/santa-clara-bruins/football/",
+    stateRank: 832,
+    record: {
+      wins: 4,
+      losses: 6,
     },
-    "pointsFor": 185,
-    "pointsAgainst": 304,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 185,
+    pointsAgainst: 304,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "saratoga": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/saratoga/saratoga-falcons/football/",
-    "stateRank": 661,
-    "record": {
-      "wins": 6,
-      "losses": 4
+  saratoga: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/saratoga/saratoga-falcons/football/",
+    stateRank: 661,
+    record: {
+      wins: 6,
+      losses: 4,
     },
-    "pointsFor": 202,
-    "pointsAgainst": 106,
-    "streak": "L2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 202,
+    pointsAgainst: 106,
+    streak: "L2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "aragon": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-mateo/aragon-dons/football/",
-    "stateRank": 563,
-    "record": {
-      "wins": 5,
-      "losses": 5
+  aragon: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-mateo/aragon-dons/football/",
+    stateRank: 563,
+    record: {
+      wins: 5,
+      losses: 5,
     },
-    "pointsFor": 204,
-    "pointsAgainst": 204,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 204,
+    pointsAgainst: 204,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "capuchino": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-bruno/capuchino-mustangs/football/",
-    "stateRank": 667,
-    "record": {
-      "wins": 2,
-      "losses": 8
+  capuchino: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-bruno/capuchino-mustangs/football/",
+    stateRank: 667,
+    record: {
+      wins: 2,
+      losses: 8,
     },
-    "pointsFor": 138,
-    "pointsAgainst": 288,
-    "streak": "L3",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 138,
+    pointsAgainst: 288,
+    streak: "L3",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "carlmont": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/belmont/carlmont-scots/football/",
-    "stateRank": 724,
-    "record": {
-      "wins": 2,
-      "losses": 8
+  carlmont: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/belmont/carlmont-scots/football/",
+    stateRank: 724,
+    record: {
+      wins: 2,
+      losses: 8,
     },
-    "pointsFor": 234,
-    "pointsAgainst": 347,
-    "streak": "L4",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 234,
+    pointsAgainst: 347,
+    streak: "L4",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "el-camino": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/south-san-francisco/el-camino-colts/football/",
-    "stateRank": 769,
-    "record": {
-      "wins": 5,
-      "losses": 5
+    maxprepsUrl: "https://www.maxpreps.com/ca/south-san-francisco/el-camino-colts/football/",
+    stateRank: 769,
+    record: {
+      wins: 5,
+      losses: 5,
     },
-    "pointsFor": 228,
-    "pointsAgainst": 238,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 228,
+    pointsAgainst: 238,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "half-moon-bay": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/half-moon-bay/half-moon-bay-cougars/football/",
-    "stateRank": 350,
-    "record": {
-      "wins": 8,
-      "losses": 4
+    maxprepsUrl: "https://www.maxpreps.com/ca/half-moon-bay/half-moon-bay-cougars/football/",
+    stateRank: 350,
+    record: {
+      wins: 8,
+      losses: 4,
     },
-    "pointsFor": 457,
-    "pointsAgainst": 287,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 457,
+    pointsAgainst: 287,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "hillsdale": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-mateo/hillsdale-fighting-knights/football/",
-    "stateRank": 662,
-    "record": {
-      "wins": 3,
-      "losses": 7
+  hillsdale: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-mateo/hillsdale-fighting-knights/football/",
+    stateRank: 662,
+    record: {
+      wins: 3,
+      losses: 7,
     },
-    "pointsFor": 125,
-    "pointsAgainst": 249,
-    "streak": "L2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 125,
+    pointsAgainst: 249,
+    streak: "L2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "jefferson": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/daly-city/jefferson-grizzlies/football/",
-    "stateRank": 540,
-    "record": {
-      "wins": 9,
-      "losses": 3
+  jefferson: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/daly-city/jefferson-grizzlies/football/",
+    stateRank: 540,
+    record: {
+      wins: 9,
+      losses: 3,
     },
-    "pointsFor": 303,
-    "pointsAgainst": 188,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 303,
+    pointsAgainst: 188,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "mills": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/millbrae/mills-vikings/football/",
-    "stateRank": 944,
-    "record": {
-      "wins": 2,
-      "losses": 8
+  mills: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/millbrae/mills-vikings/football/",
+    stateRank: 944,
+    record: {
+      wins: 2,
+      losses: 8,
     },
-    "pointsFor": 138,
-    "pointsAgainst": 277,
-    "streak": "L6",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 138,
+    pointsAgainst: 277,
+    streak: "L6",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "oceana": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/pacifica/oceana-sharks/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+  oceana: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/pacifica/oceana-sharks/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "san-mateo": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-mateo/san-mateo-bearcats/football/",
-    "stateRank": 279,
-    "record": {
-      "wins": 9,
-      "losses": 4
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-mateo/san-mateo-bearcats/football/",
+    stateRank: 279,
+    record: {
+      wins: 9,
+      losses: 4,
     },
-    "pointsFor": 370,
-    "pointsAgainst": 269,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 370,
+    pointsAgainst: 269,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "sequoia": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/redwood-city/sequoia-ravens/football/",
-    "stateRank": 525,
-    "record": {
-      "wins": 6,
-      "losses": 4
+  sequoia: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/redwood-city/sequoia-ravens/football/",
+    stateRank: 525,
+    record: {
+      wins: 6,
+      losses: 4,
     },
-    "pointsFor": 188,
-    "pointsAgainst": 210,
-    "streak": "W2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 188,
+    pointsAgainst: 210,
+    streak: "W2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "south-san-francisco": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/south-san-francisco/south-san-francisco-warriors/football/",
-    "stateRank": 708,
-    "record": {
-      "wins": 5,
-      "losses": 6
+    maxprepsUrl:
+      "https://www.maxpreps.com/ca/south-san-francisco/south-san-francisco-warriors/football/",
+    stateRank: 708,
+    record: {
+      wins: 5,
+      losses: 6,
     },
-    "pointsFor": 237,
-    "pointsAgainst": 247,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 237,
+    pointsAgainst: 247,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "terra-nova": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/pacifica/terra-nova-tigers/football/",
-    "stateRank": 558,
-    "record": {
-      "wins": 8,
-      "losses": 4
+    maxprepsUrl: "https://www.maxpreps.com/ca/pacifica/terra-nova-tigers/football/",
+    stateRank: 558,
+    record: {
+      wins: 8,
+      losses: 4,
     },
-    "pointsFor": 306,
-    "pointsAgainst": 246,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 306,
+    pointsAgainst: 246,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "westmoor": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/daly-city/westmoor-rams/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+  westmoor: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/daly-city/westmoor-rams/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "woodside": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/woodside/woodside-wildcats/football/",
-    "stateRank": 250,
-    "record": {
-      "wins": 10,
-      "losses": 1
+  woodside: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/woodside/woodside-wildcats/football/",
+    stateRank: 250,
+    record: {
+      wins: 10,
+      losses: 1,
     },
-    "pointsFor": 431,
-    "pointsAgainst": 108,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 431,
+    pointsAgainst: 108,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "burlingame": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/burlingame/burlingame-panthers/football/",
-    "stateRank": 404,
-    "record": {
-      "wins": 6,
-      "losses": 5
+  burlingame: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/burlingame/burlingame-panthers/football/",
+    stateRank: 404,
+    record: {
+      wins: 6,
+      losses: 5,
     },
-    "pointsFor": 268,
-    "pointsAgainst": 273,
-    "streak": "L2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 268,
+    pointsAgainst: 273,
+    streak: "L2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "menlo-school": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/atherton/menlo-school-knights/football/",
-    "stateRank": 169,
-    "record": {
-      "wins": 9,
-      "losses": 3
+    maxprepsUrl: "https://www.maxpreps.com/ca/atherton/menlo-school-knights/football/",
+    stateRank: 169,
+    record: {
+      wins: 9,
+      losses: 3,
     },
-    "pointsFor": 365,
-    "pointsAgainst": 164,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 365,
+    pointsAgainst: 164,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "alisal": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/salinas/alisal-trojans/football/",
-    "stateRank": 312,
-    "record": {
-      "wins": 5,
-      "losses": 6
+  alisal: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/salinas/alisal-trojans/football/",
+    stateRank: 312,
+    record: {
+      wins: 5,
+      losses: 6,
     },
-    "pointsFor": 354,
-    "pointsAgainst": 378,
-    "streak": "L2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 354,
+    pointsAgainst: 378,
+    streak: "L2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "anzar": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-juan-bautista/anzar-hawks/football/",
-    "stateRank": 80,
-    "record": {
-      "wins": 3,
-      "losses": 4
+  anzar: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-juan-bautista/anzar-hawks/football/",
+    stateRank: 80,
+    record: {
+      wins: 3,
+      losses: 4,
     },
-    "pointsFor": 156,
-    "pointsAgainst": 108,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 156,
+    pointsAgainst: 108,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "carmel": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/carmel/carmel-padres/football/",
-    "stateRank": 383,
-    "record": {
-      "wins": 6,
-      "losses": 5
+  carmel: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/carmel/carmel-padres/football/",
+    stateRank: 383,
+    record: {
+      wins: 6,
+      losses: 5,
     },
-    "pointsFor": 341,
-    "pointsAgainst": 386,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 341,
+    pointsAgainst: 386,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "ceiba": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/watsonville/ceiba-college-preparatory-academy-spartans/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+  ceiba: {
+    maxprepsUrl:
+      "https://www.maxpreps.com/ca/watsonville/ceiba-college-preparatory-academy-spartans/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "gonzales": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/gonzales/gonzales-spartans/football/",
-    "stateRank": 849,
-    "record": {
-      "wins": 3,
-      "losses": 6
+  gonzales: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/gonzales/gonzales-spartans/football/",
+    stateRank: 849,
+    record: {
+      wins: 3,
+      losses: 6,
     },
-    "pointsFor": 159,
-    "pointsAgainst": 238,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 159,
+    pointsAgainst: 238,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "greenfield": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/greenfield/greenfield-bruins/football/",
-    "stateRank": 853,
-    "record": {
-      "wins": 1,
-      "losses": 9
+  greenfield: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/greenfield/greenfield-bruins/football/",
+    stateRank: 853,
+    record: {
+      wins: 1,
+      losses: 9,
     },
-    "pointsFor": 89,
-    "pointsAgainst": 269,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 89,
+    pointsAgainst: 269,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "hollister": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/hollister/hollister-haybalers/football/",
-    "stateRank": 417,
-    "record": {
-      "wins": 3,
-      "losses": 7
+  hollister: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/hollister/hollister-haybalers/football/",
+    stateRank: 417,
+    record: {
+      wins: 3,
+      losses: 7,
     },
-    "pointsFor": 181,
-    "pointsAgainst": 285,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 181,
+    pointsAgainst: 285,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "king-city": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/king-city/king-city-mustangs/football/",
-    "stateRank": 369,
-    "record": {
-      "wins": 9,
-      "losses": 2
+    maxprepsUrl: "https://www.maxpreps.com/ca/king-city/king-city-mustangs/football/",
+    stateRank: 369,
+    record: {
+      wins: 9,
+      losses: 2,
     },
-    "pointsFor": 327,
-    "pointsAgainst": 136,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 327,
+    pointsAgainst: 136,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "marina": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/marina/marina-mariners/football/",
-    "stateRank": 855,
-    "record": {
-      "wins": 5,
-      "losses": 4
+  marina: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/marina/marina-mariners/football/",
+    stateRank: 855,
+    record: {
+      wins: 5,
+      losses: 4,
     },
-    "pointsFor": 244,
-    "pointsAgainst": 226,
-    "streak": "L3",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 244,
+    pointsAgainst: 226,
+    streak: "L3",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "monterey": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/monterey/monterey-dores/football/",
-    "stateRank": 438,
-    "record": {
-      "wins": 4,
-      "losses": 6
+  monterey: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/monterey/monterey-dores/football/",
+    stateRank: 438,
+    record: {
+      wins: 4,
+      losses: 6,
     },
-    "pointsFor": 219,
-    "pointsAgainst": 290,
-    "streak": "L4",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 219,
+    pointsAgainst: 290,
+    streak: "L4",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "monte-vista-christian": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/watsonville/monte-vista-christian-mustangs/football/",
-    "stateRank": 669,
-    "record": {
-      "wins": 4,
-      "losses": 6
+    maxprepsUrl: "https://www.maxpreps.com/ca/watsonville/monte-vista-christian-mustangs/football/",
+    stateRank: 669,
+    record: {
+      wins: 4,
+      losses: 6,
     },
-    "pointsFor": 307,
-    "pointsAgainst": 325,
-    "streak": "L4",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 307,
+    pointsAgainst: 325,
+    streak: "L4",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "north-monterey-county": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/castroville/north-monterey-county-condors/football/",
-    "stateRank": 825,
-    "record": {
-      "wins": 1,
-      "losses": 9
+    maxprepsUrl: "https://www.maxpreps.com/ca/castroville/north-monterey-county-condors/football/",
+    stateRank: 825,
+    record: {
+      wins: 1,
+      losses: 9,
     },
-    "pointsFor": 160,
-    "pointsAgainst": 309,
-    "streak": "L8",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 160,
+    pointsAgainst: 309,
+    streak: "L8",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "north-salinas": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/salinas/north-salinas-vikings/football/",
-    "stateRank": 323,
-    "record": {
-      "wins": 5,
-      "losses": 6
+    maxprepsUrl: "https://www.maxpreps.com/ca/salinas/north-salinas-vikings/football/",
+    stateRank: 323,
+    record: {
+      wins: 5,
+      losses: 6,
     },
-    "pointsFor": 241,
-    "pointsAgainst": 242,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 241,
+    pointsAgainst: 242,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "pacific-grove": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/pacific-grove/pacific-grove-breakers/football/",
-    "stateRank": 694,
-    "record": {
-      "wins": 4,
-      "losses": 6
+    maxprepsUrl: "https://www.maxpreps.com/ca/pacific-grove/pacific-grove-breakers/football/",
+    stateRank: 694,
+    record: {
+      wins: 4,
+      losses: 6,
     },
-    "pointsFor": 169,
-    "pointsAgainst": 243,
-    "streak": "L5",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 169,
+    pointsAgainst: 243,
+    streak: "L5",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "pajaro-valley": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/watsonville/pajaro-valley-grizzlies/football/",
-    "stateRank": 795,
-    "record": {
-      "wins": 6,
-      "losses": 4
+    maxprepsUrl: "https://www.maxpreps.com/ca/watsonville/pajaro-valley-grizzlies/football/",
+    stateRank: 795,
+    record: {
+      wins: 6,
+      losses: 4,
     },
-    "pointsFor": 227,
-    "pointsAgainst": 220,
-    "streak": "W5",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 227,
+    pointsAgainst: 220,
+    streak: "W5",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "rancho-san-juan": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/salinas/rancho-san-juan-trailblazers/football/",
-    "stateRank": 979,
-    "record": {
-      "wins": 1,
-      "losses": 9
+    maxprepsUrl: "https://www.maxpreps.com/ca/salinas/rancho-san-juan-trailblazers/football/",
+    stateRank: 979,
+    record: {
+      wins: 1,
+      losses: 9,
     },
-    "pointsFor": 85,
-    "pointsAgainst": 297,
-    "streak": "L6",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 85,
+    pointsAgainst: 297,
+    streak: "L6",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "seaside": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/seaside/seaside-spartans/football/",
-    "stateRank": 852,
-    "record": {
-      "wins": 4,
-      "losses": 6
+  seaside: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/seaside/seaside-spartans/football/",
+    stateRank: 852,
+    record: {
+      wins: 4,
+      losses: 6,
     },
-    "pointsFor": 191,
-    "pointsAgainst": 267,
-    "streak": "W3",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 191,
+    pointsAgainst: 267,
+    streak: "W3",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "soledad": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/soledad/soledad-aztecs/football/",
-    "stateRank": 573,
-    "record": {
-      "wins": 4,
-      "losses": 6
+  soledad: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/soledad/soledad-aztecs/football/",
+    stateRank: 573,
+    record: {
+      wins: 4,
+      losses: 6,
     },
-    "pointsFor": 215,
-    "pointsAgainst": 227,
-    "streak": "W2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 215,
+    pointsAgainst: 227,
+    streak: "W2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "watsonville": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/watsonville/watsonville-wildcatz/football/",
-    "stateRank": 685,
-    "record": {
-      "wins": 4,
-      "losses": 6
+  watsonville: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/watsonville/watsonville-wildcatz/football/",
+    stateRank: 685,
+    record: {
+      wins: 4,
+      losses: 6,
     },
-    "pointsFor": 191,
-    "pointsAgainst": 254,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 191,
+    pointsAgainst: 254,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "harbor": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/santa-cruz/harbor-pirates/football/",
-    "stateRank": 990,
-    "record": {
-      "wins": 0,
-      "losses": 10
+  harbor: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/santa-cruz/harbor-pirates/football/",
+    stateRank: 990,
+    record: {
+      wins: 0,
+      losses: 10,
     },
-    "pointsFor": 190,
-    "pointsAgainst": 340,
-    "streak": "L10",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 190,
+    pointsAgainst: 340,
+    streak: "L10",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "san-lorenzo-valley": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/felton/san-lorenzo-valley-cougars/football/",
-    "stateRank": 522,
-    "record": {
-      "wins": 8,
-      "losses": 3
+    maxprepsUrl: "https://www.maxpreps.com/ca/felton/san-lorenzo-valley-cougars/football/",
+    stateRank: 522,
+    record: {
+      wins: 8,
+      losses: 3,
     },
-    "pointsFor": 248,
-    "pointsAgainst": 203,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 248,
+    pointsAgainst: 203,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "santa-cruz": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/santa-cruz/santa-cruz-cardinals/football/",
-    "stateRank": 634,
-    "record": {
-      "wins": 7,
-      "losses": 4
+    maxprepsUrl: "https://www.maxpreps.com/ca/santa-cruz/santa-cruz-cardinals/football/",
+    stateRank: 634,
+    record: {
+      wins: 7,
+      losses: 4,
     },
-    "pointsFor": 330,
-    "pointsAgainst": 229,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 330,
+    pointsAgainst: 229,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "scotts-valley": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/scotts-valley/scotts-valley-falcons/football/",
-    "stateRank": 418,
-    "record": {
-      "wins": 8,
-      "losses": 3
+    maxprepsUrl: "https://www.maxpreps.com/ca/scotts-valley/scotts-valley-falcons/football/",
+    stateRank: 418,
+    record: {
+      wins: 8,
+      losses: 3,
     },
-    "pointsFor": 283,
-    "pointsAgainst": 138,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 283,
+    pointsAgainst: 138,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "soquel": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/soquel/soquel-knights/football/",
-    "stateRank": 94,
-    "record": {
-      "wins": 9,
-      "losses": 2
+  soquel: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/soquel/soquel-knights/football/",
+    stateRank: 94,
+    record: {
+      wins: 9,
+      losses: 2,
     },
-    "pointsFor": 367,
-    "pointsAgainst": 181,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 367,
+    pointsAgainst: 181,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "harker": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/harker-eagles/football/",
-    "stateRank": 57,
-    "record": {
-      "wins": 3,
-      "losses": 2
+  harker: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/harker-eagles/football/",
+    stateRank: 57,
+    record: {
+      wins: 3,
+      losses: 2,
     },
-    "pointsFor": 187,
-    "pointsAgainst": 59,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 187,
+    pointsAgainst: 59,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "pinewood": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/los-altos-hills/pinewood-panthers/football/",
-    "stateRank": 65,
-    "record": {
-      "wins": 5,
-      "losses": 2
+  pinewood: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/los-altos-hills/pinewood-panthers/football/",
+    stateRank: 65,
+    record: {
+      wins: 5,
+      losses: 2,
     },
-    "pointsFor": 260,
-    "pointsAgainst": 166,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 260,
+    pointsAgainst: 166,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "woodside-priory": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/portola-valley/priory-panthers/football/",
-    "stateRank": 30,
-    "record": {
-      "wins": 6,
-      "losses": 4
+    maxprepsUrl: "https://www.maxpreps.com/ca/portola-valley/priory-panthers/football/",
+    stateRank: 30,
+    record: {
+      wins: 6,
+      losses: 4,
     },
-    "pointsFor": 385,
-    "pointsAgainst": 279,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 385,
+    pointsAgainst: 279,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "crystal-springs-uplands": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/hillsborough/crystal-springs-uplands-gryphons/football/",
-    "stateRank": 20,
-    "record": {
-      "wins": 6,
-      "losses": 0
+    maxprepsUrl:
+      "https://www.maxpreps.com/ca/hillsborough/crystal-springs-uplands-gryphons/football/",
+    stateRank: 20,
+    record: {
+      wins: 6,
+      losses: 0,
     },
-    "pointsFor": 314,
-    "pointsAgainst": 86,
-    "streak": "W6",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 314,
+    pointsAgainst: 86,
+    streak: "W6",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "castilleja": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/palo-alto/castilleja-gators/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+  castilleja: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/palo-alto/castilleja-gators/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "alma-heights-christian": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/pacifica/pacific-bay-christian-eagles/football/",
-    "record": {
-      "wins": 0,
-      "losses": 0
+    maxprepsUrl: "https://www.maxpreps.com/ca/pacifica/pacific-bay-christian-eagles/football/",
+    record: {
+      wins: 0,
+      losses: 0,
     },
-    "pointsFor": 0,
-    "pointsAgainst": 0,
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 0,
+    pointsAgainst: 0,
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "pacific-bay-christian": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/pacifica/pacific-bay-christian-eagles/football/",
-    "record": {
-      "wins": 0,
-      "losses": 0
+    maxprepsUrl: "https://www.maxpreps.com/ca/pacifica/pacific-bay-christian-eagles/football/",
+    record: {
+      wins: 0,
+      losses: 0,
     },
-    "pointsFor": 0,
-    "pointsAgainst": 0,
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 0,
+    pointsAgainst: 0,
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "summit-tahoma": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/summit-tahoma-tigers/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/summit-tahoma-tigers/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "summit-rainier": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/summit-rainier-bulldogs/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/summit-rainier-bulldogs/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "mid-peninsula": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/menlo-park/mid-peninsula-dragons/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/menlo-park/mid-peninsula-dragons/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "design-tech": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/redwood-city/design-tech-dragons/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/redwood-city/design-tech-dragons/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "luis-valdez-leadership": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/luis-valdez-leadership-academy-lions/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl:
+      "https://www.maxpreps.com/ca/san-jose/luis-valdez-leadership-academy-lions/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "gilroy": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/gilroy/gilroy-mustangs/football/",
-    "stateRank": 871,
-    "record": {
-      "wins": 2,
-      "losses": 8
+  gilroy: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/gilroy/gilroy-mustangs/football/",
+    stateRank: 871,
+    record: {
+      wins: 2,
+      losses: 8,
     },
-    "pointsFor": 145,
-    "pointsAgainst": 332,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 145,
+    pointsAgainst: 332,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "presentation": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/presentation-panthers/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+  presentation: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/presentation-panthers/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "oakwood": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/morgan-hill/oakwood-hawks/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+  oakwood: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/morgan-hill/oakwood-hawks/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "trinity-christian": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/monterey/trinity-christian-warriors/football/",
-    "stateRank": 60,
-    "record": {
-      "wins": 6,
-      "losses": 3
+    maxprepsUrl: "https://www.maxpreps.com/ca/monterey/trinity-christian-warriors/football/",
+    stateRank: 60,
+    record: {
+      wins: 6,
+      losses: 3,
     },
-    "pointsFor": 353,
-    "pointsAgainst": 235,
-    "streak": "W3",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 353,
+    pointsAgainst: 235,
+    streak: "W3",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "pacific-collegiate": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/santa-cruz/pacific-collegiate-pumas/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/santa-cruz/pacific-collegiate-pumas/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "santa-catalina": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/monterey/santa-catalina-cougars/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/monterey/santa-catalina-cougars/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "eastside-college-prep": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/east-palo-alto/eastside-college-prep-panthers/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl:
+      "https://www.maxpreps.com/ca/east-palo-alto/eastside-college-prep-panthers/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "oxford-academy": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/cypress/oxford-academy-patriots/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/cypress/oxford-academy-patriots/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "mountain-view-academy": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/mountain-view/mountain-view-academy-mustangs/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl:
+      "https://www.maxpreps.com/ca/mountain-view/mountain-view-academy-mustangs/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "st-thomas-more": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/more-knights/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-jose/more-knights/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "basis-silicon-valley": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/basis-independent-silicon-valley-bobcats/football/",
-    "stateRank": 112,
-    "record": {
-      "wins": 0,
-      "losses": 7
+    maxprepsUrl:
+      "https://www.maxpreps.com/ca/san-jose/basis-independent-silicon-valley-bobcats/football/",
+    stateRank: 112,
+    record: {
+      wins: 0,
+      losses: 7,
     },
-    "pointsFor": 70,
-    "pointsAgainst": 370,
-    "streak": "L7",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 70,
+    pointsAgainst: 370,
+    streak: "L7",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "stevenson": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/pebble-beach/stevenson-pirates/football/",
-    "stateRank": 304,
-    "record": {
-      "wins": 9,
-      "losses": 2
+  stevenson: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/pebble-beach/stevenson-pirates/football/",
+    stateRank: 304,
+    record: {
+      wins: 9,
+      losses: 2,
     },
-    "pointsFor": 375,
-    "pointsAgainst": 150,
-    "streak": "L2",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 375,
+    pointsAgainst: 150,
+    streak: "L2",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "york": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/monterey/york-falcons/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+  york: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/monterey/york-falcons/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "kirby": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/santa-cruz/kirby-prep-griffins/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+  kirby: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/santa-cruz/kirby-prep-griffins/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "lick-wilmerding": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-francisco/lick-wilmerding-tigers/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-francisco/lick-wilmerding-tigers/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "urban": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-francisco/urban-blues/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+  urban: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-francisco/urban-blues/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "university": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-francisco/university-red-devils/football/",
-    "record": {
-      "wins": 0,
-      "losses": 0
+  university: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-francisco/university-red-devils/football/",
+    record: {
+      wins: 0,
+      losses: 0,
     },
-    "pointsFor": 0,
-    "pointsAgainst": 0,
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 0,
+    pointsAgainst: 0,
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "drew": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-francisco/drew-dragons/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+  drew: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-francisco/drew-dragons/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "marin-academy": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-rafael/marin-academy-wildcats/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-rafael/marin-academy-wildcats/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "san-domenico": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/san-anselmo/san-domenico-panthers/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/san-anselmo/san-domenico-panthers/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "waldorf": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/mountain-view/waldorf-mavericks/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+  waldorf: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/mountain-view/waldorf-mavericks/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "cornerstone-christian": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/antioch/cornerstone-christian-cougars/football/",
-    "stateRank": 44,
-    "record": {
-      "wins": 6,
-      "losses": 6
+    maxprepsUrl: "https://www.maxpreps.com/ca/antioch/cornerstone-christian-cougars/football/",
+    stateRank: 44,
+    record: {
+      wins: 6,
+      losses: 6,
     },
-    "pointsFor": 367,
-    "pointsAgainst": 306,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 367,
+    pointsAgainst: 306,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "california-school-for-the-deaf": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/fremont/california-school-for-the-deaf-eagles/football/",
-    "stateRank": 102,
-    "record": {
-      "wins": 1,
-      "losses": 8
+    maxprepsUrl:
+      "https://www.maxpreps.com/ca/fremont/california-school-for-the-deaf-eagles/football/",
+    stateRank: 102,
+    record: {
+      wins: 1,
+      losses: 8,
     },
-    "pointsFor": 222,
-    "pointsAgainst": 460,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 222,
+    pointsAgainst: 460,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "contra-costa-christian": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/walnut-creek/contra-costa-christian-cougars/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl:
+      "https://www.maxpreps.com/ca/walnut-creek/contra-costa-christian-cougars/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "fremont-christian": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/fremont/fremont-christian-warriors/football/",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    maxprepsUrl: "https://www.maxpreps.com/ca/fremont/fremont-christian-warriors/football/",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "moreau-catholic": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/hayward/moreau-catholic-mariners/football/",
-    "stateRank": 429,
-    "record": {
-      "wins": 4,
-      "losses": 6
+    maxprepsUrl: "https://www.maxpreps.com/ca/hayward/moreau-catholic-mariners/football/",
+    stateRank: 429,
+    record: {
+      wins: 4,
+      losses: 6,
     },
-    "pointsFor": 218,
-    "pointsAgainst": 244,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 218,
+    pointsAgainst: 244,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "newark-memorial": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/newark/newark-memorial-cougars/football/",
-    "stateRank": 846,
-    "record": {
-      "wins": 0,
-      "losses": 10
+    maxprepsUrl: "https://www.maxpreps.com/ca/newark/newark-memorial-cougars/football/",
+    stateRank: 846,
+    record: {
+      wins: 0,
+      losses: 10,
     },
-    "pointsFor": 104,
-    "pointsAgainst": 290,
-    "streak": "L10",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 104,
+    pointsAgainst: 290,
+    streak: "L10",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "james-logan": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/union-city/james-logan-colts/football/",
-    "stateRank": 327,
-    "record": {
-      "wins": 7,
-      "losses": 4
+    maxprepsUrl: "https://www.maxpreps.com/ca/union-city/james-logan-colts/football/",
+    stateRank: 327,
+    record: {
+      wins: 7,
+      losses: 4,
     },
-    "pointsFor": 237,
-    "pointsAgainst": 195,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 237,
+    pointsAgainst: 195,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "american": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/fremont/american-eagles/football/",
-    "stateRank": 929,
-    "record": {
-      "wins": 3,
-      "losses": 6
+  american: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/fremont/american-eagles/football/",
+    stateRank: 929,
+    record: {
+      wins: 3,
+      losses: 6,
     },
-    "pointsFor": 220,
-    "pointsAgainst": 268,
-    "streak": "W1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 220,
+    pointsAgainst: 268,
+    streak: "W1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
-  "irvington": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/fremont/irvington-vikings/football/",
-    "stateRank": 629,
-    "record": {
-      "wins": 7,
-      "losses": 4
+  irvington: {
+    maxprepsUrl: "https://www.maxpreps.com/ca/fremont/irvington-vikings/football/",
+    stateRank: 629,
+    record: {
+      wins: 7,
+      losses: 4,
     },
-    "pointsFor": 310,
-    "pointsAgainst": 293,
-    "streak": "L1",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
+    pointsFor: 310,
+    pointsAgainst: 293,
+    streak: "L1",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
   },
   "mission-san-jose": {
-    "maxprepsUrl": "https://www.maxpreps.com/ca/fremont/mission-san-jose-warriors/football/",
-    "stateRank": 996,
-    "record": {
-      "wins": 2,
-      "losses": 8
+    maxprepsUrl: "https://www.maxpreps.com/ca/fremont/mission-san-jose-warriors/football/",
+    stateRank: 996,
+    record: {
+      wins: 2,
+      losses: 8,
     },
-    "pointsFor": 108,
-    "pointsAgainst": 385,
-    "streak": "L3",
-    "lastUpdated": "2026-04-06T23:50:34.087Z"
-  }
+    pointsFor: 108,
+    pointsAgainst: 385,
+    streak: "L3",
+    lastUpdated: "2026-04-06T23:50:34.087Z",
+  },
 };

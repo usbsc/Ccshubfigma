@@ -85,7 +85,14 @@ export function Home() {
 
       return matchesTeam && matchesDivisionLeague && matchesPlayer;
     });
-  }, [baseBroadcastGames, divisionLeagueQuery, playerQuery, teamById, teamQuery, playersByTeamText]);
+  }, [
+    baseBroadcastGames,
+    divisionLeagueQuery,
+    playerQuery,
+    teamById,
+    teamQuery,
+    playersByTeamText,
+  ]);
   const topRankedTeams = [...teams]
     .sort((a, b) => a.ranking - b.ranking)
     .slice(0, DISPLAY_LIMITS.TOP_RANKED_TEAMS);

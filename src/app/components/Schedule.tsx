@@ -68,7 +68,14 @@ export function Schedule() {
 
       return matchesTeam && matchesDivisionLeague && matchesPlayer;
     });
-  }, [divisionLeagueQuery, levelFilteredGames, playerQuery, teamById, teamQuery, playersByTeamText]);
+  }, [
+    divisionLeagueQuery,
+    levelFilteredGames,
+    playerQuery,
+    teamById,
+    teamQuery,
+    playersByTeamText,
+  ]);
 
   const upcomingGames = filteredGames
     .filter((g) => g.status === "upcoming")
@@ -153,7 +160,8 @@ export function Schedule() {
           </select>
 
           <div className="text-[10px] font-black text-zinc-600 uppercase tracking-widest flex items-center gap-2">
-            <Filter className="w-3 h-3" /> Showing {liveGames.length} Live • {upcomingGames.length} Upcoming
+            <Filter className="w-3 h-3" /> Showing {liveGames.length} Live • {upcomingGames.length}{" "}
+            Upcoming
           </div>
         </div>
       </div>

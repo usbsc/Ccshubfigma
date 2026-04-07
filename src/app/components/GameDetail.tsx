@@ -24,7 +24,8 @@ export function GameDetail() {
   const away = teams.find((t) => t.id === game.awayTeam);
 
   const video =
-    game.video ?? (game.videoUrl ? { provider: "other" as const, embedUrl: game.videoUrl } : undefined);
+    game.video ??
+    (game.videoUrl ? { provider: "other" as const, embedUrl: game.videoUrl } : undefined);
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">

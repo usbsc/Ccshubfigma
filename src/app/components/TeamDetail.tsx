@@ -42,7 +42,7 @@ export function TeamDetail() {
   }
 
   const teamGames = (gamesByYear[selectedYear] ?? []).filter(
-    (g) => g.homeTeam === team.id || g.awayTeam === team.id,
+    (g) => g.homeTeam === team.id || g.awayTeam === team.id
   );
   const teamPlayers = players.filter((p) => p.team === team.id);
 

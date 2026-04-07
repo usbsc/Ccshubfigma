@@ -37,6 +37,9 @@ jobs:
       - name: Update MaxPreps roster data
         run: npm run update:maxpreps-rosters
 
+      - name: Format generated file
+        run: npx prettier --write src/app/data/players.maxpreps.generated.ts
+
       - name: Commit and push (if changed)
         run: |
           git config user.name "github-actions[bot]"
