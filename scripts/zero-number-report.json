@@ -1,0 +1,434 @@
+{
+  "generatedAt": "2026-04-09T22:56:54.798Z",
+  "count": 17,
+  "players": [
+    {
+      "id": "player-christopher-mp-a7eggkjc6p400",
+      "name": "Aleksi Rosti",
+      "team": "christopher",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/gilroy/christopher-cougars/athletes/aleksi-rosti/?careerid=a7eggkjc6p400",
+      "rawMatch": {
+        "id": "player-christopher-mp-a7eggkjc6p400",
+        "name": "Aleksi Rosti",
+        "team": "christopher",
+        "position": "ATH",
+        "number": 0,
+        "grade": 0,
+        "height": "",
+        "weight": 0,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/7/7/3/773e862d-e186-44aa-b268-461b4064ce52.gif?version=634347438000000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/gilroy/christopher-cougars/athletes/aleksi-rosti/?careerid=a7eggkjc6p400",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Aleksi%20Rosti%20Christopher"
+      }
+    },
+    {
+      "id": "player-christopher-mp-36berfuhtaun7",
+      "name": "Christian Martinez",
+      "team": "christopher",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/gilroy/christopher-cougars/athletes/christian-martinez/?careerid=36berfuhtaun7",
+      "rawMatch": {
+        "id": "player-christopher-mp-36berfuhtaun7",
+        "name": "Christian Martinez",
+        "team": "christopher",
+        "position": "ATH",
+        "number": 0,
+        "grade": 0,
+        "height": "5' 7\"",
+        "weight": 150,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/7/7/3/773e862d-e186-44aa-b268-461b4064ce52.gif?version=634347438000000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/gilroy/christopher-cougars/athletes/christian-martinez/?careerid=36berfuhtaun7",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Christian%20Martinez%20Christopher"
+      }
+    },
+    {
+      "id": "player-christopher-mp-fpfhqh001avk4",
+      "name": "Samuel Torres",
+      "team": "christopher",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/gilroy/christopher-cougars/athletes/samuel-torres/?careerid=fpfhqh001avk4",
+      "rawMatch": {
+        "id": "player-christopher-mp-fpfhqh001avk4",
+        "name": "Samuel Torres",
+        "team": "christopher",
+        "position": "ATH",
+        "number": 0,
+        "grade": 0,
+        "height": "",
+        "weight": 0,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/7/7/3/773e862d-e186-44aa-b268-461b4064ce52.gif?version=634347438000000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/gilroy/christopher-cougars/athletes/samuel-torres/?careerid=fpfhqh001avk4",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Samuel%20Torres%20Christopher"
+      }
+    },
+    {
+      "id": "player-independence-mp-51kk30as048qa",
+      "name": "Anthony Garcia",
+      "team": "independence",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/independence-76ers/athletes/anthony-garcia/?careerid=51kk30as048qa",
+      "rawMatch": {
+        "id": "player-independence-mp-51kk30as048qa",
+        "name": "Anthony Garcia",
+        "team": "independence",
+        "position": "ATH",
+        "number": 0,
+        "grade": 0,
+        "height": "",
+        "weight": 0,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/1/7/7/177cef60-d6fd-4dd6-ace9-59ff72a4e0e6.gif?version=636249925200000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/independence-76ers/athletes/anthony-garcia/?careerid=51kk30as048qa",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Anthony%20Garcia%20Independence"
+      }
+    },
+    {
+      "id": "player-independence-mp-8ijc66bv9q9m6",
+      "name": "Cena Im",
+      "team": "independence",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/independence-76ers/athletes/cena-im/?careerid=8ijc66bv9q9m6",
+      "rawMatch": {
+        "id": "player-independence-mp-8ijc66bv9q9m6",
+        "name": "Cena Im",
+        "team": "independence",
+        "position": "DB",
+        "subPosition": "CB",
+        "number": 0,
+        "grade": 0,
+        "height": "5' 6\"",
+        "weight": 130,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/1/7/7/177cef60-d6fd-4dd6-ace9-59ff72a4e0e6.gif?version=636249925200000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/independence-76ers/athletes/cena-im/?careerid=8ijc66bv9q9m6",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Cena%20Im%20Independence"
+      }
+    },
+    {
+      "id": "player-independence-mp-ggjeeper73sh1",
+      "name": "Daryn Benipayo",
+      "team": "independence",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/independence-76ers/athletes/daryn-benipayo/?careerid=ggjeeper73sh1",
+      "rawMatch": {
+        "id": "player-independence-mp-ggjeeper73sh1",
+        "name": "Daryn Benipayo",
+        "team": "independence",
+        "position": "ATH",
+        "number": 0,
+        "grade": 0,
+        "height": "5' 6\"",
+        "weight": 148,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/1/7/7/177cef60-d6fd-4dd6-ace9-59ff72a4e0e6.gif?version=636249925200000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/independence-76ers/athletes/daryn-benipayo/?careerid=ggjeeper73sh1",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Daryn%20Benipayo%20Independence"
+      }
+    },
+    {
+      "id": "player-independence-mp-uirioq880j4ue",
+      "name": "Luis Ruiz",
+      "team": "independence",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/independence-76ers/athletes/luis-ruiz/?careerid=uirioq880j4ue",
+      "rawMatch": {
+        "id": "player-independence-mp-uirioq880j4ue",
+        "name": "Luis Ruiz",
+        "team": "independence",
+        "position": "LB",
+        "subPosition": "OLB",
+        "number": 0,
+        "grade": 0,
+        "height": "5' 9\"",
+        "weight": 139,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/1/7/7/177cef60-d6fd-4dd6-ace9-59ff72a4e0e6.gif?version=636249925200000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/independence-76ers/athletes/luis-ruiz/?careerid=uirioq880j4ue",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Luis%20Ruiz%20Independence"
+      }
+    },
+    {
+      "id": "player-independence-mp-rsnh4pfmchh22",
+      "name": "Myles Pagaduan",
+      "team": "independence",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/independence-76ers/athletes/myles-pagaduan/?careerid=rsnh4pfmchh22",
+      "rawMatch": {
+        "id": "player-independence-mp-rsnh4pfmchh22",
+        "name": "Myles Pagaduan",
+        "team": "independence",
+        "position": "QB",
+        "number": 0,
+        "grade": 0,
+        "height": "5' 8\"",
+        "weight": 167,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/1/7/7/177cef60-d6fd-4dd6-ace9-59ff72a4e0e6.gif?version=636249925200000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/independence-76ers/athletes/myles-pagaduan/?careerid=rsnh4pfmchh22",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Myles%20Pagaduan%20Independence"
+      }
+    },
+    {
+      "id": "player-los-gatos-mp-1mbiujirb7tbb",
+      "name": "Ben Bppysen",
+      "team": "los-gatos",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/los-gatos/los-gatos-wildcats/athletes/ben-bppysen/?careerid=1mbiujirb7tbb",
+      "rawMatch": {
+        "id": "player-los-gatos-mp-1mbiujirb7tbb",
+        "name": "Ben Bppysen",
+        "team": "los-gatos",
+        "position": "LB",
+        "number": 0,
+        "grade": 0,
+        "height": "",
+        "weight": 175,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/b/d/b/bdb0b593-ef7f-4c69-8c2a-e0a48c934ca7.gif?version=636252687000000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/los-gatos/los-gatos-wildcats/athletes/ben-bppysen/?careerid=1mbiujirb7tbb",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Ben%20Bppysen%20Los%20Gatos"
+      }
+    },
+    {
+      "id": "player-los-gatos-mp-qcfog0kvafqaa",
+      "name": "Tj Lombardi",
+      "team": "los-gatos",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/los-gatos/los-gatos-wildcats/athletes/tj-lombardi/?careerid=qcfog0kvafqaa",
+      "rawMatch": {
+        "id": "player-los-gatos-mp-qcfog0kvafqaa",
+        "name": "Tj Lombardi",
+        "team": "los-gatos",
+        "position": "QB",
+        "number": 0,
+        "grade": 0,
+        "height": "5' 10\"",
+        "weight": 155,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/b/d/b/bdb0b593-ef7f-4c69-8c2a-e0a48c934ca7.gif?version=636252687000000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/los-gatos/los-gatos-wildcats/athletes/tj-lombardi/?careerid=qcfog0kvafqaa",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Tj%20Lombardi%20Los%20Gatos"
+      }
+    },
+    {
+      "id": "player-menlo-atherton-mp-bcvp3br01mhl5",
+      "name": "null Player #57",
+      "team": "menlo-atherton",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/atherton/menlo-atherton-m-a-bears/athletes/player-57/?careerid=bcvp3br01mhl5",
+      "rawMatch": {
+        "id": "player-menlo-atherton-mp-bcvp3br01mhl5",
+        "name": "null Player #57",
+        "team": "menlo-atherton",
+        "position": "ATH",
+        "number": 0,
+        "grade": 0,
+        "height": "",
+        "weight": 0,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/1/a/3/1a39c6b4-e457-463a-9cfc-8dc568876c5a.gif?version=637717199400000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/atherton/menlo-atherton-m-a-bears/athletes/player-57/?careerid=bcvp3br01mhl5",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=null%20Player%20%2357%20Menlo-Atherton"
+      }
+    },
+    {
+      "id": "player-overfelt-mp-g1raf86lcdmaa",
+      "name": "Gabriel Martinez",
+      "team": "overfelt",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/overfelt-overfelt-royals/athletes/gabriel-martinez/?careerid=g1raf86lcdmaa",
+      "rawMatch": {
+        "id": "player-overfelt-mp-g1raf86lcdmaa",
+        "name": "Gabriel Martinez",
+        "team": "overfelt",
+        "position": "QB",
+        "number": 0,
+        "grade": 0,
+        "height": "5' 8\"",
+        "weight": 0,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/e/1/a/e1adcbbb-7b19-4e93-976e-5b963ed5f866.gif?version=635804311200000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/san-jose/overfelt-overfelt-royals/athletes/gabriel-martinez/?careerid=g1raf86lcdmaa",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Gabriel%20Martinez%20Overfelt"
+      }
+    },
+    {
+      "id": "player-palma-mp-7n3agk126llk4",
+      "name": "Gerardo Fraga",
+      "team": "palma",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/salinas/palma-chieftains/athletes/gerardo-fraga/?careerid=7n3agk126llk4",
+      "rawMatch": {
+        "id": "player-palma-mp-7n3agk126llk4",
+        "name": "Gerardo Fraga",
+        "team": "palma",
+        "position": "ATH",
+        "number": 0,
+        "grade": 0,
+        "height": "",
+        "weight": 0,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/8/4/e/84efa0b6-81c1-4c6b-9546-f538cc132645.gif?version=638633909576665700&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/salinas/palma-chieftains/athletes/gerardo-fraga/?careerid=7n3agk126llk4",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Gerardo%20Fraga%20Palma"
+      }
+    },
+    {
+      "id": "player-palo-alto-mp-tn6r0b360msp9",
+      "name": "null Player #20",
+      "team": "palo-alto",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/palo-alto/palo-alto-vikings/athletes/player-20/?careerid=tn6r0b360msp9",
+      "rawMatch": {
+        "id": "player-palo-alto-mp-tn6r0b360msp9",
+        "name": "null Player #20",
+        "team": "palo-alto",
+        "position": "ATH",
+        "number": 0,
+        "grade": 0,
+        "height": "",
+        "weight": 0,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/a/3/8/a38a628c-c65f-487f-a65e-7264b6804ce0.gif?version=639078035954309740&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/palo-alto/palo-alto-vikings/athletes/player-20/?careerid=tn6r0b360msp9",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=null%20Player%20%2320%20Palo%20Alto"
+      }
+    },
+    {
+      "id": "player-palo-alto-mp-81m26drkcp811",
+      "name": "null Player #20",
+      "team": "palo-alto",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/palo-alto/palo-alto-vikings/athletes/player-20/?careerid=81m26drkcp811",
+      "rawMatch": {
+        "id": "player-palo-alto-mp-81m26drkcp811",
+        "name": "null Player #20",
+        "team": "palo-alto",
+        "position": "ATH",
+        "number": 0,
+        "grade": 0,
+        "height": "",
+        "weight": 0,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/a/3/8/a38a628c-c65f-487f-a65e-7264b6804ce0.gif?version=639078035954309740&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/palo-alto/palo-alto-vikings/athletes/player-20/?careerid=81m26drkcp811",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=null%20Player%20%2320%20Palo%20Alto"
+      }
+    },
+    {
+      "id": "player-salinas-mp-kj9788oq3n5l5",
+      "name": "Angel Fajardo",
+      "team": "salinas",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/salinas/salinas-cowboys/athletes/angel-fajardo/?careerid=kj9788oq3n5l5",
+      "rawMatch": {
+        "id": "player-salinas-mp-kj9788oq3n5l5",
+        "name": "Angel Fajardo",
+        "team": "salinas",
+        "position": "LB",
+        "subPosition": "OLB",
+        "number": 0,
+        "grade": 0,
+        "height": "",
+        "weight": 0,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/1/f/1/1f152b3b-38dc-4d34-b260-9663dc3006a4.gif?version=636848788200000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/salinas/salinas-cowboys/athletes/angel-fajardo/?careerid=kj9788oq3n5l5",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Angel%20Fajardo%20Salinas"
+      }
+    },
+    {
+      "id": "player-sobrato-mp-452qqogj8sp11",
+      "name": "Roberto Cornejo",
+      "team": "sobrato",
+      "number": 0,
+      "maxprepsUrl": "https://www.maxpreps.com/ca/morgan-hill/ann-sobrato-bulldogs/athletes/roberto-cornejo/?careerid=452qqogj8sp11",
+      "rawMatch": {
+        "id": "player-sobrato-mp-452qqogj8sp11",
+        "name": "Roberto Cornejo",
+        "team": "sobrato",
+        "position": "WR",
+        "number": 0,
+        "grade": 0,
+        "height": "",
+        "weight": 0,
+        "stats": {
+          "games": 0
+        },
+        "image": "https://image.maxpreps.io/school-mascot/0/1/b/01bf9fda-9b10-4f04-9eef-3195d7d501dc.gif?version=636136115400000000&width=1024&height=1024",
+        "highlights": [],
+        "source": "maxpreps",
+        "maxprepsUrl": "https://www.maxpreps.com/ca/morgan-hill/ann-sobrato-bulldogs/athletes/roberto-cornejo/?careerid=452qqogj8sp11",
+        "hudlSearchUrl": "https://www.hudl.com/search?q=Roberto%20Cornejo%20Sobrato"
+      }
+    }
+  ]
+}
