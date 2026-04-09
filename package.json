@@ -11,6 +11,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\"",
     "type-check": "tsc --noEmit",
+    "sync:ccs-teams": "node scripts/sync-ccs-teams.mjs",
     "update:maxpreps-teams": "node scripts/update-maxpreps-teams.mjs",
     "update:maxpreps-rosters": "node scripts/update-maxpreps-rosters.mjs",
     "update:maxpreps": "npm run update:maxpreps-teams && npm run update:maxpreps-rosters"
@@ -69,6 +70,7 @@
     "react-router": "7.13.0",
     "react-slick": "0.31.0",
     "recharts": "2.15.2",
+    "sharp": "^0.34.5",
     "sonner": "2.0.3",
     "tailwind-merge": "3.2.0",
     "tw-animate-css": "1.3.8",

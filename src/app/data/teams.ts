@@ -39,10 +39,49 @@ export interface Team {
   lastUpdated?: string; // ISO timestamp of last MaxPreps update
 }
 
+export interface BaseTeam {
+  id: string;
+  name: string;
+  mascot?: string;
+  colors?: { primary: string; secondary: string };
+  league?: string;
+  division?: string;
+  record?: { wins: number; losses: number };
+  ranking?: number;
+  stateRank?: number;
+  pointsFor?: number;
+  pointsAgainst?: number;
+  streak?: string;
+  image?: string;
+  stadium?: string;
+  headCoach?: string;
+  offensiveCoordinator?: string;
+  defensiveCoordinator?: string;
+  offensiveSystem?: string;
+  defensiveSystem?: string;
+  commonPlays?: string[];
+  strengths?: string[];
+  keyPlayers?: string[];
+  levels?: Team["levels"];
+  socials?: Team["socials"];
+  lastUpdated?: string;
+}
+
+const DEFAULT_COLORS: Team["colors"] = {
+  primary: "#111827",
+  secondary: "#9CA3AF",
+};
+
+const DEFAULT_LEVELS: Team["levels"] = {
+  varsity: { wins: 0, losses: 0 },
+  jv: { wins: 0, losses: 0 },
+  freshman: { wins: 0, losses: 0 },
+};
+
 const GENERIC_LOGO =
   "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80";
 
-export const baseTeams: Team[] = [
+export const baseTeams: BaseTeam[] = [
   {
     id: "riordan",
     name: "Archbishop Riordan",
@@ -508,7 +547,7 @@ export const baseTeams: Team[] = [
     offensiveCoordinator: "N/A",
     defensiveCoordinator: "N/A",
     offensiveSystem: "Double Wing",
-    defensiveSystem: "5-2",
+    defensiveSystem: "4-3",
     commonPlays: ["Power", "Counter"],
     strengths: ["Run game", "Physicality"],
     keyPlayers: ["RB/FS Brayden Rosa #2", "CB/WR Jeremiah Arevalos #8", "QB Kai Imahara #11"],
@@ -2189,23 +2228,40 @@ function deriveLeagueAndDivision(leagueRaw: string): Pick<Team, "league" | "divi
 export const teams: Team[] = baseTeams.map((team) => {
   const mp = maxprepsTeamData[team.id] ?? {};
 
-  const { league, division } = deriveLeagueAndDivision(mp.leagueName ?? team.league);
+  const colors = team.colors ?? DEFAULT_COLORS;
+  const { league, division } = deriveLeagueAndDivision(mp.leagueName ?? team.league ?? "");
 
   const mergedImage = mp.schoolMascotUrl ?? team.image;
   const image =
-    !mergedImage || mergedImage === GENERIC_LOGO ? createTeamPlaceholderLogo(team) : mergedImage;
+    !mergedImage || mergedImage === GENERIC_LOGO
+      ? createTeamPlaceholderLogo({ name: team.name, colors })
+      : mergedImage;
 
   return {
-    ...team,
+    id: team.id,
+    name: team.name,
+    mascot: team.mascot ?? "N/A",
+    colors,
     league,
     division,
+    record: mp.record ?? team.record ?? { wins: 0, losses: 0 },
+    ranking: team.ranking ?? 9999,
     image,
+    stadium: team.stadium ?? "",
+    headCoach: team.headCoach ?? "",
+    offensiveCoordinator: team.offensiveCoordinator ?? "",
+    defensiveCoordinator: team.defensiveCoordinator ?? "",
+    offensiveSystem: team.offensiveSystem ?? "",
+    defensiveSystem: team.defensiveSystem ?? "",
+    commonPlays: team.commonPlays ?? [],
+    strengths: team.strengths ?? [],
+    keyPlayers: team.keyPlayers ?? [],
+    levels: team.levels ?? DEFAULT_LEVELS,
     socials: {
       ...team.socials,
       maxpreps: mp.maxprepsUrl ?? team.socials?.maxpreps,
     },
     stateRank: mp.stateRank ?? team.stateRank,
-    record: mp.record ?? team.record,
     pointsFor: mp.pointsFor ?? team.pointsFor,
     pointsAgainst: mp.pointsAgainst ?? team.pointsAgainst,
     streak: mp.streak ?? team.streak,
