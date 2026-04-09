@@ -2106,6 +2106,46 @@ export const baseTeams: Team[] = [
       },
     },
   },
+  {
+    id: "santa-clara-high",
+    name: "Santa Clara High",
+    mascot: "Bruins",
+    colors: {
+      primary: "Blue",
+      secondary: "Gold",
+    },
+    league: "SCVAL - Santa Clara Valley Athletic League",
+    division: "Division I",
+    record: {
+      wins: 0,
+      losses: 0,
+    },
+    ranking: 49,
+    image: GENERIC_LOGO,
+    stadium: "N/A",
+    headCoach: "N/A",
+    offensiveCoordinator: "N/A",
+    defensiveCoordinator: "N/A",
+    offensiveSystem: "N/A",
+    defensiveSystem: "N/A",
+    commonPlays: [],
+    strengths: [],
+    keyPlayers: [],
+    levels: {
+      varsity: {
+        wins: 0,
+        losses: 0,
+      },
+      jv: {
+        wins: 0,
+        losses: 0,
+      },
+      freshman: {
+        wins: 0,
+        losses: 0,
+      },
+    },
+  },
 ];
 
 function getTeamInitials(teamName: string) {
