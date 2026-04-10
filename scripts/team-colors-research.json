@@ -1,0 +1,164 @@
+{
+  "createdAt": "2026-04-10T00:31:32.086Z",
+  "purpose": "Track team color research from official sources",
+  "teams": [
+    {
+      "id": "riordan",
+      "name": "Archbishop Riordan",
+      "league": "Bay Foothill",
+      "websites": [
+        "https://www.riordanhs.org/athletics"
+      ]
+    },
+    {
+      "id": "serra",
+      "name": "Junipero Serra",
+      "league": "Bay Foothill",
+      "websites": [
+        "https://www.serrahs.com/athletics"
+      ]
+    },
+    {
+      "id": "st-francis",
+      "name": "St. Francis",
+      "league": "Bay Foothill",
+      "websites": [
+        "https://www.stfrancismv.org/athletics"
+      ]
+    },
+    {
+      "id": "st-ignatius",
+      "name": "St. Ignatius",
+      "league": "Bay Foothill",
+      "websites": [
+        "https://www.siprep.org/athletics"
+      ]
+    },
+    {
+      "id": "mitty",
+      "name": "Archbishop Mitty",
+      "league": "Bay Foothill",
+      "websites": [
+        "https://www.mittyhs.org/athletics"
+      ]
+    },
+    {
+      "id": "valley-christian",
+      "name": "Valley Christian",
+      "league": "Bay Foothill",
+      "websites": [
+        "https://www.vcs.org/athletics"
+      ]
+    },
+    {
+      "id": "bellarmine",
+      "name": "Bellarmine Prep",
+      "league": "Bay Foothill",
+      "websites": [
+        "https://www.bcp.org/athletics"
+      ]
+    },
+    {
+      "id": "sacred-heart",
+      "name": "Sacred Heart Cathedral",
+      "league": "Bay Foothill",
+      "websites": [
+        "https://www.shcp.org/athletics"
+      ]
+    },
+    {
+      "id": "los-gatos",
+      "name": "Los Gatos",
+      "league": "PAL",
+      "websites": [
+        "https://www.lgusd.org/los-gatos-high"
+      ]
+    },
+    {
+      "id": "wilcox",
+      "name": "Wilcox",
+      "league": "PAL",
+      "websites": [
+        "https://www.ewsd.org/wilcox"
+      ]
+    },
+    {
+      "id": "palo-alto",
+      "name": "Palo Alto",
+      "league": "PAL",
+      "websites": [
+        "https://www.pausd.org/palo-alto-high"
+      ]
+    },
+    {
+      "id": "menlo-atherton",
+      "name": "Menlo-Atherton",
+      "league": "PAL",
+      "websites": [
+        "https://www.mavesd.org/menlo-atherton"
+      ]
+    },
+    {
+      "id": "salinas",
+      "name": "Salinas",
+      "league": "PCAL",
+      "websites": [
+        "https://www.salinashs.org/athletics"
+      ]
+    },
+    {
+      "id": "palma",
+      "name": "Palma",
+      "league": "PCAL",
+      "websites": [
+        "https://www.palmachristian.org/athletics"
+      ]
+    },
+    {
+      "id": "north-salinas",
+      "name": "North Salinas",
+      "league": "PCAL",
+      "websites": [
+        "https://www.nsusd.org/north-salinas"
+      ]
+    },
+    {
+      "id": "gilroy",
+      "name": "Gilroy",
+      "league": "PCAL",
+      "websites": [
+        "https://www.gusd.org/gilroy-high"
+      ]
+    },
+    {
+      "id": "morgan-hill",
+      "name": "Morgan Hill",
+      "league": "PCAL",
+      "websites": [
+        "https://www.mhusd.org/morgan-hill-high"
+      ]
+    },
+    {
+      "id": "san-martin",
+      "name": "San Martin",
+      "league": "PCAL",
+      "websites": [
+        "https://www.gilroyunified.org/san-martin"
+      ]
+    },
+    {
+      "id": "tennessee-williams",
+      "name": "Tennessee Williams",
+      "league": "PCAL",
+      "websites": [
+        "https://www.gilroyunified.org/tennessee-williams"
+      ]
+    }
+  ],
+  "sources": {
+    "official": "School district/athletics websites",
+    "maxpreps": "MaxPreps team pages",
+    "wikipedia": "Wikipedia team/school pages",
+    "logo": "Primary team logo colors"
+  }
+}

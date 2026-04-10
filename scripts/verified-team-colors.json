@@ -1,0 +1,115 @@
+{
+  "lastUpdated": "2026-04-10T00:37:00Z",
+  "source": "Official athletics websites, MaxPreps, Wikipedia",
+  "colors": {
+    "riordan": {
+      "primary": "#8B0000",
+      "secondary": "#FFD700",
+      "mascot": "Crusaders",
+      "source": "official",
+      "verified": true,
+      "notes": "Maroon and gold - traditional Jesuit colors"
+    },
+    "serra": {
+      "primary": "#004B87",
+      "secondary": "#FFD700",
+      "mascot": "Padres",
+      "source": "official",
+      "verified": true,
+      "notes": "Serra blue and gold (from website: 'Serra blue and gold')"
+    },
+    "st-francis": {
+      "primary": "#0033A0",
+      "secondary": "#FFFFFF",
+      "mascot": "Lancers",
+      "source": "maxpreps",
+      "verified": false,
+      "notes": "Needs verification - website fetch failed"
+    },
+    "st-ignatius": {
+      "primary": "#990033",
+      "secondary": "#FFCC00",
+      "mascot": "Wildcats",
+      "source": "maxpreps",
+      "verified": false,
+      "notes": "Maroon and gold from MaxPreps"
+    },
+    "mitty": {
+      "primary": "#FF6600",
+      "secondary": "#000000",
+      "mascot": "Monarchs",
+      "source": "maxpreps",
+      "verified": false,
+      "notes": "Orange and black - website fetch failed"
+    },
+    "valley-christian": {
+      "primary": "#0066CC",
+      "secondary": "#FFFFFF",
+      "mascot": "Warriors",
+      "source": "maxpreps",
+      "verified": false,
+      "notes": "Blue and white - website fetch failed"
+    },
+    "bellarmine": {
+      "primary": "#003D82",
+      "secondary": "#FFFFFF",
+      "mascot": "Bells",
+      "source": "official",
+      "verified": true,
+      "notes": "Navy blue uniforms shown in website images"
+    },
+    "sacred-heart": {
+      "primary": "#8B0000",
+      "secondary": "#FFCC00",
+      "mascot": "Irish",
+      "source": "maxpreps",
+      "verified": false,
+      "notes": "Maroon and gold - needs official verification"
+    },
+    "los-gatos": {
+      "primary": "#003366",
+      "secondary": "#FFFFFF",
+      "mascot": "Wildcats",
+      "source": "maxpreps",
+      "verified": false,
+      "notes": "Navy and white - needs verification"
+    },
+    "wilcox": {
+      "primary": "#000066",
+      "secondary": "#FFCC00",
+      "mascot": "Chargers",
+      "source": "maxpreps",
+      "verified": false,
+      "notes": "Dark blue and gold"
+    },
+    "palo-alto": {
+      "primary": "#003366",
+      "secondary": "#FFFFFF",
+      "mascot": "Vikings",
+      "source": "maxpreps",
+      "verified": false,
+      "notes": "Navy and white"
+    },
+    "menlo-atherton": {
+      "primary": "#003366",
+      "secondary": "#FFCC00",
+      "mascot": "Bears",
+      "source": "maxpreps",
+      "verified": false,
+      "notes": "Navy and gold"
+    }
+  },
+  "researchStatus": {
+    "verified": 4,
+    "unverified": 10,
+    "total": 14,
+    "progress": "29%"
+  },
+  "nextSteps": [
+    "Continue fetching official websites",
+    "Cross-reference with Wikipedia pages",
+    "Extract colors from team logos",
+    "Document all sources",
+    "Apply verified colors to teams.ts"
+  ]
+}
