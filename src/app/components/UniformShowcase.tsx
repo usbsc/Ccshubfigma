@@ -34,12 +34,7 @@ export function UniformShowcase({ team }: UniformShowcaseProps) {
       <circle cx="50" cy="18" r="12" fill={helmetColor} stroke="#1a1a1a" strokeWidth="0.5" />
 
       {/* Helmet facemask */}
-      <path
-        d="M 42 18 Q 42 25 50 26 Q 58 25 58 18"
-        fill="none"
-        stroke="#555"
-        strokeWidth="1"
-      />
+      <path d="M 42 18 Q 42 25 50 26 Q 58 25 58 18" fill="none" stroke="#555" strokeWidth="1" />
 
       {/* Helmet stripe down center */}
       <rect x="49" y="8" width="2" height="20" fill={accentColor} />
@@ -141,10 +136,14 @@ export function UniformShowcase({ team }: UniformShowcaseProps) {
             <tr>
               {uniformTypes.map(({ key }) => {
                 const uniform = team.uniforms?.[key];
-                if (!uniform) return <td key={key} className="border border-zinc-700 bg-zinc-900" />;
+                if (!uniform)
+                  return <td key={key} className="border border-zinc-700 bg-zinc-900" />;
 
                 return (
-                  <td key={key} className="border border-zinc-700 bg-gradient-to-b from-zinc-900 to-zinc-950 p-6">
+                  <td
+                    key={key}
+                    className="border border-zinc-700 bg-gradient-to-b from-zinc-900 to-zinc-950 p-6"
+                  >
                     <div className="h-56 w-20 mx-auto">
                       <UniformRenderer
                         jerseyColor={uniform.primary}
@@ -162,7 +161,8 @@ export function UniformShowcase({ team }: UniformShowcaseProps) {
             <tr>
               {uniformTypes.map(({ key }) => {
                 const uniform = team.uniforms?.[key];
-                if (!uniform) return <td key={key} className="border border-zinc-700 bg-zinc-900" />;
+                if (!uniform)
+                  return <td key={key} className="border border-zinc-700 bg-zinc-900" />;
 
                 return (
                   <td key={key} className="border border-zinc-700 bg-zinc-900 p-4">
@@ -213,7 +213,10 @@ export function UniformShowcase({ team }: UniformShowcaseProps) {
 
       {/* Legend */}
       <div className="mt-6 pt-4 border-t border-zinc-800 text-xs text-zinc-500 text-center">
-        <p>Uniform designs shown with helmet, jersey (primary color), pants (secondary color), and accent stripes.</p>
+        <p>
+          Uniform designs shown with helmet, jersey (primary color), pants (secondary color), and
+          accent stripes.
+        </p>
       </div>
     </motion.div>
   );

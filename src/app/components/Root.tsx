@@ -162,9 +162,7 @@ export function Root() {
                   <Settings className="w-5 h-5 text-green-400" />
                   Theme
                 </h3>
-                <p className="text-zinc-400 text-sm mb-4">
-                  Choose your preferred color theme.
-                </p>
+                <p className="text-zinc-400 text-sm mb-4">Choose your preferred color theme.</p>
 
                 <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                   {(["light", "dark", "summer", "fall", "spring"] as const).map((t) => (

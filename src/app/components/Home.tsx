@@ -528,7 +528,9 @@ export function Home() {
                         {team.name}
                       </div>
                       <div className="text-[10px] font-black text-zinc-500 uppercase tracking-widest truncate">
-                        <span className="line-clamp-1">{team.record.wins}-{team.record.losses} • {team.division}</span>
+                        <span className="line-clamp-1">
+                          {team.record.wins}-{team.record.losses} • {team.division}
+                        </span>
                       </div>
                     </div>
                   </div>

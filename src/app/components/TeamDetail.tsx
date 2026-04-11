@@ -92,7 +92,9 @@ export function TeamDetail() {
                 {typeof team.stateRank === "number" ? (
                   <span className="text-zinc-300">CA #{team.stateRank}</span>
                 ) : null}
-                <span className="bg-green-700/70 px-3 py-1 rounded-full text-xs uppercase tracking-widest whitespace-normal line-clamp-2">{team.division}</span>
+                <span className="bg-green-700/70 px-3 py-1 rounded-full text-xs uppercase tracking-widest whitespace-normal line-clamp-2">
+                  {team.division}
+                </span>
               </div>
 
               {team.socials && (
@@ -212,7 +214,7 @@ export function TeamDetail() {
             <div key={level} className="bg-zinc-800 rounded-xl p-4">
               <div className="text-sm text-zinc-400 uppercase mb-2">{level}</div>
               <div className="text-2xl font-bold">
-                {typeof record === 'string' ? record : `${record.wins}-${record.losses}`}
+                {typeof record === "string" ? record : `${record.wins}-${record.losses}`}
               </div>
             </div>
           ))}

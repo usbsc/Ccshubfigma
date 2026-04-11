@@ -58,8 +58,16 @@ export const baseTeams: Team[] = [
       secondary: "#FFD700",
     },
     uniforms: {
-      home: { primary: "#8B0000", secondary: "#FFD700", description: "Red jersey with gold accents" },
-      away: { primary: "#FFFFFF", secondary: "#000000", description: "White jersey with maroon trim" },
+      home: {
+        primary: "#8B0000",
+        secondary: "#FFD700",
+        description: "Red jersey with gold accents",
+      },
+      away: {
+        primary: "#FFFFFF",
+        secondary: "#000000",
+        description: "White jersey with maroon trim",
+      },
       alternate: { primary: "#FFD700", secondary: "#8B0000", description: "Gold jersey (rare)" },
     },
     league: "West Catholic Athletic League",
@@ -69,8 +77,7 @@ export const baseTeams: Team[] = [
       losses: 1,
     },
     ranking: 1,
-    image:
-      "/logos/riordan.png",
+    image: "/logos/riordan.png",
     stadium: "Mayer Family Field",
     headCoach: "Adhir Ravipati",
     offensiveCoordinator: "Steve Nicoletti",
@@ -78,7 +85,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Pro-Style Offense",
     defensiveSystem: "4-3 Defense",
     commonPlays: ["Power Run", "Deep Post", "Screen Pass", "Boot Action"],
-    commonDefensivePlay: ["Gap Control","Cover 2","Blitz Package","Linebacker Scrape"],
+    commonDefensivePlay: ["Gap Control", "Cover 2", "Blitz Package", "Linebacker Scrape"],
     strengths: ["Tough defense", "Physical play", "Elite skill players"],
     keyPlayers: ["QB Michael Mitchell Jr. #10", "WR Wesley Winn #1", "WR Chris Lawson #2"],
     levels: {
@@ -114,7 +121,11 @@ export const baseTeams: Team[] = [
     },
     uniforms: {
       home: { primary: "#004B87", secondary: "#FFFFFF", description: "Dark gray jersey with gold" },
-      away: { primary: "#FFFFFF", secondary: "#004B87", description: "White jersey with gray trim" },
+      away: {
+        primary: "#FFFFFF",
+        secondary: "#004B87",
+        description: "White jersey with gray trim",
+      },
       alternate: { primary: "#FFFFFF", secondary: "#004B87", description: "Gold jersey" },
     },
     league: "West Catholic Athletic League",
@@ -124,8 +135,7 @@ export const baseTeams: Team[] = [
       losses: 6,
     },
     ranking: 2,
-    image:
-      "/logos/serra.png",
+    image: "/logos/serra.png",
     stadium: "Brady Family Stadium",
     headCoach: "Patrick Walsh",
     offensiveCoordinator: "Mike Crist",
@@ -133,7 +143,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Multiple Offense",
     defensiveSystem: "3-3-5 Defense",
     commonPlays: ["Pistol Formation", "Jet Sweep", "Curl Route", "Draw Play"],
-    commonDefensivePlay: ["Cornerback Blitz","Safety Roll","Gap Control","Linebacker Read"],
+    commonDefensivePlay: ["Cornerback Blitz", "Safety Roll", "Gap Control", "Linebacker Read"],
     strengths: ["Versatile schemes", "Fast linebackers", "Red zone efficiency"],
     keyPlayers: ["RB Iziah Singleton #22", "TE Jace Cannon #88", "WR Jaiden Tinson #1"],
     levels: {
@@ -169,7 +179,11 @@ export const baseTeams: Team[] = [
     },
     uniforms: {
       home: { primary: "#0033A0", secondary: "#FFFFFF", description: "Blue jersey with white" },
-      away: { primary: "#FFFFFF", secondary: "#0033A0", description: "White jersey with blue trim" },
+      away: {
+        primary: "#FFFFFF",
+        secondary: "#0033A0",
+        description: "White jersey with blue trim",
+      },
       alternate: { primary: "#FFFFFF", secondary: "#0033A0", description: "Gray alternate" },
     },
     league: "West Catholic Athletic League",
@@ -179,8 +193,7 @@ export const baseTeams: Team[] = [
       losses: 6,
     },
     ranking: 4,
-    image:
-      "/logos/st-francis.png",
+    image: "/logos/st-francis.png",
     stadium: "Ron Calcagno Stadium",
     headCoach: "Greg Calcagno",
     offensiveCoordinator: "Brandon Gamble",
@@ -188,7 +201,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Pro-Style Offense",
     defensiveSystem: "3-4 Defense",
     commonPlays: ["Power Run", "Deep Post", "Screen Pass", "Boot Action"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Physical run game", "Strong defensive line", "Special teams excellence"],
     keyPlayers: ["RB Kingston Keanaaina #22", "OL John Fifita #77", "QB Trent Knight #12"],
     levels: {
@@ -243,7 +256,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Spread",
     defensiveSystem: "4-2-5",
     commonPlays: ["Inside Zone", "RPO"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Balanced attack", "Strong line play"],
     keyPlayers: ["QB Soren Hummel #18", "RB Jarious Hogan #6", "OLB Daniel Leupold #7"],
     levels: {
@@ -289,8 +302,7 @@ export const baseTeams: Team[] = [
       losses: 5,
     },
     ranking: 6,
-    image:
-      "/logos/mitty.png",
+    image: "/logos/mitty.png",
     stadium: "Mitty Field",
     headCoach: "Danny Sullivan",
     offensiveCoordinator: "N/A",
@@ -298,7 +310,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Multiple",
     defensiveSystem: "4-3",
     commonPlays: ["Inside Zone", "Power"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Disciplined execution", "Strong tradition"],
     keyPlayers: [
       "RB Lazaro Faraj-Washington #21",
@@ -338,7 +350,11 @@ export const baseTeams: Team[] = [
     },
     uniforms: {
       home: { primary: "#0066CC", secondary: "#FFFFFF", description: "Blue jersey with white" },
-      away: { primary: "#FFFFFF", secondary: "#0066CC", description: "White jersey with blue trim" },
+      away: {
+        primary: "#FFFFFF",
+        secondary: "#0066CC",
+        description: "White jersey with blue trim",
+      },
       alternate: { primary: "#FFFFFF", secondary: "#0066CC", description: "Gold alternate" },
     },
     league: "West Catholic Athletic League",
@@ -348,8 +364,7 @@ export const baseTeams: Team[] = [
       losses: 7,
     },
     ranking: 10,
-    image:
-      "/logos/valley-christian.png",
+    image: "/logos/valley-christian.png",
     stadium: "Valley Christian Stadium",
     headCoach: "Mike Machado",
     offensiveCoordinator: "N/A",
@@ -357,7 +372,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Multiple",
     defensiveSystem: "4-2-5",
     commonPlays: ["Power", "Counter"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Physicality", "Strong defense"],
     keyPlayers: ["OL Champ Taulealea #75", "TE/DE Colton Hider #88", "RB/DB Micah Mosley #5"],
     levels: {
@@ -403,8 +418,7 @@ export const baseTeams: Team[] = [
       losses: 8,
     },
     ranking: 16,
-    image:
-      "/logos/bellarmine.png",
+    image: "/logos/bellarmine.png",
     stadium: "Memorial Field",
     headCoach: "Jalal Beauchman",
     offensiveCoordinator: "N/A",
@@ -412,7 +426,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Spread",
     defensiveSystem: "4-3",
     commonPlays: ["Zone Read", "Slant"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Passing game", "Athleticism"],
     keyPlayers: ["QB Dominic Sotelo #7", "LB/RB Nico Tatom #4", "OT Richard Steele #77"],
     levels: {
@@ -458,8 +472,7 @@ export const baseTeams: Team[] = [
       losses: 7,
     },
     ranking: 8,
-    image:
-      "/logos/sacred-heart.png",
+    image: "/logos/sacred-heart.png",
     stadium: "Kezar Stadium",
     headCoach: "Antoine Evans",
     offensiveCoordinator: "N/A",
@@ -467,7 +480,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Spread",
     defensiveSystem: "4-3",
     commonPlays: ["RPO", "Bubble Screen"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Speed", "Athleticism"],
     keyPlayers: ["QB Michael Sargent #15", "RB/SS Legend Williams #6", "DE/TE Mickey Williams #8"],
     levels: {
@@ -514,8 +527,7 @@ export const baseTeams: Team[] = [
       losses: 4,
     },
     ranking: 3,
-    image:
-      "/logos/los-gatos.png",
+    image: "/logos/los-gatos.png",
     stadium: "Helm Field",
     headCoach: "Mark Krail",
     offensiveCoordinator: "N/A",
@@ -523,7 +535,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "West Coast",
     defensiveSystem: "4-3",
     commonPlays: ["Quick Slant", "Sprint Out"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Precision", "Tradition"],
     keyPlayers: ["RB Grayson Doslak #24", "WR Max Thomas #8", "QB Luca Salimi #10"],
     levels: {
@@ -556,7 +568,11 @@ export const baseTeams: Team[] = [
     },
     uniforms: {
       home: { primary: "#000066", secondary: "#FFCC00", description: "Navy jersey with gold" },
-      away: { primary: "#FFFFFF", secondary: "#000066", description: "White jersey with navy trim" },
+      away: {
+        primary: "#FFFFFF",
+        secondary: "#000066",
+        description: "White jersey with navy trim",
+      },
       alternate: { primary: "#FFCC00", secondary: "#000066", description: "Gold alternate" },
     },
     league: "Peninsula Athletic League - Bay",
@@ -566,8 +582,7 @@ export const baseTeams: Team[] = [
       losses: 5,
     },
     ranking: 13,
-    image:
-      "/logos/wilcox.png",
+    image: "/logos/wilcox.png",
     stadium: "Wilcox High Stadium",
     headCoach: "Paul Rosa",
     offensiveCoordinator: "N/A",
@@ -575,7 +590,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Double Wing",
     defensiveSystem: "5-2",
     commonPlays: ["Power", "Counter"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Run game", "Physicality"],
     keyPlayers: ["RB/FS Brayden Rosa #2", "CB/WR Jeremiah Arevalos #8", "QB Kai Imahara #11"],
     levels: {
@@ -621,8 +636,7 @@ export const baseTeams: Team[] = [
       losses: 10,
     },
     ranking: 31,
-    image:
-      "/logos/palo-alto.png",
+    image: "/logos/palo-alto.png",
     stadium: "Viking Stadium",
     headCoach: "Danny Sullivan",
     offensiveCoordinator: "N/A",
@@ -630,7 +644,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Spread",
     defensiveSystem: "4-3",
     commonPlays: ["Inside Zone", "Slant"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Balanced attack", "Strong secondary"],
     keyPlayers: ["QB Justin Fung #2", "WR Kacey Washington #3", "TE Malcolm Phillips #22"],
     levels: {
@@ -685,7 +699,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Spread",
     defensiveSystem: "4-2-5",
     commonPlays: ["Zone Read", "Deep Post"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Athleticism", "Speed"],
     keyPlayers: ["QB Teddy Dacey #10", "WR Jacob Roeder #2", "RB Monty Turner #33"],
     levels: {
@@ -737,7 +751,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Spread",
     defensiveSystem: "4-3",
     commonPlays: ["Inside Zone", "Bubble Screen"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Athletic playmakers", "Strong defense"],
     keyPlayers: ["QB John Schalesky #12", "MLB Josiah Orta #8", "OLB Aiden Swann #4"],
     levels: {
@@ -788,7 +802,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Spread",
     defensiveSystem: "4-3",
     commonPlays: ["Zone Read"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Speed", "Versatility"],
     keyPlayers: ["N/A"],
     levels: {
@@ -835,7 +849,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Spread",
     defensiveSystem: "4-3",
     commonPlays: ["Pass-heavy"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Quarterback play"],
     keyPlayers: ["N/A"],
     levels: {
@@ -883,7 +897,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Power Run",
     defensiveSystem: "5-2",
     commonPlays: ["Power", "Blast"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Physicality", "Tradition"],
     keyPlayers: ["QB Jordan McCoy #5", "RB Aaron Wiley #7", "RB Kaleb Fries #10"],
     levels: {
@@ -931,7 +945,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Multiple",
     defensiveSystem: "4-3",
     commonPlays: ["Balanced"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Strong program", "Physical play"],
     keyPlayers: ["N/A"],
     levels: {
@@ -981,7 +995,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Power Run",
     defensiveSystem: "4-3",
     commonPlays: ["Power", "Toss"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Discipline", "Physical line play"],
     keyPlayers: ["N/A"],
     levels: {
@@ -1031,7 +1045,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Wing-T",
     defensiveSystem: "4-3",
     commonPlays: ["Buck Sweep", "Trap"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Precision", "Run game"],
     keyPlayers: ["N/A"],
     levels: {
@@ -1072,7 +1086,7 @@ export const baseTeams: Team[] = [
       wins: 6,
       losses: 6,
     },
-    ranking: 999,
+    ranking: 19,
     image: "https://vcloud.blueframe.com/secure/image/628101",
     stadium: "SHP Stadium",
     headCoach: "N/A",
@@ -1081,7 +1095,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "Spread",
     defensiveSystem: "3-4",
     commonPlays: ["Inside Zone"],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: ["Coaching", "Execution"],
     keyPlayers: ["N/A"],
     levels: {
@@ -1098,52 +1112,6 @@ export const baseTeams: Team[] = [
     socials: {
       twitter: "SHP_Football",
       instagram: "shpfootball",
-    },
-  },
-  {
-    id: "andrew-hill",
-    name: "Andrew Hill",
-    mascot: "Falcons",
-    colors: {
-      primary: "Blue",
-      secondary: "Gold",
-    },
-    uniforms: {
-      home: { primary: "#CC0000", secondary: "#000000", description: "Red jersey with white" },
-      away: { primary: "#FFFFFF", secondary: "#CC0000", description: "White with red trim" },
-      alternate: { primary: "#000000", secondary: "#CC0000", description: "Black jersey" },
-    },
-    league: "BVAL - West Valley",
-    division: "BVAL - West Valley",
-    record: {
-      wins: 0,
-      losses: 10,
-    },
-    ranking: 49,
-    image: GENERIC_LOGO,
-    stadium: "N/A",
-    headCoach: "N/A",
-    offensiveCoordinator: "N/A",
-    defensiveCoordinator: "N/A",
-    offensiveSystem: "N/A",
-    defensiveSystem: "N/A",
-    commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
-    strengths: [],
-    keyPlayers: [],
-    levels: {
-      varsity: {
-        wins: 0,
-        losses: 10,
-      },
-      jv: {
-        wins: 0,
-        losses: 10,
-      },
-      freshman: {
-        wins: 0,
-        losses: 10,
-      },
     },
   },
   {
@@ -1174,7 +1142,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1220,7 +1188,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1263,7 +1231,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1306,7 +1274,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1349,7 +1317,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1392,7 +1360,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1435,7 +1403,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1481,7 +1449,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1524,7 +1492,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1567,7 +1535,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1610,7 +1578,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1653,7 +1621,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1696,7 +1664,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1739,7 +1707,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1782,7 +1750,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1825,7 +1793,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1868,7 +1836,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1914,7 +1882,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -1957,7 +1925,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2000,7 +1968,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2043,7 +2011,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2086,7 +2054,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2129,7 +2097,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2172,7 +2140,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2215,7 +2183,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2258,7 +2226,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2301,7 +2269,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2335,7 +2303,7 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
+    ranking: 50,
     image: GENERIC_LOGO,
     stadium: "N/A",
     headCoach: "N/A",
@@ -2344,7 +2312,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "N/A",
     defensiveSystem: "N/A",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2373,7 +2341,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#CC0000", secondary: "#FFFFFF", description: "Gilroy home uniform" },
       away: { primary: "#FFFFFF", secondary: "#CC0000", description: "Gilroy away uniform" },
-      alternate: { primary: "#FFFFFF", secondary: "#CC0000", description: "Gilroy alternate uniform" },
+      alternate: {
+        primary: "#FFFFFF",
+        secondary: "#CC0000",
+        description: "Gilroy alternate uniform",
+      },
     },
     league: "PCAL - Cypress",
     division: "PCAL - Cypress",
@@ -2382,7 +2354,8 @@ export const baseTeams: Team[] = [
       losses: 8,
     },
     ranking: 38,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Gavilan College",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2390,7 +2363,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2416,7 +2389,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#003366", secondary: "#FFFFFF", description: "Morgan Hill home uniform" },
       away: { primary: "#FFFFFF", secondary: "#003366", description: "Morgan Hill away uniform" },
-      alternate: { primary: "#FFFFFF", secondary: "#003366", description: "Morgan Hill alternate uniform" },
+      alternate: {
+        primary: "#FFFFFF",
+        secondary: "#003366",
+        description: "Morgan Hill alternate uniform",
+      },
     },
     league: "PCAL - Cypress",
     division: "PCAL - Cypress",
@@ -2424,8 +2401,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Morgan Hill High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2433,7 +2411,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2462,7 +2440,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#2D5016", secondary: "#FFFFFF", description: "San Martin home uniform" },
       away: { primary: "#FFFFFF", secondary: "#2D5016", description: "San Martin away uniform" },
-      alternate: { primary: "#FFFFFF", secondary: "#2D5016", description: "San Martin alternate uniform" },
+      alternate: {
+        primary: "#FFFFFF",
+        secondary: "#2D5016",
+        description: "San Martin alternate uniform",
+      },
     },
     league: "PCAL - Cypress",
     division: "PCAL - Cypress",
@@ -2470,8 +2452,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "San Martin High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2479,7 +2462,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2506,9 +2489,21 @@ export const baseTeams: Team[] = [
       secondary: "#000000",
     },
     uniforms: {
-      home: { primary: "#FFD700", secondary: "#000000", description: "Tennessee Williams home uniform" },
-      away: { primary: "#FFFFFF", secondary: "#FFD700", description: "Tennessee Williams away uniform" },
-      alternate: { primary: "#000000", secondary: "#FFD700", description: "Tennessee Williams alternate uniform" },
+      home: {
+        primary: "#FFD700",
+        secondary: "#000000",
+        description: "Tennessee Williams home uniform",
+      },
+      away: {
+        primary: "#FFFFFF",
+        secondary: "#FFD700",
+        description: "Tennessee Williams away uniform",
+      },
+      alternate: {
+        primary: "#000000",
+        secondary: "#FFD700",
+        description: "Tennessee Williams alternate uniform",
+      },
     },
     league: "PCAL - Cypress",
     division: "PCAL - Cypress",
@@ -2516,8 +2511,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Tennessee Williams High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2525,7 +2521,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2552,9 +2548,21 @@ export const baseTeams: Team[] = [
       secondary: "#FFD700",
     },
     uniforms: {
-      home: { primary: "#8B0000", secondary: "#FFD700", description: "East Palo Alto home uniform" },
-      away: { primary: "#FFFFFF", secondary: "#8B0000", description: "East Palo Alto away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#8B0000", description: "East Palo Alto alternate uniform" },
+      home: {
+        primary: "#8B0000",
+        secondary: "#FFD700",
+        description: "East Palo Alto home uniform",
+      },
+      away: {
+        primary: "#FFFFFF",
+        secondary: "#8B0000",
+        description: "East Palo Alto away uniform",
+      },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#8B0000",
+        description: "East Palo Alto alternate uniform",
+      },
     },
     league: "PAL",
     division: "PAL",
@@ -2562,8 +2570,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Ravenswood High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2571,7 +2580,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2600,7 +2609,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#003D99", secondary: "#FFFFFF", description: "Livermore home uniform" },
       away: { primary: "#FFFFFF", secondary: "#003D99", description: "Livermore away uniform" },
-      alternate: { primary: "#FFFFFF", secondary: "#003D99", description: "Livermore alternate uniform" },
+      alternate: {
+        primary: "#FFFFFF",
+        secondary: "#003D99",
+        description: "Livermore alternate uniform",
+      },
     },
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
@@ -2608,8 +2621,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Livermore High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2617,7 +2631,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2649,7 +2663,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#2E7D32", secondary: "#FFFFFF", description: "Granada home uniform" },
       away: { primary: "#FFFFFF", secondary: "#2E7D32", description: "Granada away uniform" },
-      alternate: { primary: "#FFFFFF", secondary: "#2E7D32", description: "Granada alternate uniform" },
+      alternate: {
+        primary: "#FFFFFF",
+        secondary: "#2E7D32",
+        description: "Granada alternate uniform",
+      },
     },
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
@@ -2657,8 +2675,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Granada High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2666,7 +2685,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2698,7 +2717,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#8B0000", secondary: "#FFD700", description: "Foothill home uniform" },
       away: { primary: "#FFFFFF", secondary: "#8B0000", description: "Foothill away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#8B0000", description: "Foothill alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#8B0000",
+        description: "Foothill alternate uniform",
+      },
     },
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
@@ -2706,8 +2729,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Foothill High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2715,7 +2739,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2747,7 +2771,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#003D99", secondary: "#FFD700", description: "Amador Valley home uniform" },
       away: { primary: "#FFFFFF", secondary: "#003D99", description: "Amador Valley away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#003D99", description: "Amador Valley alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#003D99",
+        description: "Amador Valley alternate uniform",
+      },
     },
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
@@ -2755,8 +2783,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Amador Valley High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2764,7 +2793,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2794,9 +2823,21 @@ export const baseTeams: Team[] = [
       secondary: "#000000",
     },
     uniforms: {
-      home: { primary: "#8B0000", secondary: "#000000", description: "San Ramon Valley home uniform" },
-      away: { primary: "#FFFFFF", secondary: "#8B0000", description: "San Ramon Valley away uniform" },
-      alternate: { primary: "#000000", secondary: "#8B0000", description: "San Ramon Valley alternate uniform" },
+      home: {
+        primary: "#8B0000",
+        secondary: "#000000",
+        description: "San Ramon Valley home uniform",
+      },
+      away: {
+        primary: "#FFFFFF",
+        secondary: "#8B0000",
+        description: "San Ramon Valley away uniform",
+      },
+      alternate: {
+        primary: "#000000",
+        secondary: "#8B0000",
+        description: "San Ramon Valley alternate uniform",
+      },
     },
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
@@ -2804,8 +2845,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "San Ramon Valley High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2813,7 +2855,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2845,7 +2887,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#8B0000", secondary: "#FFD700", description: "Monte Vista home uniform" },
       away: { primary: "#FFFFFF", secondary: "#8B0000", description: "Monte Vista away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#8B0000", description: "Monte Vista alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#8B0000",
+        description: "Monte Vista alternate uniform",
+      },
     },
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
@@ -2853,8 +2899,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Monte Vista High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2862,7 +2909,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2894,7 +2941,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#003D99", secondary: "#FFD700", description: "Mountain View home uniform" },
       away: { primary: "#FFFFFF", secondary: "#003D99", description: "Mountain View away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#003D99", description: "Mountain View alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#003D99",
+        description: "Mountain View alternate uniform",
+      },
     },
     league: "Peninsula Athletic League - Bay",
     division: "Peninsula Athletic League - Bay",
@@ -2902,8 +2953,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Mountain View High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2911,7 +2963,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2943,7 +2995,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#2E7D32", secondary: "#FFD700", description: "Half Moon Bay home uniform" },
       away: { primary: "#FFFFFF", secondary: "#2E7D32", description: "Half Moon Bay away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#2E7D32", description: "Half Moon Bay alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#2E7D32",
+        description: "Half Moon Bay alternate uniform",
+      },
     },
     league: "Peninsula Athletic League - Bay",
     division: "Peninsula Athletic League - Bay",
@@ -2951,8 +3007,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Half Moon Bay High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -2960,7 +3017,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -2992,7 +3049,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#8B0000", secondary: "#FFD700", description: "Pajaro Valley home uniform" },
       away: { primary: "#FFFFFF", secondary: "#8B0000", description: "Pajaro Valley away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#8B0000", description: "Pajaro Valley alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#8B0000",
+        description: "Pajaro Valley alternate uniform",
+      },
     },
     league: "SCVAL - De Anza",
     division: "SCVAL - De Anza",
@@ -3000,8 +3061,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Pajaro Valley High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3009,7 +3071,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3041,7 +3103,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#003D99", secondary: "#FFD700", description: "Harbor home uniform" },
       away: { primary: "#FFFFFF", secondary: "#003D99", description: "Harbor away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#003D99", description: "Harbor alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#003D99",
+        description: "Harbor alternate uniform",
+      },
     },
     league: "SCVAL - De Anza",
     division: "SCVAL - De Anza",
@@ -3049,8 +3115,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Harbor High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3058,7 +3125,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3090,7 +3157,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#000000", secondary: "#FFD700", description: "Watsonville home uniform" },
       away: { primary: "#FFFFFF", secondary: "#000000", description: "Watsonville away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#000000", description: "Watsonville alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#000000",
+        description: "Watsonville alternate uniform",
+      },
     },
     league: "SCVAL - De Anza",
     division: "SCVAL - De Anza",
@@ -3098,8 +3169,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Watsonville High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3107,7 +3179,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3139,7 +3211,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#003D99", secondary: "#FFD700", description: "Hollister home uniform" },
       away: { primary: "#FFFFFF", secondary: "#003D99", description: "Hollister away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#003D99", description: "Hollister alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#003D99",
+        description: "Hollister alternate uniform",
+      },
     },
     league: "SCVAL - De Anza",
     division: "SCVAL - De Anza",
@@ -3147,8 +3223,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Hollister High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3156,7 +3233,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3186,9 +3263,21 @@ export const baseTeams: Team[] = [
       secondary: "#FFFFFF",
     },
     uniforms: {
-      home: { primary: "#8B0000", secondary: "#FFFFFF", description: "Archbishop Alemany home uniform" },
-      away: { primary: "#FFFFFF", secondary: "#8B0000", description: "Archbishop Alemany away uniform" },
-      alternate: { primary: "#FFFFFF", secondary: "#8B0000", description: "Archbishop Alemany alternate uniform" },
+      home: {
+        primary: "#8B0000",
+        secondary: "#FFFFFF",
+        description: "Archbishop Alemany home uniform",
+      },
+      away: {
+        primary: "#FFFFFF",
+        secondary: "#8B0000",
+        description: "Archbishop Alemany away uniform",
+      },
+      alternate: {
+        primary: "#FFFFFF",
+        secondary: "#8B0000",
+        description: "Archbishop Alemany alternate uniform",
+      },
     },
     league: "West Catholic Athletic League",
     division: "West Catholic Athletic League",
@@ -3196,8 +3285,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Archbishop Alemany High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3205,7 +3295,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3237,7 +3327,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#003D99", secondary: "#FFD700", description: "Alisal home uniform" },
       away: { primary: "#FFFFFF", secondary: "#003D99", description: "Alisal away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#003D99", description: "Alisal alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#003D99",
+        description: "Alisal alternate uniform",
+      },
     },
     league: "PCAL - Gabilan",
     division: "PCAL - Gabilan",
@@ -3245,8 +3339,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Alisal High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3254,7 +3349,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3286,7 +3381,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#FF8B00", secondary: "#000000", description: "Gonzales home uniform" },
       away: { primary: "#FFFFFF", secondary: "#FF8B00", description: "Gonzales away uniform" },
-      alternate: { primary: "#000000", secondary: "#FF8B00", description: "Gonzales alternate uniform" },
+      alternate: {
+        primary: "#000000",
+        secondary: "#FF8B00",
+        description: "Gonzales alternate uniform",
+      },
     },
     league: "PCAL - Gabilan",
     division: "PCAL - Gabilan",
@@ -3294,8 +3393,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Gonzales High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3303,7 +3403,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3335,7 +3435,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#8B0000", secondary: "#FFD700", description: "Greenfield home uniform" },
       away: { primary: "#FFFFFF", secondary: "#8B0000", description: "Greenfield away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#8B0000", description: "Greenfield alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#8B0000",
+        description: "Greenfield alternate uniform",
+      },
     },
     league: "PCAL - Gabilan",
     division: "PCAL - Gabilan",
@@ -3343,8 +3447,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Greenfield High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3352,7 +3457,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3384,7 +3489,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#2E7D32", secondary: "#FFD700", description: "San Benito home uniform" },
       away: { primary: "#FFFFFF", secondary: "#2E7D32", description: "San Benito away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#2E7D32", description: "San Benito alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#2E7D32",
+        description: "San Benito alternate uniform",
+      },
     },
     league: "PCAL - Cypress",
     division: "PCAL - Cypress",
@@ -3392,8 +3501,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "San Benito High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3401,7 +3511,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3433,7 +3543,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#003D99", secondary: "#FFD700", description: "Sequoia home uniform" },
       away: { primary: "#FFFFFF", secondary: "#003D99", description: "Sequoia away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#003D99", description: "Sequoia alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#003D99",
+        description: "Sequoia alternate uniform",
+      },
     },
     league: "Peninsula Athletic League - Bay",
     division: "Peninsula Athletic League - Bay",
@@ -3441,8 +3555,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Sequoia High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3450,7 +3565,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3482,7 +3597,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#8B0000", secondary: "#FFD700", description: "Woodside home uniform" },
       away: { primary: "#FFFFFF", secondary: "#8B0000", description: "Woodside away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#8B0000", description: "Woodside alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#8B0000",
+        description: "Woodside alternate uniform",
+      },
     },
     league: "Peninsula Athletic League - Bay",
     division: "Peninsula Athletic League - Bay",
@@ -3490,8 +3609,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Woodside High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3499,7 +3619,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3531,7 +3651,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#FF8B00", secondary: "#000000", description: "Lynbrook home uniform" },
       away: { primary: "#FFFFFF", secondary: "#FF8B00", description: "Lynbrook away uniform" },
-      alternate: { primary: "#000000", secondary: "#FF8B00", description: "Lynbrook alternate uniform" },
+      alternate: {
+        primary: "#000000",
+        secondary: "#FF8B00",
+        description: "Lynbrook alternate uniform",
+      },
     },
     league: "SCVAL - De Anza",
     division: "SCVAL - De Anza",
@@ -3539,8 +3663,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Lynbrook High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3548,7 +3673,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3578,9 +3703,21 @@ export const baseTeams: Team[] = [
       secondary: "#FFD700",
     },
     uniforms: {
-      home: { primary: "#8B0000", secondary: "#FFD700", description: "Charles S. Buchser home uniform" },
-      away: { primary: "#FFFFFF", secondary: "#8B0000", description: "Charles S. Buchser away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#8B0000", description: "Charles S. Buchser alternate uniform" },
+      home: {
+        primary: "#8B0000",
+        secondary: "#FFD700",
+        description: "Charles S. Buchser home uniform",
+      },
+      away: {
+        primary: "#FFFFFF",
+        secondary: "#8B0000",
+        description: "Charles S. Buchser away uniform",
+      },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#8B0000",
+        description: "Charles S. Buchser alternate uniform",
+      },
     },
     league: "SCVAL - De Anza",
     division: "SCVAL - De Anza",
@@ -3588,8 +3725,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Buchser High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3597,7 +3735,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3629,7 +3767,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#8B0000", secondary: "#FFD700", description: "Soquel home uniform" },
       away: { primary: "#FFFFFF", secondary: "#8B0000", description: "Soquel away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#8B0000", description: "Soquel alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#8B0000",
+        description: "Soquel alternate uniform",
+      },
     },
     league: "SCVAL - De Anza",
     division: "SCVAL - De Anza",
@@ -3637,8 +3779,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Soquel High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3646,7 +3789,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3678,7 +3821,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#8B0000", secondary: "#FFD700", description: "Santa Cruz home uniform" },
       away: { primary: "#FFFFFF", secondary: "#8B0000", description: "Santa Cruz away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#8B0000", description: "Santa Cruz alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#8B0000",
+        description: "Santa Cruz alternate uniform",
+      },
     },
     league: "SCVAL - De Anza",
     division: "SCVAL - De Anza",
@@ -3686,8 +3833,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Santa Cruz High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3695,7 +3843,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3727,7 +3875,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#8B0000", secondary: "#FFD700", description: "Piedmont home uniform" },
       away: { primary: "#FFFFFF", secondary: "#8B0000", description: "Piedmont away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#8B0000", description: "Piedmont alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#8B0000",
+        description: "Piedmont alternate uniform",
+      },
     },
     league: "Bay Valley Athletic League",
     division: "Bay Valley Athletic League",
@@ -3735,8 +3887,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Piedmont High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3744,7 +3897,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
@@ -3776,7 +3929,11 @@ export const baseTeams: Team[] = [
     uniforms: {
       home: { primary: "#003D99", secondary: "#FFD700", description: "Carlmont home uniform" },
       away: { primary: "#FFFFFF", secondary: "#003D99", description: "Carlmont away uniform" },
-      alternate: { primary: "#FFD700", secondary: "#003D99", description: "Carlmont alternate uniform" },
+      alternate: {
+        primary: "#FFD700",
+        secondary: "#003D99",
+        description: "Carlmont alternate uniform",
+      },
     },
     league: "Peninsula Athletic League - Bay",
     division: "Peninsula Athletic League - Bay",
@@ -3784,8 +3941,9 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 999,
-    image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
+    ranking: 50,
+    image:
+      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
     stadium: "Carlmont High",
     headCoach: "TBD",
     offensiveCoordinator: "TBD",
@@ -3793,7 +3951,7 @@ export const baseTeams: Team[] = [
     offensiveSystem: "TBD",
     defensiveSystem: "TBD",
     commonPlays: [],
-    commonDefensivePlay: ["Gap Discipline","Linebacker Flow","Coverage Rotation","Pass Rush"],
+    commonDefensivePlay: ["Gap Discipline", "Linebacker Flow", "Coverage Rotation", "Pass Rush"],
     strengths: [],
     keyPlayers: [],
     levels: {
