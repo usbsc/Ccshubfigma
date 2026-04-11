@@ -212,7 +212,7 @@ export function TeamDetail() {
             <div key={level} className="bg-zinc-800 rounded-xl p-4">
               <div className="text-sm text-zinc-400 uppercase mb-2">{level}</div>
               <div className="text-2xl font-bold">
-                {record.wins}-{record.losses}
+                {typeof record === 'string' ? record : `${record.wins}-${record.losses}`}
               </div>
             </div>
           ))}

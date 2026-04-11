@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Shirt } from "lucide-react";
 import type { Team } from "../data/teams";

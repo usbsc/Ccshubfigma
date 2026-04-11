@@ -30,8 +30,8 @@ export interface Team {
   keyPlayers: string[];
   levels: {
     varsity: { wins: number; losses: number };
-    jv: { wins: number; losses: number };
-    freshman: { wins: number; losses: number };
+    jv: { wins: number; losses: number } | "N/A";
+    freshman: { wins: number; losses: number } | "N/A";
   };
   socials?: {
     twitter?: string;
@@ -64,8 +64,8 @@ export const baseTeams: Team[] = [
     league: "West Catholic Athletic League",
     division: "Bay Foothill League - Division I",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 12,
+      losses: 1,
     },
     ranking: 1,
     image:
@@ -81,16 +81,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["QB Michael Mitchell Jr. #10", "WR Wesley Winn #1", "WR Chris Lawson #2"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 12,
+        losses: 1,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 12,
+        losses: 1,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 12,
+        losses: 1,
       },
     },
     socials: {
@@ -135,16 +135,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["RB Iziah Singleton #22", "TE Jace Cannon #88", "WR Jaiden Tinson #1"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 8,
+        losses: 6,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 8,
+        losses: 6,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 8,
+        losses: 6,
       },
     },
     socials: {
@@ -189,16 +189,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["RB Kingston Keanaaina #22", "OL John Fifita #77", "QB Trent Knight #12"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 6,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 6,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 6,
       },
     },
     socials: {
@@ -226,8 +226,8 @@ export const baseTeams: Team[] = [
     league: "West Catholic Athletic League",
     division: "Bay Foothill League - Division I",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 9,
+      losses: 6,
     },
     ranking: 5,
     image:
@@ -243,16 +243,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["QB Soren Hummel #18", "RB Jarious Hogan #6", "OLB Daniel Leupold #7"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 9,
+        losses: 6,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 9,
+        losses: 6,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 9,
+        losses: 6,
       },
     },
     socials: {
@@ -280,8 +280,8 @@ export const baseTeams: Team[] = [
     league: "West Catholic Athletic League",
     division: "Bay Foothill League - Division I",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 6,
+      losses: 5,
     },
     ranking: 6,
     image:
@@ -301,16 +301,16 @@ export const baseTeams: Team[] = [
     ],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 5,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 5,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 5,
       },
     },
     socials: {
@@ -338,8 +338,8 @@ export const baseTeams: Team[] = [
     league: "West Catholic Athletic League",
     division: "Bay Foothill League - Division I",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 3,
+      losses: 7,
     },
     ranking: 10,
     image:
@@ -355,16 +355,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["OL Champ Taulealea #75", "TE/DE Colton Hider #88", "RB/DB Micah Mosley #5"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 3,
+        losses: 7,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 3,
+        losses: 7,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 3,
+        losses: 7,
       },
     },
     socials: {
@@ -392,8 +392,8 @@ export const baseTeams: Team[] = [
     league: "West Catholic Athletic League",
     division: "Bay Foothill League - Division I",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 2,
+      losses: 8,
     },
     ranking: 16,
     image:
@@ -409,16 +409,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["QB Dominic Sotelo #7", "LB/RB Nico Tatom #4", "OT Richard Steele #77"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 8,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 8,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 8,
       },
     },
     socials: {
@@ -446,8 +446,8 @@ export const baseTeams: Team[] = [
     league: "West Catholic Athletic League",
     division: "Bay Foothill League - Division I",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 6,
+      losses: 7,
     },
     ranking: 8,
     image:
@@ -463,16 +463,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["QB Michael Sargent #15", "RB/SS Legend Williams #6", "DE/TE Mickey Williams #8"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 7,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 7,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 7,
       },
     },
     socials: {
@@ -501,8 +501,8 @@ export const baseTeams: Team[] = [
     league: "Peninsula Athletic League - Bay",
     division: "Peninsula Athletic League - Bay",
     record: {
-      wins: 11,
-      losses: 3,
+      wins: 9,
+      losses: 4,
     },
     ranking: 3,
     image:
@@ -518,16 +518,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["RB Grayson Doslak #24", "WR Max Thomas #8", "QB Luca Salimi #10"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 9,
+        losses: 4,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 9,
+        losses: 4,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 9,
+        losses: 4,
       },
     },
     socials: {
@@ -552,8 +552,8 @@ export const baseTeams: Team[] = [
     league: "Peninsula Athletic League - Bay",
     division: "Peninsula Athletic League - Bay",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 6,
+      losses: 5,
     },
     ranking: 13,
     image:
@@ -569,16 +569,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["RB/FS Brayden Rosa #2", "CB/WR Jeremiah Arevalos #8", "QB Kai Imahara #11"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 5,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 5,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 5,
       },
     },
     socials: {
@@ -607,7 +607,7 @@ export const baseTeams: Team[] = [
     division: "Peninsula Athletic League - Bay",
     record: {
       wins: 0,
-      losses: 0,
+      losses: 10,
     },
     ranking: 31,
     image:
@@ -624,15 +624,15 @@ export const baseTeams: Team[] = [
     levels: {
       varsity: {
         wins: 0,
-        losses: 0,
+        losses: 10,
       },
       jv: {
         wins: 0,
-        losses: 0,
+        losses: 10,
       },
       freshman: {
         wins: 0,
-        losses: 0,
+        losses: 10,
       },
     },
     socials: {
@@ -660,8 +660,8 @@ export const baseTeams: Team[] = [
     league: "Peninsula Athletic League - Bay",
     division: "Peninsula Athletic League - Bay",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 7,
+      losses: 7,
     },
     ranking: 12,
     image:
@@ -677,16 +677,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["QB Teddy Dacey #10", "WR Jacob Roeder #2", "RB Monty Turner #33"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 7,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 7,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 7,
       },
     },
     socials: {
@@ -711,8 +711,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 5,
+      losses: 6,
     },
     ranking: 22,
     image:
@@ -728,16 +728,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["QB John Schalesky #12", "MLB Josiah Orta #8", "OLB Aiden Swann #4"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 6,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 6,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 6,
       },
     },
     socials: {
@@ -762,8 +762,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 6,
+      losses: 4,
     },
     ranking: 21,
     image: "https://vcloud.blueframe.com/secure/image/628151",
@@ -778,17 +778,14 @@ export const baseTeams: Team[] = [
     keyPlayers: ["N/A"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 4,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 4,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
     socials: {
       twitter: "LeighFootball",
@@ -811,8 +808,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 3,
+      losses: 7,
     },
     ranking: 32,
     image: "https://vcloud.blueframe.com/secure/image/628153",
@@ -827,17 +824,14 @@ export const baseTeams: Team[] = [
     keyPlayers: ["N/A"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 3,
+        losses: 7,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 3,
+        losses: 7,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
     socials: {
       twitter: "LelandFootball",
@@ -860,8 +854,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 1,
+      losses: 9,
     },
     ranking: 39,
     image:
@@ -877,17 +871,14 @@ export const baseTeams: Team[] = [
     keyPlayers: ["QB Jordan McCoy #5", "RB Aaron Wiley #7", "RB Kaleb Fries #10"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 1,
+        losses: 9,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 1,
+        losses: 9,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
     socials: {
       twitter: "OG_Football",
@@ -911,8 +902,8 @@ export const baseTeams: Team[] = [
     league: "PCAL - Gabilan",
     division: "PCAL - Gabilan",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 7,
+      losses: 4,
     },
     ranking: 9,
     image: "https://vcloud.blueframe.com/secure/image/628193",
@@ -927,16 +918,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["N/A"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 4,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 4,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 4,
       },
     },
     socials: {
@@ -960,8 +951,8 @@ export const baseTeams: Team[] = [
     league: "PCAL - Gabilan",
     division: "PCAL - Gabilan",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 11,
+      losses: 1,
     },
     ranking: 7,
     image: "https://vcloud.blueframe.com/secure/image/628173",
@@ -976,16 +967,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["N/A"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 11,
+        losses: 1,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 11,
+        losses: 1,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 11,
+        losses: 1,
       },
     },
     socials: {
@@ -1009,8 +1000,8 @@ export const baseTeams: Team[] = [
     league: "SCCAL",
     division: "SCCAL",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 1,
+      losses: 9,
     },
     ranking: 27,
     image: "https://vcloud.blueframe.com/secure/image/628111",
@@ -1025,16 +1016,16 @@ export const baseTeams: Team[] = [
     keyPlayers: ["N/A"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 1,
+        losses: 9,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 1,
+        losses: 9,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 1,
+        losses: 9,
       },
     },
     socials: {
@@ -1058,8 +1049,8 @@ export const baseTeams: Team[] = [
     league: "PAL - Bay",
     division: "PAL - Bay",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 6,
+      losses: 6,
     },
     ranking: 999,
     image: "https://vcloud.blueframe.com/secure/image/628101",
@@ -1074,17 +1065,14 @@ export const baseTeams: Team[] = [
     keyPlayers: ["N/A"],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 6,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 6,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
     socials: {
       twitter: "SHP_Football",
@@ -1108,7 +1096,7 @@ export const baseTeams: Team[] = [
     division: "BVAL - West Valley",
     record: {
       wins: 0,
-      losses: 0,
+      losses: 10,
     },
     ranking: 49,
     image: GENERIC_LOGO,
@@ -1124,15 +1112,15 @@ export const baseTeams: Team[] = [
     levels: {
       varsity: {
         wins: 0,
-        losses: 0,
+        losses: 10,
       },
       jv: {
         wins: 0,
-        losses: 0,
+        losses: 10,
       },
       freshman: {
         wins: 0,
-        losses: 0,
+        losses: 10,
       },
     },
   },
@@ -1152,8 +1140,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Santa Teresa",
     division: "BVAL - Santa Teresa",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 7,
+      losses: 6,
     },
     ranking: 18,
     image: GENERIC_LOGO,
@@ -1168,16 +1156,16 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 6,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 6,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 6,
       },
     },
   },
@@ -1197,8 +1185,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - West Valley",
     division: "BVAL - West Valley",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 2,
+      losses: 8,
     },
     ranking: 41,
     image: GENERIC_LOGO,
@@ -1213,17 +1201,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 8,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 8,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1242,8 +1227,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Santa Teresa",
     division: "BVAL - Santa Teresa",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 5,
+      losses: 5,
     },
     ranking: 44,
     image: GENERIC_LOGO,
@@ -1258,17 +1243,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 5,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 5,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1287,8 +1269,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - West Valley",
     division: "BVAL - West Valley",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 6,
+      losses: 4,
     },
     ranking: 25,
     image: GENERIC_LOGO,
@@ -1303,17 +1285,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 4,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 4,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1332,8 +1311,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - West Valley",
     division: "BVAL - West Valley",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 5,
+      losses: 5,
     },
     ranking: 43,
     image: GENERIC_LOGO,
@@ -1348,17 +1327,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 5,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 5,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1377,8 +1353,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - West Valley",
     division: "BVAL - West Valley",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 1,
+      losses: 9,
     },
     ranking: 48,
     image: GENERIC_LOGO,
@@ -1393,17 +1369,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 1,
+        losses: 9,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 1,
+        losses: 9,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1422,8 +1395,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Santa Teresa",
     division: "BVAL - Santa Teresa",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 11,
+      losses: 4,
     },
     ranking: 14,
     image: GENERIC_LOGO,
@@ -1438,16 +1411,16 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 11,
+        losses: 4,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 11,
+        losses: 4,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 11,
+        losses: 4,
       },
     },
   },
@@ -1467,8 +1440,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 9,
+      losses: 3,
     },
     ranking: 15,
     image: GENERIC_LOGO,
@@ -1483,17 +1456,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 9,
+        losses: 3,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 9,
+        losses: 3,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1512,8 +1482,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - West Valley",
     division: "BVAL - West Valley",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 2,
+      losses: 7,
     },
     ranking: 46,
     image: GENERIC_LOGO,
@@ -1528,17 +1498,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 7,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 7,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1557,8 +1524,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - West Valley",
     division: "BVAL - West Valley",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 5,
+      losses: 5,
     },
     ranking: 29,
     image: GENERIC_LOGO,
@@ -1573,17 +1540,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 5,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 5,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1602,8 +1566,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 10,
+      losses: 4,
     },
     ranking: 23,
     image: GENERIC_LOGO,
@@ -1618,17 +1582,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 10,
+        losses: 4,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 10,
+        losses: 4,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1647,8 +1608,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Santa Teresa",
     division: "BVAL - Santa Teresa",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 6,
+      losses: 5,
     },
     ranking: 28,
     image: GENERIC_LOGO,
@@ -1663,17 +1624,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 5,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 6,
+        losses: 5,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1692,8 +1650,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - West Valley",
     division: "BVAL - West Valley",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 5,
+      losses: 5,
     },
     ranking: 40,
     image: GENERIC_LOGO,
@@ -1708,17 +1666,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 5,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 5,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1737,8 +1692,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - West Valley",
     division: "BVAL - West Valley",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 7,
+      losses: 4,
     },
     ranking: 33,
     image: GENERIC_LOGO,
@@ -1753,17 +1708,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 4,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 4,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1782,8 +1734,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 11,
+      losses: 1,
     },
     ranking: 11,
     image: GENERIC_LOGO,
@@ -1798,17 +1750,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 11,
+        losses: 1,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 11,
+        losses: 1,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1827,8 +1776,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Mt. Hamilton",
     division: "BVAL - Mt. Hamilton",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 5,
+      losses: 5,
     },
     ranking: 30,
     image: GENERIC_LOGO,
@@ -1843,17 +1792,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 5,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 5,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1872,8 +1818,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Santa Teresa",
     division: "BVAL - Santa Teresa",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 8,
+      losses: 5,
     },
     ranking: 24,
     image: GENERIC_LOGO,
@@ -1888,16 +1834,16 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 8,
+        losses: 5,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 8,
+        losses: 5,
       },
       freshman: {
-        wins: 0,
-        losses: 0,
+        wins: 8,
+        losses: 5,
       },
     },
   },
@@ -1917,8 +1863,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Santa Teresa",
     division: "BVAL - Santa Teresa",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 3,
+      losses: 7,
     },
     ranking: 35,
     image: GENERIC_LOGO,
@@ -1933,17 +1879,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 3,
+        losses: 7,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 3,
+        losses: 7,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -1962,8 +1905,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - Santa Teresa",
     division: "BVAL - Santa Teresa",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 9,
+      losses: 3,
     },
     ranking: 20,
     image: GENERIC_LOGO,
@@ -1978,17 +1921,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 9,
+        losses: 3,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 9,
+        losses: 3,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -2007,8 +1947,8 @@ export const baseTeams: Team[] = [
     league: "BVAL - West Valley",
     division: "BVAL - West Valley",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 7,
+      losses: 3,
     },
     ranking: 36,
     image: GENERIC_LOGO,
@@ -2023,17 +1963,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 3,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 3,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -2053,7 +1990,7 @@ export const baseTeams: Team[] = [
     division: "SCVAL - El Camino",
     record: {
       wins: 0,
-      losses: 0,
+      losses: 10,
     },
     ranking: 47,
     image: GENERIC_LOGO,
@@ -2069,16 +2006,13 @@ export const baseTeams: Team[] = [
     levels: {
       varsity: {
         wins: 0,
-        losses: 0,
+        losses: 10,
       },
       jv: {
         wins: 0,
-        losses: 0,
+        losses: 10,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -2097,8 +2031,8 @@ export const baseTeams: Team[] = [
     league: "SCVAL - El Camino",
     division: "SCVAL - El Camino",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 2,
+      losses: 8,
     },
     ranking: 37,
     image: GENERIC_LOGO,
@@ -2113,17 +2047,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 8,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 8,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -2142,8 +2073,8 @@ export const baseTeams: Team[] = [
     league: "SCVAL - El Camino",
     division: "SCVAL - El Camino",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 2,
+      losses: 8,
     },
     ranking: 45,
     image: GENERIC_LOGO,
@@ -2158,17 +2089,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 8,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 8,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -2187,8 +2115,8 @@ export const baseTeams: Team[] = [
     league: "SCVAL - De Anza",
     division: "SCVAL - De Anza",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 7,
+      losses: 3,
     },
     ranking: 26,
     image: GENERIC_LOGO,
@@ -2203,17 +2131,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 3,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 7,
+        losses: 3,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -2232,8 +2157,8 @@ export const baseTeams: Team[] = [
     league: "SCVAL - De Anza",
     division: "SCVAL - De Anza",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 3,
+      losses: 7,
     },
     ranking: 34,
     image: GENERIC_LOGO,
@@ -2248,17 +2173,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 3,
+        losses: 7,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 3,
+        losses: 7,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -2277,8 +2199,8 @@ export const baseTeams: Team[] = [
     league: "SCVAL - De Anza",
     division: "SCVAL - De Anza",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 4,
+      losses: 6,
     },
     ranking: 42,
     image: GENERIC_LOGO,
@@ -2293,17 +2215,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 4,
+        losses: 6,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 4,
+        losses: 6,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -2322,8 +2241,8 @@ export const baseTeams: Team[] = [
     league: "PCAL - Gabilan",
     division: "PCAL - Gabilan",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 5,
+      losses: 6,
     },
     ranking: 17,
     image: GENERIC_LOGO,
@@ -2338,17 +2257,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 6,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 5,
+        losses: 6,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
@@ -2412,8 +2328,8 @@ export const baseTeams: Team[] = [
     league: "PCAL - Cypress",
     division: "PCAL - Cypress",
     record: {
-      wins: 0,
-      losses: 0,
+      wins: 2,
+      losses: 8,
     },
     ranking: 38,
     image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=200&h=200&q=80",
@@ -2428,17 +2344,14 @@ export const baseTeams: Team[] = [
     keyPlayers: [],
     levels: {
       varsity: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 8,
       },
       jv: {
-        wins: 0,
-        losses: 0,
+        wins: 2,
+        losses: 8,
       },
-      freshman: {
-        wins: 0,
-        losses: 0,
-      },
+      freshman: "N/A",
     },
   },
   {
