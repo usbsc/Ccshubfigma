@@ -2303,7 +2303,7 @@ export const baseTeams: Team[] = [
       wins: 0,
       losses: 0,
     },
-    ranking: 50,
+    ranking: 49,
     image: GENERIC_LOGO,
     stadium: "N/A",
     headCoach: "N/A",
