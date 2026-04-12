@@ -73,8 +73,7 @@ export function Rankings() {
               <span className="text-blue-500 font-black">Index</span>
             </h1>
             <p className="text-zinc-400 text-sm font-medium max-w-md">
-              Real-time performance metrics synchronized with official CIF, MaxPreps, and CalPreps
-              data.
+              Real-time performance metrics synchronized with official CIF and MaxPreps data.
             </p>
           </div>
 
