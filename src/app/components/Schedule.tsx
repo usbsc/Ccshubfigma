@@ -367,12 +367,6 @@ export function Schedule() {
 
       {/* Grouped Schedule */}
       <section className="space-y-12">
-        {liveGames.length === 0 && upcomingGames.length === 0 ? (
-          <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 text-zinc-400">
-            No games loaded for {seasonLabel(selectedYear)} yet.
-          </div>
-        ) : null}
-
         {Object.entries(gamesByDate).map(([date, dateGames]) => (
           <div key={date} className="space-y-6">
             <div className="flex items-center gap-4">
