@@ -21,7 +21,6 @@ import {
   seasonLabel,
   type GameYear,
 } from "../data/games";
-import { players } from "../data/players";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./common/ImageWithFallback";
 import { UniformShowcase } from "./UniformShowcase";
@@ -46,7 +45,6 @@ export function TeamDetail() {
   const teamGames = (gamesByYear[selectedYear] ?? []).filter(
     (g) => g.homeTeam === team.id || g.awayTeam === team.id
   );
-  const teamPlayers = players.filter((p) => p.team === team.id);
 
   const upcomingGames = teamGames
     .filter((g) => g.status === "upcoming")
@@ -340,44 +338,6 @@ export function TeamDetail() {
           ))}
         </ul>
       </motion.div>
-
-      {/* Key Players */}
-      {teamPlayers.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="bg-zinc-900 rounded-2xl p-6 border border-zinc-800"
-        >
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Users className="w-6 h-6 text-purple-400" />
-            Key Players
-          </h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            {teamPlayers.map((player) => (
-              <Link
-                key={player.id}
-                to="/players"
-                className="bg-zinc-800 rounded-xl p-4 hover:bg-zinc-700 transition-colors"
-              >
-                <div className="w-full h-48 overflow-hidden rounded-lg mb-3">
-                  <ImageWithFallback
-                    src={team.image}
-                    alt={player.name}
-                    className="w-full h-full object-contain bg-zinc-950 p-6"
-                  />
-                </div>
-                <div className="font-bold text-lg">
-                  #{player.number} {player.name}
-                </div>
-                <div className="text-sm text-zinc-400">
-                  {player.position} • Grade {player.grade}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-      )}
 
       {/* Schedule */}
       <div className="flex flex-wrap items-center justify-between gap-3">
