@@ -30,6 +30,7 @@ export function Home() {
 
   const [teamQuery, setTeamQuery] = useState("");
   const [divisionLeagueQuery, setDivisionLeagueQuery] = useState("");
+  const [userLocation, setUserLocation] = useState("");
 
   const teamById = useMemo(() => new Map(teams.map((t) => [t.id, t])), []);
 
@@ -226,6 +227,43 @@ export function Home() {
           </div>
         </motion.section>
       )}
+
+      {/* Games Near You Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="mb-8"
+      >
+        <div className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 rounded-2xl p-8 border border-green-800/50 backdrop-blur-sm">
+          <div className="mb-6">
+            <h2 className="text-2xl font-black mb-2 flex items-center gap-3 text-white">
+              <MapPin className="w-6 h-6 text-green-400" />
+              Games Near You
+            </h2>
+            <p className="text-sm text-zinc-300">Find football games in your area</p>
+          </div>
+
+          <div className="relative group">
+            <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500 group-focus-within:text-green-400 transition-colors" />
+            <input
+              type="text"
+              placeholder="Search by city or zip code..."
+              value={userLocation}
+              onChange={(e) => setUserLocation(e.target.value)}
+              className="w-full bg-zinc-950 border border-green-800/50 rounded-2xl py-4 pl-12 pr-4 text-sm font-bold text-white focus:outline-none focus:ring-2 focus:ring-green-500/50 transition-all shadow-xl"
+              aria-label="Search games by location"
+            />
+          </div>
+
+          {userLocation.trim().length > 0 && (
+            <div className="mt-6 text-sm text-zinc-400">
+              <p>Games near <span className="font-bold text-green-300">{userLocation}</span> would appear here</p>
+              <p className="text-xs mt-2 text-zinc-500">(Location-based filtering coming soon)</p>
+            </div>
+          )}
+        </div>
+      </motion.section>
 
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Main Feed Column */}
