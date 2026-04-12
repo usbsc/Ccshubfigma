@@ -2305,7 +2305,7 @@ export const baseTeams: Team[] = [
     },
     ranking: 49,
     image: "/logos/santa-clara.png",
-    stadium: "Fremont High School",
+    stadium: "Don Bordoneavue Field",
     // Note: Coaching data below is from baseTeams (manual) and may not be current.
     // Real-time stats (record, streak, ranking) come from MaxPreps.
     // To update coaches, check MaxPreps page or verify with school athletics.
