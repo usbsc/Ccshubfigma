@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <!-- Black background (X.com style) -->
+  <!-- Black background -->
   <rect width="512" height="512" fill="#000000"/>
   
-  <!-- White X -->
-  <g fill="none" stroke="white" stroke-width="60" stroke-linecap="round" stroke-linejoin="round">
+  <!-- White X with thicker stroke for visibility at small sizes -->
+  <g fill="none" stroke="white" stroke-width="80" stroke-linecap="round" stroke-linejoin="round">
     <!-- Top-left to bottom-right -->
-    <line x1="80" y1="80" x2="432" y2="432"/>
+    <line x1="60" y1="60" x2="452" y2="452"/>
     <!-- Top-right to bottom-left -->
-    <line x1="432" y1="80" x2="80" y2="432"/>
+    <line x1="452" y1="60" x2="60" y2="452"/>
   </g>
 </svg>
