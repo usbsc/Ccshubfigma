@@ -297,6 +297,29 @@ export function TeamDetail() {
         </div>
       </motion.div>
 
+      {/* Common Defensive Plays */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.45 }}
+        className="bg-zinc-900 rounded-2xl p-6 border border-zinc-800"
+      >
+        <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+          <Shield className="w-6 h-6 text-red-400" />
+          Common Defensive Plays
+        </h2>
+        <div className="flex flex-wrap gap-3">
+          {team.commonDefensivePlay.map((play, idx) => (
+            <span
+              key={idx}
+              className="bg-red-900/30 px-4 py-2 rounded-full font-medium border border-red-800 hover:bg-red-900/50 transition-colors text-red-200"
+            >
+              {play}
+            </span>
+          ))}
+        </div>
+      </motion.div>
+
       {/* Strengths */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
