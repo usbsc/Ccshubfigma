@@ -37,11 +37,14 @@ export function Root() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 hover:opacity-80 transition-all active:scale-95 group"
             >
-              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:rotate-3 transition-transform overflow-hidden p-1">
-                <ImageWithFallback
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:rotate-3 transition-transform overflow-hidden p-0">
+                <img
                   src="/ccshub/logos/ccshub-banner.jpg"
                   alt="CCSHUB"
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
                 />
               </div>
               <div>
