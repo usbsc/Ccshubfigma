@@ -1,4 +1,14 @@
 import { maxprepsTeamData } from "./teams.maxpreps.generated";
+import { schoolInfoData } from "./school-info";
+
+export interface SchoolInfo {
+  founded: number; // Year the school was founded
+  footballProgramStarted: number; // Year football program started
+  ccsJoined: number; // Year joined CCS
+  championships: { year: number; division: string }[]; // State/Regional/CCS championships
+  fieldCapacity?: number; // Home field capacity
+  notableFacts: string[]; // Notable achievements, streaks, etc.
+}
 
 export interface Team {
   uniforms?: {
@@ -42,6 +52,7 @@ export interface Team {
     youtube?: string;
     website?: string;
   };
+  schoolInfo?: SchoolInfo;
   lastUpdated?: string; // ISO timestamp of last MaxPreps update
 }
 
@@ -4078,6 +4089,7 @@ export const teams: Team[] = baseTeams.map((team) => {
     pointsFor: mp.pointsFor ?? team.pointsFor,
     pointsAgainst: mp.pointsAgainst ?? team.pointsAgainst,
     streak: mp.streak ?? team.streak,
+    schoolInfo: schoolInfoData[team.id] ?? team.schoolInfo,
     lastUpdated: mp.lastUpdated ?? team.lastUpdated,
   };
 });

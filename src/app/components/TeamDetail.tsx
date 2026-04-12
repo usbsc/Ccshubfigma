@@ -13,6 +13,7 @@ import {
   Instagram,
   ExternalLink,
   Image,
+  History,
 } from "lucide-react";
 import { teams } from "../data/teams";
 import {
@@ -275,6 +276,75 @@ export function TeamDetail() {
           </div>
         </motion.div>
       </div>
+
+      {/* School Info */}
+      {team.schoolInfo && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+          className="bg-card rounded-2xl p-6 border border-border"
+        >
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+            <History className="w-6 h-6 text-purple-400" />
+            School History & Facts
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-3">
+              <div>
+                <div className="text-sm text-muted-foreground">School Founded</div>
+                <div className="font-semibold">{team.schoolInfo.founded}</div>
+              </div>
+              <div>
+                <div className="text-sm text-muted-foreground">Football Program Started</div>
+                <div className="font-semibold">{team.schoolInfo.footballProgramStarted}</div>
+              </div>
+              <div>
+                <div className="text-sm text-muted-foreground">Joined CCS</div>
+                <div className="font-semibold">{team.schoolInfo.ccsJoined}</div>
+              </div>
+              {team.schoolInfo.fieldCapacity && (
+                <div>
+                  <div className="text-sm text-muted-foreground">Field Capacity</div>
+                  <div className="font-semibold">{team.schoolInfo.fieldCapacity.toLocaleString()}</div>
+                </div>
+              )}
+            </div>
+            <div>
+              {team.schoolInfo.championships && team.schoolInfo.championships.length > 0 && (
+                <div>
+                  <div className="text-sm text-muted-foreground mb-2">Championships</div>
+                  <div className="space-y-1">
+                    {team.schoolInfo.championships.map((champ, idx) => (
+                      <div key={idx} className="text-sm font-medium">
+                        {champ.year} - {champ.division}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {!team.schoolInfo.championships || team.schoolInfo.championships.length === 0 && (
+                <div className="text-sm text-muted-foreground italic">
+                  Championship history not yet documented
+                </div>
+              )}
+            </div>
+          </div>
+          {team.schoolInfo.notableFacts && team.schoolInfo.notableFacts.length > 0 && (
+            <div className="mt-4 pt-4 border-t border-border">
+              <div className="text-sm text-muted-foreground mb-2">Notable Facts</div>
+              <ul className="space-y-1">
+                {team.schoolInfo.notableFacts.map((fact, idx) => (
+                  <li key={idx} className="text-sm flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>{fact}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </motion.div>
+      )}
 
       {/* Common Plays */}
       <motion.div
