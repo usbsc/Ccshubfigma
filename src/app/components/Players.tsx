@@ -154,9 +154,9 @@ export function Players() {
                     {/* Team Info */}
                     {team && (
                       <div className="flex items-center gap-2 pt-2 border-t border-zinc-700">
-                        {team.logoUrl && (
+                        {team.image && (
                           <ImageWithFallback
-                            src={team.logoUrl}
+                            src={team.image}
                             alt={team.name}
                             className="w-6 h-6 rounded"
                           />
