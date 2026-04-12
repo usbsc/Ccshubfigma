@@ -12,6 +12,7 @@ import {
   Twitter,
   Instagram,
   ExternalLink,
+  Image,
 } from "lucide-react";
 import { teams } from "../data/teams";
 import {
@@ -337,6 +338,32 @@ export function TeamDetail() {
             </li>
           ))}
         </ul>
+      </motion.div>
+
+      {/* Photos Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.55 }}
+        className="bg-zinc-900 rounded-2xl p-6 border border-zinc-800"
+      >
+        <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+          <Image className="w-6 h-6 text-purple-400" />
+          Photos
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {[...Array(8)].map((_, idx) => (
+            <div
+              key={idx}
+              className="aspect-square bg-zinc-800 rounded-lg border border-zinc-700 flex items-center justify-center hover:border-purple-500 hover:bg-zinc-700/50 transition-all cursor-pointer group"
+            >
+              <div className="text-center">
+                <Image className="w-8 h-8 text-zinc-600 mx-auto mb-2 group-hover:text-purple-400 transition-colors" />
+                <p className="text-xs text-zinc-500 group-hover:text-zinc-400 transition-colors">Coming Soon</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </motion.div>
 
       {/* Schedule */}
