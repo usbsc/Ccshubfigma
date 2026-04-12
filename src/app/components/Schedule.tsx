@@ -8,7 +8,6 @@ import {
   type GameYear,
 } from "../data/games";
 import { teams } from "../data/teams";
-import { players } from "../data/players";
 import { useMemo, useState } from "react";
 import { useNfhsCifccsBroadcasts } from "../hooks/useNfhsCifccsBroadcasts";
 import { ImageWithFallback } from "./common/ImageWithFallback";
@@ -20,7 +19,6 @@ export function Schedule() {
 
   const [teamQuery, setTeamQuery] = useState("");
   const [divisionLeagueQuery, setDivisionLeagueQuery] = useState("");
-  const [playerQuery, setPlayerQuery] = useState("");
 
   const games = gamesByYear[selectedYear] ?? [];
 
@@ -49,16 +47,6 @@ export function Schedule() {
 
   const teamById = useMemo(() => new Map(teams.map((t) => [t.id, t])), []);
 
-  const playersByTeamText = useMemo(() => {
-    const m = new Map<string, string>();
-    for (const p of players) {
-      const prev = m.get(p.team) || "";
-      const searchableText = `${p.name.toLowerCase()}|${p.number}`;
-      m.set(p.team, `${prev}|${searchableText}`);
-    }
-    return m;
-  }, []);
-
   const getTeam = (id: string) => teamById.get(id);
 
   const levelFilteredGames =
@@ -67,9 +55,8 @@ export function Schedule() {
   const filteredGames = useMemo(() => {
     const tq = teamQuery.trim().toLowerCase();
     const dlq = divisionLeagueQuery.trim().toLowerCase();
-    const pq = playerQuery.trim().toLowerCase();
 
-    if (tq.length === 0 && dlq.length === 0 && pq.length === 0) return levelFilteredGames;
+    if (tq.length === 0 && dlq.length === 0) return levelFilteredGames;
 
     return levelFilteredGames.filter((game) => {
       const home = teamById.get(game.homeTeam);
@@ -85,20 +72,13 @@ export function Schedule() {
       } ${away?.league ?? ""}`.toLowerCase();
       const matchesDivisionLeague = dlq.length === 0 || divisionLeagueHaystack.includes(dlq);
 
-      const matchesPlayer =
-        pq.length === 0 ||
-        (playersByTeamText.get(game.homeTeam) || "").includes(pq) ||
-        (playersByTeamText.get(game.awayTeam) || "").includes(pq);
-
-      return matchesTeam && matchesDivisionLeague && matchesPlayer;
+      return matchesTeam && matchesDivisionLeague;
     });
   }, [
     divisionLeagueQuery,
     levelFilteredGames,
-    playerQuery,
     teamById,
     teamQuery,
-    playersByTeamText,
   ]);
 
   const upcomingGames = filteredGames
@@ -213,18 +193,6 @@ export function Schedule() {
             onChange={(e) => setDivisionLeagueQuery(e.target.value)}
             className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl py-4 pl-12 pr-4 text-sm font-bold text-white focus:outline-none focus:ring-2 focus:ring-green-500/50 transition-all shadow-xl"
             aria-label="Search broadcasts by division or league"
-          />
-        </div>
-
-        <div className="relative group">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500 group-focus-within:text-green-500 transition-colors" />
-          <input
-            type="text"
-            placeholder="Search player (optional)..."
-            value={playerQuery}
-            onChange={(e) => setPlayerQuery(e.target.value)}
-            className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl py-4 pl-12 pr-4 text-sm font-bold text-white focus:outline-none focus:ring-2 focus:ring-green-500/50 transition-all shadow-xl"
-            aria-label="Search broadcasts by player"
           />
         </div>
       </div>
