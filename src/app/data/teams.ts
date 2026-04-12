@@ -2309,11 +2309,11 @@ export const baseTeams: Team[] = [
     // Note: Coaching data below is from baseTeams (manual) and may not be current.
     // Real-time stats (record, streak, ranking) come from MaxPreps.
     // To update coaches, check MaxPreps page or verify with school athletics.
-    headCoach: "TBD",
+    headCoach: "Nelson Gifford",
     offensiveCoordinator: "TBD",
-    defensiveCoordinator: "TBD",
-    offensiveSystem: "TBD",
-    defensiveSystem: "TBD",
+    defensiveCoordinator: "Detrick Wright",
+    offensiveSystem: "Spread",
+    defensiveSystem: "3-3-5/3-4",
     commonPlays: ["Outside Zone", "Play Action Pass", "Screen Pass", "Mesh Concept"],
     commonDefensivePlay: ["Gap Assignment", "Man Coverage", "Linebacker Blitz", "Safety Rotation"],
     strengths: ["Disciplined execution", "Fast tempo", "Ball control"],
