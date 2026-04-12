@@ -1,3 +1,5 @@
+import { maxprepsPlayers } from "./players.maxpreps.generated";
+
 export interface Player {
   id: string;
   name: string;
@@ -20,7 +22,11 @@ export interface Player {
 
 export const manualPlayers: Player[] = [];
 
-export const players: Player[] = [];
+export const players: Player[] = (() => {
+  return maxprepsPlayers.sort((a, b) =>
+    (a.team + a.name).localeCompare(b.team + b.name)
+  );
+})();
 
 function normalizePlayerName(name: string) {
   return (name || "")
