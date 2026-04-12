@@ -1,4 +1,4 @@
-import { Award, TrendingUp, Search, Star, X } from "lucide-react";
+import { Award, Search } from "lucide-react";
 import { players, Player } from "../data/players.maxpreps";
 import { teams } from "../data/teams";
 import { motion, AnimatePresence } from "motion/react";

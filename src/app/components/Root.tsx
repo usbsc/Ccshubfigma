@@ -2,7 +2,6 @@ import { Outlet, Link, NavLink } from "react-router";
 import { Bell, Award, Calendar, Users, BarChart3, Settings } from "lucide-react";
 import { useState } from "react";
 import { ImageWithFallback } from "./common/ImageWithFallback";
-import { EXTERNAL_URLS } from "../constants";
 import { homeTeamStorage } from "../services/storage";
 import { useTheme } from "../context/ThemeContext";
 
