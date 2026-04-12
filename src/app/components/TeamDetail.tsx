@@ -463,15 +463,17 @@ export function TeamDetail() {
           <Image className="w-6 h-6 text-purple-400" />
           Photos
         </h2>
-        <div className="w-full rounded-lg overflow-hidden border border-zinc-800">
-          <iframe
-            src="https://lightroom.adobe.com/shares/3af11b5819fb4d48a6d1b659dba92b74"
-            width="100%"
-            height="600"
-            frameBorder="0"
-            allowFullScreen
-            className="w-full"
-          ></iframe>
+        <div className="flex flex-col items-center justify-center py-12 px-6 rounded-lg border-2 border-dashed border-zinc-700">
+          <Image className="w-12 h-12 text-purple-400 mb-4" />
+          <p className="text-zinc-300 mb-4 text-center">View team photos on Adobe Lightroom</p>
+          <a
+            href="https://lightroom.adobe.com/shares/3af11b5819fb4d48a6d1b659dba92b74"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-semibold transition-colors flex items-center gap-2"
+          >
+            Open Gallery <ExternalLink className="w-5 h-5" />
+          </a>
         </div>
       </motion.div>
     </div>
