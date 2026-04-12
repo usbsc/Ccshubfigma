@@ -194,31 +194,34 @@ export function TeamDetail() {
         ))}
       </div>
 
-      {/* Uniforms */}
-      <UniformShowcase team={team} />
+      {/* Uniforms & Levels */}
+      <div className="grid md:grid-cols-2 gap-6">
+        {/* Uniforms */}
+        <UniformShowcase team={team} />
 
-      {/* Level Records */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="bg-zinc-900 rounded-2xl p-6 border border-zinc-800"
-      >
-        <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-          <Users className="w-6 h-6 text-blue-400" />
-          All Levels
-        </h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {Object.entries(team.levels).map(([level, record]) => (
-            <div key={level} className="bg-zinc-800 rounded-xl p-4">
-              <div className="text-sm text-zinc-400 uppercase mb-2">{level}</div>
-              <div className="text-2xl font-bold">
-                {typeof record === "string" ? record : `${record.wins}-${record.losses}`}
+        {/* Level Records */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="bg-zinc-900 rounded-2xl p-6 border border-zinc-800"
+        >
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+            <Users className="w-6 h-6 text-blue-400" />
+            All Levels
+          </h2>
+          <div className="grid gap-3">
+            {Object.entries(team.levels).map(([level, record]) => (
+              <div key={level} className="bg-zinc-800 rounded-xl p-3">
+                <div className="text-sm text-zinc-400 uppercase mb-1">{level}</div>
+                <div className="text-xl font-bold">
+                  {typeof record === "string" ? record : `${record.wins}-${record.losses}`}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
 
       {/* Coaching Staff & System */}
       <div className="grid md:grid-cols-2 gap-6">

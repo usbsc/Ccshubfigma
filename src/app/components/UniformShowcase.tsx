@@ -109,114 +109,47 @@ export function UniformShowcase({ team }: UniformShowcaseProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800"
+      className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800"
     >
-      <div className="flex items-center gap-3 mb-8">
-        <Shirt className="w-6 h-6 text-blue-400" />
-        <h2 className="text-2xl font-bold">Uniforms</h2>
+      <div className="flex items-center gap-2 mb-4">
+        <Shirt className="w-5 h-5 text-blue-400" />
+        <h2 className="text-lg font-bold">Uniforms</h2>
       </div>
 
-      {/* Wikipedia-style uniform table */}
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
-          <thead>
-            <tr>
-              {uniformTypes.map(({ label }) => (
-                <th
-                  key={label}
-                  className="border border-zinc-700 bg-zinc-800 px-4 py-3 text-center font-bold text-white text-sm"
-                >
-                  {label}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {/* Uniform graphics row */}
-            <tr>
-              {uniformTypes.map(({ key }) => {
-                const uniform = team.uniforms?.[key];
-                if (!uniform)
-                  return <td key={key} className="border border-zinc-700 bg-zinc-900" />;
+      {/* Compact uniform display */}
+      <div className="grid grid-cols-3 gap-2">
+        {uniformTypes.map(({ key, label }) => {
+          const uniform = team.uniforms?.[key];
+          if (!uniform) return null;
 
-                return (
-                  <td
-                    key={key}
-                    className="border border-zinc-700 bg-gradient-to-b from-zinc-900 to-zinc-950 p-6"
-                  >
-                    <div className="h-56 w-20 mx-auto">
-                      <UniformRenderer
-                        jerseyColor={uniform.primary}
-                        pantsColor={uniform.secondary}
-                        helmetColor={uniform.primary}
-                        accentColor={uniform.secondary}
-                      />
-                    </div>
-                  </td>
-                );
-              })}
-            </tr>
-
-            {/* Colors row */}
-            <tr>
-              {uniformTypes.map(({ key }) => {
-                const uniform = team.uniforms?.[key];
-                if (!uniform)
-                  return <td key={key} className="border border-zinc-700 bg-zinc-900" />;
-
-                return (
-                  <td key={key} className="border border-zinc-700 bg-zinc-900 p-4">
-                    <div className="space-y-3 text-sm">
-                      {/* Jersey Color */}
-                      <div className="flex items-center gap-3">
-                        <div
-                          className="w-12 h-12 rounded border-2 border-zinc-600 shadow-md flex-shrink-0"
-                          style={{ backgroundColor: uniform.primary }}
-                          title="Jersey color"
-                        />
-                        <div>
-                          <div className="text-xs text-zinc-400 uppercase tracking-wide font-semibold">
-                            Jersey
-                          </div>
-                          <div className="font-mono text-white font-bold text-xs">
-                            {uniform.primary}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Pants/Accent Color */}
-                      {uniform.secondary && uniform.secondary !== uniform.primary && (
-                        <div className="flex items-center gap-3">
-                          <div
-                            className="w-12 h-12 rounded border-2 border-zinc-600 shadow-md flex-shrink-0"
-                            style={{ backgroundColor: uniform.secondary }}
-                            title="Pants/accent color"
-                          />
-                          <div>
-                            <div className="text-xs text-zinc-400 uppercase tracking-wide font-semibold">
-                              Pants
-                            </div>
-                            <div className="font-mono text-white font-bold text-xs">
-                              {uniform.secondary}
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </td>
-                );
-              })}
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      {/* Legend */}
-      <div className="mt-6 pt-4 border-t border-zinc-800 text-xs text-zinc-500 text-center">
-        <p>
-          Uniform designs shown with helmet, jersey (primary color), pants (secondary color), and
-          accent stripes.
-        </p>
+          return (
+            <div key={key} className="bg-zinc-800 rounded-lg p-3 text-center">
+              <div className="text-xs font-bold text-zinc-300 mb-2">{label}</div>
+              <div className="h-24 w-12 mx-auto mb-2">
+                <UniformRenderer
+                  jerseyColor={uniform.primary}
+                  pantsColor={uniform.secondary}
+                  helmetColor={uniform.primary}
+                  accentColor={uniform.secondary}
+                />
+              </div>
+              <div className="flex gap-2 justify-center">
+                <div
+                  className="w-6 h-6 rounded border border-zinc-600 flex-shrink-0"
+                  style={{ backgroundColor: uniform.primary }}
+                  title="Jersey color"
+                />
+                {uniform.secondary && uniform.secondary !== uniform.primary && (
+                  <div
+                    className="w-6 h-6 rounded border border-zinc-600 flex-shrink-0"
+                    style={{ backgroundColor: uniform.secondary }}
+                    title="Pants/accent color"
+                  />
+                )}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </motion.div>
   );
